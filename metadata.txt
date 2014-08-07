@@ -1,0 +1,8 @@
+[general]
+name=GeoPicardie
+qgisMinimumVersion=2.0
+description=Accès simplifié aux couches de GéoPicardie
+author=GéoPicardie
+email=contact@geopicardie.fr
+version=version 1
+deprecated=False
