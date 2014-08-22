@@ -8,12 +8,16 @@ except:
 
 from PyQt4.QtGui import *
 from qgis.core import *
+import os
+import json
 
 NODE_TYPE_FOLDER = "folder"
 NODE_TYPE_WS = "web_service"
 NODE_TYPE_WMS_LAYER = "wms_layer"
 NODE_TYPE_WMS_LAYER_STYLE = "wms_layer-style"
 NODE_TYPE_WFS_FEATURE_TYPE = "wfs_feature_type"
+
+CONFIG_FILE_NAME = "favorites.json"
 
 class FavoritesTreeNode:
   """
@@ -44,86 +48,99 @@ class FavoritesTreeNode:
   def addWMSLayer(self):
     layer_url = u"crs={}&dpiMode=7&featureCount=10&format={}&layers={}&styles={}&url={}".format(
       self.layer_srs, self.layer_format, self.layer_name, self.layer_style, self.service_url)
-    # QMessageBox.information(None, "DEBUG:", layer_url) 
     self.iface.addRasterLayer(layer_url, self.layer_name, "wms")
+
+
+  def __str__(self):
+    result = u"{} (description: {}, type: {}, children: {})".format(self.title, self.description, self.node_type, len(self.children))
+    return
+
+  def __unicode__(self):
+    result = u"{} (description: {}, type: {}, children: {})".format(self.title, self.description, self.node_type, len(self.children))
+    return
+
+  def __repr__(self):
+    result = u"{} (description: {}, type: {}, children: {})".format(self.title, self.description, self.node_type, len(self.children))
+    return
+
+class FavoriteTreeNodeFactory:
+  """
+  Class used to build FavoritesTreeNode instances
+  """
+
+  def build_tree(self, iface, tree_config):
+    """
+    Function that do the job
+    """
+
+    # Read the node attributes
+    node_title = tree_config.get('title', None)
+    node_description = tree_config.get('description', None)
+    node_type = tree_config.get('type', None)
+    node_params = tree_config.get('params', None)
+
+    if node_title:
+      # Creation of the node
+      node = FavoritesTreeNode(iface, node_title, node_type, node_description, node_params)
+
+      # Creation of the node children
+      node_children = tree_config.get('children', [])
+      if len(node_children) > 0:
+        for child_config in node_children:
+          child_node = self.build_tree(iface, child_config)
+          node.children.append(child_node)
+
+      return node
+
+    else:
+      return None
 
 
 class PluginGeoPicardie:
   """
+  Plugin class.
   """
 
-  def __init__(self,iface):
+  def __init__(self, iface):
     """
+    Plugin initialisation.
+    A json config file is read in order to configure the plugin GUI.
     """
     self.iface = iface
-    
-    self.favorites_tree = FavoritesTreeNode(iface, u"GéoPicardie")
 
-    raster_tree_node = FavoritesTreeNode(iface=iface, title="Raster",
-      node_type=NODE_TYPE_FOLDER, description="Couches raster courantes")
+    # Read config file
+    config_struct = None
+    current_dir_path = os.path.dirname(os.path.abspath(__file__))
+    param_file_path = os.path.join(current_dir_path, CONFIG_FILE_NAME)
+    with open(param_file_path) as f:
+      config_string = "".join(f.readlines())
+      config_struct = json.loads(config_string)
 
-    raster_tree_node.children.append(FavoritesTreeNode(
-      iface=iface,
-      title=u"Vue aérienne 2001-2002",
-      node_type=NODE_TYPE_WMS_LAYER,
-      description=u"Orthophotographie aérienne de la Picardie de 2001-2002 (résolution de 1,25 m)",
-      params={
-        "url": u"http://www.geopicardie.fr/geoserver/wms",
-        "name": u"geopicardie:picardie_ortho_2002",
-        "format": u"image/jpeg",
-        "srs": u"epsg:2154",
-        "style": u""
-      }))
+    self.ressources_tree = FavoriteTreeNodeFactory().build_tree(self.iface, config_struct)
 
-    raster_tree_node.children.append(FavoritesTreeNode(
-      iface=iface,
-      title=u"Vue aérienne 2008-2009",
-      node_type=NODE_TYPE_WMS_LAYER,
-      description=u"Orthophotographie aérienne composite de la Picardie de 2008-2009 (résolution de 0,25 m)",
-      params={
-        "url": u"http://www.geopicardie.fr/geoserver/wms",
-        "name": u"geopicardie:picardie_ortho_composite_2008_2009_vis",
-        "format": u"image/jpeg",
-        "srs": u"epsg:2154",
-        "style": u""
-      }))
-
-    raster_tree_node.children.append(FavoritesTreeNode(
-      iface=iface,
-      title=u"Scan 25 - IGN",
-      node_type=NODE_TYPE_WMS_LAYER,
-      description=u"Scan25 de l'IGN de la Picardie",
-      params={
-        "url": u"http://www.geopicardie.fr/geoserver/wms",
-        "name": u"geopicardie:picardie_scan25",
-        "format": u"image/png",
-        "srs": u"epsg:2154",
-        "style": u""
-      }))
-
-    self.favorites_tree.children.append(raster_tree_node)
 
   def initGui(self):
     """
+    Plugin GUI initialisation.
     """
 
-    self.createSubMenuForFavorite(self.favorites_tree, self.iface.pluginMenu())
+    self.createSubMenuForFavorite(self.ressources_tree, self.iface.pluginMenu())
 
 
-  def createSubMenuForFavorite(self, favorite_tree_node, parent_menu):
+  def createSubMenuForFavorite(self, tree, parent_menu):
     """
     """
 
-    if self.favorites_tree.children != None and len(favorite_tree_node.children) > 0:
-      sub_menu = QMenu(favorite_tree_node.title, parent_menu)
-      for child in favorite_tree_node.children:
+    if tree.children != None and len(tree.children) > 0:
+      sub_menu = QMenu(tree.title, parent_menu)
+      for child in tree.children:
         self.createSubMenuForFavorite(child, sub_menu)
 
       parent_menu.addMenu(sub_menu)
 
     else:
-      action = QAction(favorite_tree_node.title, self.iface.mainWindow())
-      QObject.connect(action, SIGNAL("triggered()"), favorite_tree_node.runAction)
+      action = QAction(tree.title, self.iface.mainWindow())
+      QObject.connect(action, SIGNAL("triggered()"), tree.runAction)
       parent_menu.addAction(action)
 
   def unload(self):

@@ -1,0 +1,75 @@
+{
+  "title": "GéoPicardie",
+  "description": "Couches issues de GéoPicardie",
+  "type": "folder",
+  "children": [
+    {
+      "title": "Fonds cartographiques courants",
+      "description": "Fonds cartographiques de GéoPicardie les plus couramment utilisés",
+      "type": "folder",
+      "children": [
+        {
+          "title": "Raster",
+          "description": "Couches raster courantes",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Vue aérienne 2001-2002",
+              "description": "Orthophotographie aérienne de la Picardie de 2001-2002 (résolution de 1,25 m)",
+              "type": "wms_layer",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:picardie_ortho_2002",
+                "format": "image/jpeg",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Vue aérienne 2008-2009",
+              "description": "Orthophotographie aérienne composite de la Picardie de 2008-2009 (résolution de 0,25 m)",
+              "type": "wms_layer",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:picardie_ortho_composite_2008_2009_vis",
+                "format": "image/jpeg",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Scan 25 - IGN",
+              "description": "Scan25 de l'IGN de la Picardie",
+              "type": "wms_layer",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:picardie_scan25",
+                "format": "image/png",
+                "srs": "epsg:2154"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Vecteur",
+          "description": "Couches vecteur courantes",
+          "type": "folder",
+          "children": [
+          ]
+        },
+        {
+          "title": "Services WMS",
+          "description": "A compléter",
+          "type": "folder",
+          "children": [
+          ]
+        },
+        {
+          "title": "Services WFS",
+          "description": "A compléter",
+          "type": "folder",
+          "children": [
+          ]
+        }       
+      ]
+    }
+  ]
+}
