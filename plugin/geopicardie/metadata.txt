@@ -1,0 +1,8 @@
+[general]
+name=GeoPicardie
+qgisMinimumVersion=2.0
+description=Plugin simplifiant la connexion aux ressources de GeoPicardie
+author=GeoPicardie
+email=contact@geopicardie.fr
+version=version 1
+deprecated=False
