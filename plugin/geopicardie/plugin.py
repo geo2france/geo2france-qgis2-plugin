@@ -11,6 +11,7 @@ from qgis.core import *
 import os
 import json
 
+from geopicardie.utils import plugin_globals
 from geopicardie.utils.gpic_node_types import *
 from geopicardie.gui.gpic_dock import GpicDockWidget
 
@@ -22,12 +23,11 @@ class FavoritesTreeNode:
   """
   """
 
-  def __init__(self, iface, title, node_type=GpicNodeTypes.Instance().NODE_TYPE_FOLDER,
+  def __init__(self, title, node_type=GpicNodeTypes.Instance().NODE_TYPE_FOLDER,
     description=None, params=None):
     """
     """
 
-    self.iface = iface
     self.node_type = node_type
     self.title = title
     self.description = description
@@ -47,7 +47,7 @@ class FavoritesTreeNode:
   def addWMSLayer(self):
     layer_url = u"crs={}&featureCount=10&format={}&layers={}&maxHeight=256&maxWidth=256&styles={}&url={}".format(
       self.layer_srs, self.layer_format, self.layer_name, self.layer_style, self.service_url)
-    self.iface.addRasterLayer(layer_url, self.layer_name, "wms")
+    plugin_globals.iface.addRasterLayer(layer_url, self.layer_name, "wms")
 
   def __str__(self):
     result = u"{} (description: {}, type: {}, children: {})".format(self.title, self.description, self.node_type, len(self.children))
@@ -66,7 +66,7 @@ class FavoriteTreeNodeFactory:
   Class used to build FavoritesTreeNode instances
   """
 
-  def build_tree(self, iface, tree_config):
+  def build_tree(self, tree_config):
     """
     Function that do the job
     """
@@ -79,13 +79,13 @@ class FavoriteTreeNodeFactory:
 
     if node_title:
       # Creation of the node
-      node = FavoritesTreeNode(iface, node_title, node_type, node_description, node_params)
+      node = FavoritesTreeNode(node_title, node_type, node_description, node_params)
 
       # Creation of the node children
       node_children = tree_config.get('children', [])
       if len(node_children) > 0:
         for child_config in node_children:
-          child_node = self.build_tree(iface, child_config)
+          child_node = self.build_tree(child_config)
           node.children.append(child_node)
 
       return node
@@ -104,6 +104,7 @@ class PluginGeoPicardie:
     Plugin initialisation.
     A json config file is read in order to configure the plugin GUI.
     """
+    plugin_globals.iface = iface
     self.iface = iface
 
     # Read the config file
@@ -114,8 +115,7 @@ class PluginGeoPicardie:
       config_string = "".join(f.readlines())
       config_struct = json.loads(config_string)
 
-# !! Why pass the iface variable to this structure?
-    self.ressources_tree = FavoriteTreeNodeFactory().build_tree(self.iface, config_struct)
+    self.ressources_tree = FavoriteTreeNodeFactory().build_tree(config_struct)
 
 
   def initGui(self):
@@ -124,7 +124,7 @@ class PluginGeoPicardie:
     """
 
     # Create a menu
-    self.createSubMenuForFavorite(self.ressources_tree, self.iface.pluginMenu())
+    self.createPluginMenu()
 
     # Create a dockable panel with a tree of resources
     self.dock = GpicDockWidget()
@@ -132,26 +132,37 @@ class PluginGeoPicardie:
     self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dock)
 
 
-# To be removed
-# The tree of resources won't be available as a menu but in a treeview widget
-  def createSubMenuForFavorite(self, tree, parent_menu):
+  def createPluginMenu(self):
     """
     """
 
-    if tree.children != None and len(tree.children) > 0:
-      sub_menu = QMenu(tree.title, parent_menu)
-      for child in tree.children:
-        self.createSubMenuForFavorite(child, sub_menu)
+    plugin_menu = self.iface.pluginMenu()
+    self.gpic_menu = QMenu(u"GéoPicardie", plugin_menu)
+    plugin_menu.addMenu(self.gpic_menu)
 
-      parent_menu.addMenu(sub_menu)
+    show_gpic_panel_action = QAction(u'Afficher le panneau GéoPicardie', self.iface.mainWindow())        
+    show_gpic_panel_action.triggered.connect(self.showGpicPanelMenuTriggered)
+    self.gpic_menu.addAction(show_gpic_panel_action)
 
-    else:
-      action = QAction(tree.title, self.iface.mainWindow())
-      QObject.connect(action, SIGNAL("triggered()"), tree.runAction)
-      parent_menu.addAction(action)
+    about_action = QAction(u'À propos…', self.iface.mainWindow())        
+    about_action.triggered.connect(self.aboutMenuTriggered)
+    self.gpic_menu.addAction(about_action)
 
 
-# Something should probably be done by this function
+  def showGpicPanelMenuTriggered(self):
+    """
+    """
+    self.dock.show()
+
+
+  def aboutMenuTriggered(self):
+    """
+    """
+    QMessageBox.information(self.iface.mainWindow(),
+      u"GéoPicardie",
+      u"L'action de ce menu n'est pas encore implémentée",
+      QMessageBox.Ok)
+
+
   def unload(self):
-    # self.iface.removePluginMenu("&Test plugins",self.action)
-    pass
+    self.iface.pluginMenu().removeAction(self.gpic_menu.menuAction())
