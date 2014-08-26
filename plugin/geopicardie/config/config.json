@@ -9,23 +9,52 @@
       "type": "folder",
       "children": [
         {
-          "title": "Fonds cartographiques courants",
-          "description": "Fonds cartographiques de GéoPicardie les plus couramment utilisés",
+          "title": "Fonds topographiques",
+          "description": "Fonds cartographique décrivant la nature du terrain",
           "type": "folder",
           "children": [
             {
-              "title": "Vue aérienne 2001-2002",
-              "description": "Orthophotographie aérienne de la Picardie de 2001-2002 (résolution de 1,25 m)",
+              "title": "Scan 25 - IGN",
+              "description": "Scan25 (version topographique) de l'IGN de la Picardie",
               "type": "wms_layer",
               "params": {
                 "url": "http://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:picardie_ortho_2002",
-                "format": "image/jpeg",
+                "name": "geopicardie:picardie_scan25",
+                "format": "image/png",
                 "srs": "epsg:2154"
               }
             },
             {
-              "title": "Vue aérienne 2008-2009",
+              "title": "OpenStreetMap - apparence GéoPicardie - contrasté",
+              "description": "Apparence d'OpenStreetMap élaborée par GéoPicardie - version contrastée",
+              "type": "wms_layer",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "autres:osm_geopicardie_bright",
+                "format": "image/jpeg",
+                "srs": "epsg:3857"
+              }
+            },
+            {
+              "title": "Occupation du sol de Picardie - apparence GéoPicardie - contrasté",
+              "description": "Cartographie de l'occupation du sol de la Picardie de 1992 à 2010",
+              "type": "wms_layer",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:mos_picardie",
+                "format": "image/png",
+                "srs": "epsg:2154"
+              }
+            }      
+          ]
+        },
+        {
+          "title": "Vues aériennes récentes - domaine visible",
+          "description": "Photographies aériennes prises dans le domaine visible depuis 2007",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Vue aérienne de la Picardie 2008-2009",
               "description": "Orthophotographie aérienne composite de la Picardie de 2008-2009 (résolution de 0,25 m)",
               "type": "wms_layer",
               "params": {
@@ -36,23 +65,85 @@
               }
             },
             {
-              "title": "Scan 25 - IGN",
-              "description": "Scan25 de l'IGN de la Picardie",
+              "title": "Vue aérienne de l'Oise 2008-2009 - visible",
+              "description": "Orthophotographie aérienne de l'Oise de 2008-2009 dans le domaine visible (résolution de 20 cm)",
               "type": "wms_layer",
               "params": {
                 "url": "http://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:picardie_scan25",
-                "format": "image/png",
+                "name": "reg22:oise_ortho_2008_vis",
+                "format": "image/jpeg",
                 "srs": "epsg:2154"
               }
             },
             {
-              "title": "Vecteur",
-              "description": "Couches vecteur courantes",
-              "type": "folder",
-              "children": [
-              ]
+              "title": "Vue aérienne de l'Aisne 2009 - visible",
+              "description": "Orthophotographie aérienne de l'Aisne de 2009 dans le domaine visible (résolution de 25 cm)",
+              "type": "wms_layer",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:aisne_ortho_2009_vis",
+                "format": "image/jpeg",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Vue aérienne de la Somme 2008 - visible",
+              "description": "Orthophotographie aérienne de la Somme de 2008 dans le domaine visible (résolution de 20 cm)",
+              "type": "wms_layer",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:somme_ortho_2008_vis",
+                "format": "image/jpeg",
+                "srs": "epsg:2154"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Vues aériennes récentes - domaine infrarouge",
+          "description": "Photographies aériennes prises dans le domaine infrarouge depuis 2007",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Vue aérienne de l'Aisne 2009 - infrarouge",
+              "description": "Orthophotographie aérienne de l'Aisne de 2009 dans le domaine infrarouge (résolution de 25 cm)",
+              "type": "wms_layer",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:aisne_ortho_2009_ir",
+                "format": "image/jpeg",
+                "srs": "epsg:2154"
+              }
             }      
+          ]
+        },
+        {
+          "title": "Vues aériennes anciennes",
+          "description": "Photographies aériennes anciennes",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Vue aérienne de Picardie 2001-2002",
+              "description": "Orthophotographie aérienne de la Picardie de 2001-2002 (résolution de 1,25 m)",
+              "type": "wms_layer",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:picardie_ortho_2002",
+                "format": "image/jpeg",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Vue aérienne côte normande et picarde 1947 (ROLNP)",
+              "description": "Orthophotographie aérienne de la côte normand-picarde de 1947",
+              "type": "wmts_layer",
+              "params": {
+                "url": "http://188.65.168.39:81/arcgis/rest/services/Imagerie/Orthos_historiques_1947/MapServer/WMTS",
+                "name": "Imagerie_Orthos_historiques_1947",
+                "format": "image/png",
+                "srs": "epsg:2154"
+              }
+            }
           ]
         }
       ]
