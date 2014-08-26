@@ -15,9 +15,9 @@ from geopicardie.utils import plugin_globals
 from geopicardie.utils.gpic_node_types import *
 from geopicardie.gui.gpic_dock import GpicDockWidget
 
-
 CONFIG_FILE_NAME = "config.json"
 CONFIG_DIR_NAME = "config"
+
 
 class FavoritesTreeNode:
   """
@@ -40,14 +40,35 @@ class FavoritesTreeNode:
       self.layer_srs = params.get("srs")
       self.layer_style = params.get("style", "")
 
+    elif self.node_type == GpicNodeTypes.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
+      self.service_url = params.get("url")
+      self.feature_type_name = params.get("name")
+      self.wfs_version = params.get("version", "1.0.0")
+      self.layer_srs = params.get("srs")
+
   def runAction(self):
     if self.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER:
       self.addWMSLayer()
+    elif self.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMTS_LAYER:
+      self.addWMTSLayer()
+    elif self.node_type == GpicNodeTypes.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
+      self.addWFSLayer()
 
   def addWMSLayer(self):
     layer_url = u"crs={}&featureCount=10&format={}&layers={}&maxHeight=256&maxWidth=256&styles={}&url={}".format(
       self.layer_srs, self.layer_format, self.layer_name, self.layer_style, self.service_url)
     plugin_globals.iface.addRasterLayer(layer_url, self.layer_name, "wms")
+
+  def addWMTSLayer(self):
+    pass
+
+  def addWFSLayer(self):
+    first_param_prefix = '?'
+    if '?' in self.service_url:
+      first_param_prefix = '&'
+    layer_url = u"{}{}SERVICE=WFS&VERSION={}&REQUEST=GetFeature&TYPENAME={}&SRSNAME={}".format(
+      self.service_url, first_param_prefix, self.wfs_version, self.feature_type_name, self.layer_srs)
+    plugin_globals.iface.addVectorLayer(layer_url, self.title, "WFS")
 
   def __str__(self):
     result = u"{} (description: {}, type: {}, children: {})".format(self.title, self.description, self.node_type, len(self.children))
@@ -60,6 +81,7 @@ class FavoritesTreeNode:
   def __repr__(self):
     result = u"{} (description: {}, type: {}, children: {})".format(self.title, self.description, self.node_type, len(self.children))
     return
+
 
 class FavoriteTreeNodeFactory:
   """
@@ -109,8 +131,8 @@ class PluginGeoPicardie:
 
     # Read the config file
     config_struct = None
-    current_dir_path = os.path.dirname(os.path.abspath(__file__))
-    param_file_path = os.path.join(current_dir_path, CONFIG_DIR_NAME, CONFIG_FILE_NAME)
+    plugin_globals.plugin_path = os.path.dirname(os.path.abspath(__file__))
+    param_file_path = os.path.join(plugin_globals.plugin_path, CONFIG_DIR_NAME, CONFIG_FILE_NAME)
     with open(param_file_path) as f:
       config_string = "".join(f.readlines())
       config_struct = json.loads(config_string)
