@@ -21,13 +21,21 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
     self.gpic_data = gpic_data
     self.setText(0, gpic_data.title)
 
-    if gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_FOLDER:
-      self.setIcon(0, GpicIcons.Instance().folder_icon)
-    elif gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER:
-      self.setIcon(0, GpicIcons.Instance().wms_layer_icon)
-    elif gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
-      self.setIcon(0, GpicIcons.Instance().wfs_layer_icon)
+    gpicIcons = GpicIcons.Instance()
+    icon = None
 
+    if gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_FOLDER:
+      icon = gpicIcons.folder_icon
+    elif gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER:
+      icon = gpicIcons.wms_layer_icon
+    elif gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER_STYLE:
+      icon = gpicIcons.wms_style_icon
+    elif gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
+      icon = gpicIcons.wfs_layer_icon
+
+    if icon != None:
+      self.setIcon(0, icon)
+      
     self.setFlags(Qt.ItemIsEnabled | Qt.ItemIsSelectable)
 
 

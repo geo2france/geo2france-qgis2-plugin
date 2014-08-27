@@ -9,6 +9,7 @@ from geopicardie.utils.singleton import *
 
 IMAGE_DIR_NAME = "images"
 ICON_WMS_LAYER_FILE_NAME = "mIconWms.svg"
+ICON_WMS_STYLE_FILE_NAME = "mIconWmsStyle.svg"
 ICON_WFS_LAYER_FILE_NAME = "mIconWfs.svg"
 
 
@@ -29,6 +30,9 @@ class GpicIcons():
 
     wms_layer_icon_path = os.path.join(plugin_globals.plugin_path, IMAGE_DIR_NAME, ICON_WMS_LAYER_FILE_NAME)
     self.wms_layer_icon = QtGui.QIcon(wms_layer_icon_path)
+
+    wms_style_icon_path = os.path.join(plugin_globals.plugin_path, IMAGE_DIR_NAME, ICON_WMS_STYLE_FILE_NAME)
+    self.wms_style_icon = QtGui.QIcon(wms_style_icon_path)
 
     wfs_layer_icon_path = os.path.join(plugin_globals.plugin_path, IMAGE_DIR_NAME, ICON_WFS_LAYER_FILE_NAME)
     self.wfs_layer_icon = QtGui.QIcon(wfs_layer_icon_path)
