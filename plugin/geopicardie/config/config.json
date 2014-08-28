@@ -314,12 +314,16 @@
                     {
                       "title": "Dégradé du bleu vers le rouge",
                       "type": "wms_layer_style",
-                      "name": "vent_couleur_rouge_bleu"
+                      "params": {
+                        "name": "vent_couleurs_rouge_bleu"
+                      }
                     },
                     {
                       "title": "Dégradé de gris et de transparence",
                       "type": "wms_layer_style",
-                      "name": "vent_niveaux_gris_et_transparence"
+                      "params": {
+                        "name": "vent_niveaux_gris_et_transparence"
+                      }
                     }
                   ]
                 },
