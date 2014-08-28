@@ -154,6 +154,42 @@
           ]
         },
         {
+          "title": "Relief",
+          "description": "Données altimétriques",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Relief de la Somme (2008)",
+              "description": "Altitude sur l'ensemble du département de la Somme issue de l'orthorectification des vues aériennes de 2008",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "Relief de la Somme (2008) - couleurs",
+                  "description": "Altitude sur l'ensemble du département de la Somme issue de l'orthorectification des vues aériennes de 2008 - images en couleurs",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wms",
+                    "name": "geopicardie:somme_mnt_2008_img_slope_shade_color_5m",
+                    "format": "image/jpeg",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Relief de la Somme (2008) - niveaux de gris",
+                  "description": "Altitude sur l'ensemble du département de la Somme issue de l'orthorectification des vues aériennes de 2008 - images en niveaux de gris",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wms",
+                    "name": "geopicardie:somme_mnt_2008_img_slope_shade_5m",
+                    "format": "image/jpeg",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
           "title": "Limites administratives",
           "description": "Données concernant les limites administratives",
           "type": "folder",
