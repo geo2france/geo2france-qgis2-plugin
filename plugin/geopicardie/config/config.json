@@ -145,8 +145,10 @@
                   "params": {
                     "url": "http://188.65.168.39:81/arcgis/rest/services/Imagerie/Orthos_historiques_1947/MapServer/WMTS",
                     "name": "Imagerie_Orthos_historiques_1947",
+                    "tilematrixset_name": "nativeTileMatrixSet",
                     "format": "image/png",
-                    "srs": "epsg:2154"
+                    "srs": "urn:ogc:def:crs:EPSG::102110",
+                    "style": "default"
                   }
                 }
               ]

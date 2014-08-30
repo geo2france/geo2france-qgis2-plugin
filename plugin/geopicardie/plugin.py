@@ -44,6 +44,14 @@ class FavoritesTreeNode:
     elif self.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER_STYLE:
       self.layer_style_name = params.get("name")
 
+    elif self.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMTS_LAYER:
+      self.service_url = params.get("url")
+      self.layer_tilematrixset_name = params.get("tilematrixset_name")
+      self.layer_name = params.get("name")
+      self.layer_format = params.get("format")
+      self.layer_srs = params.get("srs")
+      self.layer_style_name = params.get("style", "")
+
     elif self.node_type == GpicNodeTypes.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
       self.service_url = params.get("url")
       self.feature_type_name = params.get("name")
@@ -88,7 +96,9 @@ class FavoritesTreeNode:
     """
     """
 
-    pass
+    layer_url = u"tileMatrixSet={}&crs={}&featureCount=10&format={}&layers={}&maxHeight=256&maxWidth=256&styles={}&url={}".format(
+      self.layer_tilematrixset_name, self.layer_srs, self.layer_format, self.layer_name, self.layer_style_name, self.service_url)
+    plugin_globals.iface.addRasterLayer(layer_url, self.title, "wms")
 
 
   def addWFSLayer(self):
