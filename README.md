@@ -12,13 +12,13 @@ Pré-requis :
 
 Processus d'installation (manuelle pour l'instant) :
 * Installation :
-** Télécharger le répertoire ./plugin/geopicardie
-** Copier ce répertoire dans le répertoire des plugin de votre répertoire personnel (typiquement ~/.qgis2/python/plugins)
+  * Télécharger le répertoire ./plugin/geopicardie
+  * Copier ce répertoire dans le répertoire des plugin de votre répertoire personnel (typiquement ~/.qgis2/python/plugins)
 * Activation de l'extension :
-** Lancer QGIS
-** Ouvrir le gestionnaire d'extensions
-** Activer le plugin "GeoPicardie" dans le gestionnaire d'extensions
-** Fermer le gestionnaire d'extensions
+  * Lancer QGIS
+  * Ouvrir le gestionnaire d'extensions
+  * Activer le plugin "GeoPicardie" dans le gestionnaire d'extensions
+  * Fermer le gestionnaire d'extensions
 
 
 Utilisation
