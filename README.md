@@ -68,5 +68,7 @@ Licence
 -------
 
 Licence : New BSD
+
 cf. fichier LICENSE.txt
+
 cf. http://choosealicense.com/licenses/bsd-3-clause/
