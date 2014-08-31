@@ -141,13 +141,12 @@
                 {
                   "title": "Vue aérienne côte normande et picarde 1947 (ROLNP)",
                   "description": "Orthophotographie aérienne de la côte normand-picarde de 1947",
-                  "type": "wmts_layer",
+                  "type": "wms_layer",
                   "params": {
-                    "url": "http://188.65.168.39:81/arcgis/rest/services/Imagerie/Orthos_historiques_1947/MapServer/WMTS",
-                    "name": "Imagerie_Orthos_historiques_1947",
-                    "tilematrixset_name": "nativeTileMatrixSet",
-                    "format": "image/png",
-                    "srs": "urn:ogc:def:crs:EPSG::102110",
+                    "url": "http://www.rolnp.fr/arcgis/services/Imagerie/Orthos_historiques_1947/MapServer/WMSServer",
+                    "name": "0",
+                    "format": "image/png8",
+                    "srs": "epsg:2154",
                     "style": "default"
                   }
                 }
