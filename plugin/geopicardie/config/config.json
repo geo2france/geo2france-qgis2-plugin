@@ -36,7 +36,7 @@
               }
             },
             {
-              "title": "Occupation du sol de Picardie - apparence GéoPicardie - contrasté",
+              "title": "Occupation du sol de Picardie",
               "description": "Cartographie de l'occupation du sol de la Picardie de 1992 à 2010",
               "type": "wms_layer",
               "params": {
@@ -49,102 +49,363 @@
           ]
         },
         {
-          "title": "Vues aériennes récentes - domaine visible",
-          "description": "Photographies aériennes prises dans le domaine visible depuis 2007",
+          "title": "Vues aériennes",
+          "description": "Photographies aériennes",
           "type": "folder",
           "children": [
             {
-              "title": "Vue aérienne de la Picardie 2008-2009",
-              "description": "Orthophotographie aérienne composite de la Picardie de 2008-2009 (résolution de 0,25 m)",
-              "type": "wms_layer",
-              "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:picardie_ortho_composite_2008_2009_vis",
-                "format": "image/jpeg",
-                "srs": "epsg:2154"
-              }
+              "title": "Vues aériennes récentes - domaine visible",
+              "description": "Photographies aériennes prises dans le domaine visible depuis 2007",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "Vue aérienne de la Picardie 2008-2009",
+                  "description": "Orthophotographie aérienne composite de la Picardie de 2008-2009 (résolution de 0,25 m)",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wms",
+                    "name": "geopicardie:picardie_ortho_composite_2008_2009_vis",
+                    "format": "image/jpeg",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Vue aérienne de l'Oise 2008-2009 - visible",
+                  "description": "Orthophotographie aérienne de l'Oise de 2008-2009 dans le domaine visible (résolution de 20 cm)",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wms",
+                    "name": "reg22:oise_ortho_2008_vis",
+                    "format": "image/jpeg",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Vue aérienne de l'Aisne 2009 - visible",
+                  "description": "Orthophotographie aérienne de l'Aisne de 2009 dans le domaine visible (résolution de 25 cm)",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wms",
+                    "name": "geopicardie:aisne_ortho_2009_vis",
+                    "format": "image/jpeg",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Vue aérienne de la Somme 2008 - visible",
+                  "description": "Orthophotographie aérienne de la Somme de 2008 dans le domaine visible (résolution de 20 cm)",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wms",
+                    "name": "geopicardie:somme_ortho_2008_vis",
+                    "format": "image/jpeg",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
             },
             {
-              "title": "Vue aérienne de l'Oise 2008-2009 - visible",
-              "description": "Orthophotographie aérienne de l'Oise de 2008-2009 dans le domaine visible (résolution de 20 cm)",
-              "type": "wms_layer",
-              "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
-                "name": "reg22:oise_ortho_2008_vis",
-                "format": "image/jpeg",
-                "srs": "epsg:2154"
-              }
+              "title": "Vues aériennes récentes - domaine infrarouge",
+              "description": "Photographies aériennes prises dans le domaine infrarouge depuis 2007",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "Vue aérienne de l'Aisne 2009 - infrarouge",
+                  "description": "Orthophotographie aérienne de l'Aisne de 2009 dans le domaine infrarouge (résolution de 25 cm)",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wms",
+                    "name": "geopicardie:aisne_ortho_2009_ir",
+                    "format": "image/jpeg",
+                    "srs": "epsg:2154"
+                  }
+                }      
+              ]
             },
             {
-              "title": "Vue aérienne de l'Aisne 2009 - visible",
-              "description": "Orthophotographie aérienne de l'Aisne de 2009 dans le domaine visible (résolution de 25 cm)",
-              "type": "wms_layer",
-              "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:aisne_ortho_2009_vis",
-                "format": "image/jpeg",
-                "srs": "epsg:2154"
-              }
-            },
-            {
-              "title": "Vue aérienne de la Somme 2008 - visible",
-              "description": "Orthophotographie aérienne de la Somme de 2008 dans le domaine visible (résolution de 20 cm)",
-              "type": "wms_layer",
-              "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:somme_ortho_2008_vis",
-                "format": "image/jpeg",
-                "srs": "epsg:2154"
-              }
+              "title": "Vues aériennes anciennes",
+              "description": "Photographies aériennes anciennes",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "Vue aérienne de Picardie 2001-2002",
+                  "description": "Orthophotographie aérienne de la Picardie de 2001-2002 (résolution de 1,25 m)",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wms",
+                    "name": "geopicardie:picardie_ortho_2002",
+                    "format": "image/jpeg",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Vue aérienne côte normande et picarde 1947 (ROLNP)",
+                  "description": "Orthophotographie aérienne de la côte normand-picarde de 1947",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://www.rolnp.fr/arcgis/services/Imagerie/Orthos_historiques_1947/MapServer/WMSServer",
+                    "name": "0",
+                    "format": "image/png8",
+                    "srs": "epsg:2154",
+                    "style": "default"
+                  }
+                }
+              ]
             }
           ]
         },
         {
-          "title": "Vues aériennes récentes - domaine infrarouge",
-          "description": "Photographies aériennes prises dans le domaine infrarouge depuis 2007",
+          "title": "Relief",
+          "description": "Données altimétriques",
           "type": "folder",
           "children": [
             {
-              "title": "Vue aérienne de l'Aisne 2009 - infrarouge",
-              "description": "Orthophotographie aérienne de l'Aisne de 2009 dans le domaine infrarouge (résolution de 25 cm)",
-              "type": "wms_layer",
-              "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:aisne_ortho_2009_ir",
-                "format": "image/jpeg",
-                "srs": "epsg:2154"
-              }
-            }      
+              "title": "Relief de la Somme (2008)",
+              "description": "Altitude sur l'ensemble du département de la Somme issue de l'orthorectification des vues aériennes de 2008",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "Relief de la Somme (2008) - couleurs",
+                  "description": "Altitude sur l'ensemble du département de la Somme issue de l'orthorectification des vues aériennes de 2008 - images en couleurs",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wms",
+                    "name": "geopicardie:somme_mnt_2008_img_slope_shade_color_5m",
+                    "format": "image/jpeg",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Relief de la Somme (2008) - niveaux de gris",
+                  "description": "Altitude sur l'ensemble du département de la Somme issue de l'orthorectification des vues aériennes de 2008 - images en niveaux de gris",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wms",
+                    "name": "geopicardie:somme_mnt_2008_img_slope_shade_5m",
+                    "format": "image/jpeg",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
+            }
           ]
         },
         {
-          "title": "Vues aériennes anciennes",
-          "description": "Photographies aériennes anciennes",
+          "title": "Limites administratives",
+          "description": "Données concernant les limites administratives",
           "type": "folder",
           "children": [
             {
-              "title": "Vue aérienne de Picardie 2001-2002",
-              "description": "Orthophotographie aérienne de la Picardie de 2001-2002 (résolution de 1,25 m)",
-              "type": "wms_layer",
-              "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:picardie_ortho_2002",
-                "format": "image/jpeg",
-                "srs": "epsg:2154"
-              }
+              "title": "Région",
+              "description": "Limites de la région",
+              "type": "folder",
+              "children": []
             },
             {
-              "title": "Vue aérienne côte normande et picarde 1947 (ROLNP)",
-              "description": "Orthophotographie aérienne de la côte normand-picarde de 1947",
-              "type": "wmts_layer",
-              "params": {
-                "url": "http://188.65.168.39:81/arcgis/rest/services/Imagerie/Orthos_historiques_1947/MapServer/WMTS",
-                "name": "Imagerie_Orthos_historiques_1947",
-                "format": "image/png",
-                "srs": "epsg:2154"
-              }
+              "title": "Départements",
+              "description": "Limites des départements",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "Départements - GeoFLA - polygones",
+                  "description": "Limites des départements basées sur la base de données GeoFLA de l'IGN (objets surfaciques)",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "autres:ign_geofla_departements",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Départements - GeoFLA - polylignes",
+                  "description": "Limites des départements basées sur la base de données GeoFLA de l'IGN (objets linéaires)",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "autres:ign_geofla_limites_dept",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Pays de Picardie",
+              "description": "Pays de Picardie",
+              "type": "folder",
+              "children": []
+            },
+            {
+              "title": "EPCI à fiscalité propre",
+              "description": "EPCI à fiscalité propre",
+              "type": "folder",
+              "children": []
+            },
+            {
+              "title": "Parcs naturels régionaux",
+              "description": "Parcs naturels régionaux",
+              "type": "folder",
+              "children": []
+            },
+            {
+              "title": "Cantons électoraux",
+              "description": "Cantons électoraux",
+              "type": "folder",
+              "children": []
             }
           ]
+        },
+        {
+          "title": "Aménagement & urbanisme",
+          "description": "Données concernant l'aménagement et l'urbanisme",
+          "type": "folder",
+          "children": [
+            {
+              "title": "SCoT",
+              "description": "Schéma de Cohérence Territoriale",
+              "type": "folder",
+              "children": []
+            },
+            {
+              "title": "PLU, PLUI et cartes communales",
+              "description": "PLU, PLUI et cartes communales",
+              "type": "folder",
+              "children": []
+            },
+            {
+              "title": "SUP",
+              "description": "Servitudes d'utilité publique",
+              "type": "folder",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Transports",
+          "description": "Données concernant les transports",
+          "type": "folder",
+          "children": [
+          ]
+        },
+        {
+          "title": "Éducation & formation",
+          "description": "Données concernant l'enseignement, la formation et l'éducation",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Établissements d'enseignement secondaire",
+              "description": "Données relatives aux établissements d'enseignement secondaire",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "Lycées de Picardie - adresse",
+                  "description": "Localisation à l'adresse des lycées publics et privés de Picardie",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "reg22:lycees_adresses",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Activités économiques",
+          "description": "Données concernant les activités économiques",
+          "type": "folder",
+          "children": [
+          ]
+        },
+        {
+          "title": "Environnement",
+          "description": "Données concernant l'environnement : faune, flore et paysages",
+          "type": "folder",
+          "children": [
+          ]
+        },
+        {
+          "title": "Climat, air et énergie",
+          "description": "Données concernant le climat, la qualité de l'air et l'énergie",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Énergie éolienne",
+              "description": "Données relatives à l'énergie éolienne",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "Vitesse du vent à 40 m en Picardie (2002)",
+                  "description": "Modélisation de la vitesse du vent à 40 m au-dessus du sol en Picardie",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wms",
+                    "name": "geopicardie:vent40m",
+                    "format": "image/png",
+                    "srs": "epsg:2154"
+                  },
+                  "children": [
+                    {
+                      "title": "Dégradé du bleu vers le rouge",
+                      "type": "wms_layer_style",
+                      "params": {
+                        "name": "vent_couleurs_rouge_bleu"
+                      }
+                    },
+                    {
+                      "title": "Dégradé de gris et de transparence",
+                      "type": "wms_layer_style",
+                      "params": {
+                        "name": "vent_niveaux_gris_et_transparence"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "Zones d'implantation favorables",
+                  "description": "Limites des zones d'implantation favorables des parcs éoliens",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wms",
+                    "name": "geopicardie:vent40m",
+                    "format": "image/png",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Zones d'implantation favorables sous condition",
+                  "description": "Limites des zones d'implantation favorables sous condition des parcs éoliens",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wms",
+                    "name": "geopicardie:vent40m",
+                    "format": "image/png",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Implantations d'éoliennes",
+                  "description": "Localisation des mats d'éoliennes",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wms",
+                    "name": "geopicardie:vent40m",
+                    "format": "image/png",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Tourisme et loisir",
+          "description": "Données concernant le tourisme et les activités de loisir",
+          "type": "folder",
+          "children": []
         }
       ]
     },
