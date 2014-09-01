@@ -4,5 +4,5 @@ qgisMinimumVersion=2.0
 description=Plugin simplifiant la connexion aux ressources de GeoPicardie
 author=GeoPicardie
 email=contact@geopicardie.fr
-version=version 1
+version=version 0.2
 deprecated=False
