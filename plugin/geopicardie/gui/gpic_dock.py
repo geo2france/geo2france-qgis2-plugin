@@ -9,6 +9,7 @@ from geopicardie.gui.gpic_tree_items import GpicTreeWidgetItem
    
 class GpicDockWidget(QDockWidget):
   """
+  The dock widget containing the tree view displaying the GéoPicardie resources
   """
 
 
@@ -32,6 +33,10 @@ class GpicDockWidget(QDockWidget):
     self.explorerWidget.setHeaderLabel('')
     self.explorerWidget.setHeaderHidden(True)
     self.explorerWidget.itemDoubleClicked.connect(self.itemDoubleClicked)
+
+    # context menu of the tree widget
+    self.explorerWidget.setContextMenuPolicy(Qt.CustomContextMenu)
+    self.explorerWidget.customContextMenuRequested.connect(self.openMenu)
 
     self.layout = QVBoxLayout()
     self.layout.setSpacing(2)
@@ -61,13 +66,33 @@ class GpicDockWidget(QDockWidget):
       for child in resources_tree.children:
         createSubItem(child, self.explorerWidget)
 
+
   def itemDoubleClicked(self, item, column):
     """
+    Handles double clic on an item of the tre view
     """
 
-    # QMessageBox.information(self, 'Info Message', 'double-clic',
-    #       QMessageBox.Ok)
-    item.runAction()
+    item.runDefaultAction()
+
+
+  def openMenu(self, position):
+    """
+    Handles contextual menu in the tree view
+    """
+    selected_item = self.explorerWidget.currentItem()
+    menu = selected_item.createMenu()
+
+  #   indexes = self.treeView.selectedIndexes()
+
+  # 51         if len(indexes) > 0:
+  # 52         
+  # 53             level = 0
+  # 54             index = indexes[0]
+  # 55             while index.parent().isValid():
+  # 56                 index = index.parent()
+  # 57                 level += 1
+
+    menu.exec_(self.explorerWidget.viewport().mapToGlobal(position))
 
 
   def dockStateChanged(self, floating):

@@ -43,7 +43,7 @@ class FavoritesTreeNode:
       self.layer_srs = params.get("srs")
 
 
-  def runAction(self):
+  def runAddToMapAction(self):
     """
     """
 

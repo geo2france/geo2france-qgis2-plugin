@@ -40,6 +40,8 @@ class PluginGeoPicardie:
   def initGui(self):
     """
     Plugin GUI initialisation.
+    Creates a menu item in the menu of QGIS
+    Creates a DockWidget containing the tree of resources
     """
 
     # Create a menu
@@ -53,6 +55,7 @@ class PluginGeoPicardie:
 
   def createPluginMenu(self):
     """
+    Creates the plugin main menu
     """
 
     plugin_menu = self.iface.pluginMenu()
@@ -70,16 +73,23 @@ class PluginGeoPicardie:
 
   def showGpicPanelMenuTriggered(self):
     """
+    Shows the dock widget
     """
     self.dock.show()
 
 
   def aboutMenuTriggered(self):
     """
+    Shows the About box
     """
 
     dialog = AboutBox(self.iface.mainWindow())
     dialog.exec_()
 
+
   def unload(self):
+    """
+    Removes the plugin menu
+    """
+    
     self.iface.pluginMenu().removeAction(self.gpic_menu.menuAction())

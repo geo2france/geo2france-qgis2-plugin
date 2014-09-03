@@ -10,6 +10,7 @@ from geopicardie.utils.gpic_icons import *
 
 class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
   """
+  An item of tree view.
   """
 
   def __init__(self, parent, gpic_data = None):
@@ -24,13 +25,13 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
     gpicIcons = GpicIcons.Instance()
     icon = None
 
-    if gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_FOLDER:
+    if self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_FOLDER:
       icon = gpicIcons.folder_icon
-    elif gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER:
+    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER:
       icon = gpicIcons.wms_layer_icon
-    elif gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER_STYLE:
+    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER_STYLE:
       icon = gpicIcons.wms_style_icon
-    elif gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
+    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
       icon = gpicIcons.wfs_layer_icon
 
     if icon != None:
@@ -39,8 +40,55 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
     self.setFlags(Qt.ItemIsEnabled | Qt.ItemIsSelectable)
 
 
-  def runAction(self):
+  def runDefaultAction(self):
     """
     """
 
-    self.gpic_data.runAction()
+    if self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_FOLDER:
+      pass
+    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER:
+      self.runAddToMapAction()
+    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER_STYLE:
+      self.runAddToMapAction()
+    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
+      self.runAddToMapAction()
+
+
+  def runAddToMapAction(self):
+    """
+    """
+
+    self.gpic_data.runAddToMapAction()
+
+
+  def runShowMetadataAction(self):
+    """
+    """
+
+    pass
+
+
+  def createMenu(self):
+    """
+    Creates a contextual menu
+    """
+
+    menu = QtGui.QMenu()
+
+    if self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_FOLDER:
+      menu.addAction(u"Envoyer des chouquettes à l'administrateur de GéoPicardie...")
+    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER:
+      add_to_map_action = menu.addAction(u"Ajouter à la carte")
+      add_to_map_action.triggered.connect(self.runAddToMapAction)
+      show_metadata_action = menu.addAction(u"Afficher les métadonnées...")
+      show_metadata_action.triggered.connect(self.runShowMetadataAction)
+    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER_STYLE:
+      add_to_map_action = menu.addAction(u"Ajouter à la carte")
+      add_to_map_action.triggered.connect(self.runAddToMapAction)
+    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
+      add_to_map_action = menu.addAction(u"Ajouter à la carte")
+      add_to_map_action.triggered.connect(self.runAddToMapAction)
+      show_metadata_action = menu.addAction(u"Afficher les métadonnées...")
+      show_metadata_action.triggered.connect(self.runShowMetadataAction)
+
+    return menu
