@@ -1,162 +1,16 @@
 # -*- coding: utf-8 -*-
 
 from PyQt4.QtCore import *
-try:
-  from PyQt4.QtCore import QString
-except:
-  QString = type("")
-
 from PyQt4.QtGui import *
-from qgis.core import *
+
 import os
 import json
 
 from geopicardie.utils.plugin_globals import GpicGlobals
 from geopicardie.gui.gpic_dock import GpicDockWidget
 from geopicardie.gui.about_box import AboutBox
-
-
-
-class FavoritesTreeNode:
-  """
-  """
-
-  def __init__(self, title, node_type=GpicGlobals.Instance().NODE_TYPE_FOLDER,
-    description=None, params=None, parent_node=None):
-    """
-    """
-
-    self.parent_node = parent_node
-    self.node_type = node_type
-    self.title = title
-    self.description = description
-    self.children = []
-
-    if self.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER:
-      self.service_url = params.get("url")
-      self.layer_name = params.get("name")
-      self.layer_format = params.get("format")
-      self.layer_srs = params.get("srs")
-      self.layer_style_name = params.get("style", "")
-
-    elif self.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER_STYLE:
-      self.layer_style_name = params.get("name")
-
-    elif self.node_type == GpicGlobals.Instance().NODE_TYPE_WMTS_LAYER:
-      self.service_url = params.get("url")
-      self.layer_tilematrixset_name = params.get("tilematrixset_name")
-      self.layer_name = params.get("name")
-      self.layer_format = params.get("format")
-      self.layer_srs = params.get("srs")
-      self.layer_style_name = params.get("style", "")
-
-    elif self.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
-      self.service_url = params.get("url")
-      self.feature_type_name = params.get("name")
-      self.wfs_version = params.get("version", "1.0.0")
-      self.layer_srs = params.get("srs")
-
-
-  def runAction(self):
-    """
-    """
-
-    if self.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER:
-      self.addWMSLayer()
-    elif self.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER_STYLE:
-      self.addWMSLayerWithStyle()
-    elif self.node_type == GpicGlobals.Instance().NODE_TYPE_WMTS_LAYER:
-      self.addWMTSLayer()
-    elif self.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
-      self.addWFSLayer()
-
-
-  def addWMSLayer(self):
-    """
-    """
-
-    layer_url = u"crs={}&featureCount=10&format={}&layers={}&maxHeight=256&maxWidth=256&styles={}&url={}".format(
-      self.layer_srs, self.layer_format, self.layer_name, self.layer_style_name, self.service_url)
-    GpicGlobals.Instance().iface.addRasterLayer(layer_url, self.title, "wms")
-
-
-  def addWMSLayerWithStyle(self):
-    """
-    """
-
-    if self.parent_node != None:
-      layer_url = u"crs={}&featureCount=10&format={}&layers={}&maxHeight=256&maxWidth=256&styles={}&url={}".format(
-        self.parent_node.layer_srs, self.parent_node.layer_format, self.parent_node.layer_name, self.layer_style_name, self.parent_node.service_url)
-      GpicGlobals.Instance().iface.addRasterLayer(layer_url, self.parent_node.title, "wms")
-
-
-  def addWMTSLayer(self):
-    """
-    """
-
-    layer_url = u"tileMatrixSet={}&crs={}&featureCount=10&format={}&layers={}&maxHeight=256&maxWidth=256&styles={}&url={}".format(
-      self.layer_tilematrixset_name, self.layer_srs, self.layer_format, self.layer_name, self.layer_style_name, self.service_url)
-    GpicGlobals.Instance().iface.addRasterLayer(layer_url, self.title, "wms")
-
-
-  def addWFSLayer(self):
-    """
-    """
-
-    first_param_prefix = '?'
-    if '?' in self.service_url:
-      first_param_prefix = '&'
-    layer_url = u"{}{}SERVICE=WFS&VERSION={}&REQUEST=GetFeature&TYPENAME={}&SRSNAME={}".format(
-      self.service_url, first_param_prefix, self.wfs_version, self.feature_type_name, self.layer_srs)
-    GpicGlobals.Instance().iface.addVectorLayer(layer_url, self.title, "WFS")
-
-
-  def __str__(self):
-    result = u"{} (description: {}, type: {}, children: {})".format(self.title, self.description, self.node_type, len(self.children))
-    return
-
-
-  def __unicode__(self):
-    result = u"{} (description: {}, type: {}, children: {})".format(self.title, self.description, self.node_type, len(self.children))
-    return
-
-
-  def __repr__(self):
-    result = u"{} (description: {}, type: {}, children: {})".format(self.title, self.description, self.node_type, len(self.children))
-    return
-
-
-class FavoriteTreeNodeFactory:
-  """
-  Class used to build FavoritesTreeNode instances
-  """
-
-  def build_tree(self, tree_config, parent_node = None):
-    """
-    Function that do the job
-    """
-
-    # Read the node attributes
-    node_title = tree_config.get('title', None)
-    node_description = tree_config.get('description', None)
-    node_type = tree_config.get('type', None)
-    node_params = tree_config.get('params', None)
-
-    if node_title:
-      # Creation of the node
-      node = FavoritesTreeNode(node_title, node_type, node_description, node_params, parent_node)
-
-      # Creation of the node children
-      node_children = tree_config.get('children', [])
-      if len(node_children) > 0:
-        for child_config in node_children:
-          child_node = self.build_tree(child_config, node)
-          node.children.append(child_node)
-
-      return node
-
-    else:
-      return None
+from geopicardie.nodes.nodes import FavoriteTreeNodeFactory
+from geopicardie.nodes.nodes import FavoritesTreeNode
 
 
 class PluginGeoPicardie:
@@ -171,10 +25,6 @@ class PluginGeoPicardie:
     """
 
     self.iface = iface
-    # QMessageBox.information(self.iface.mainWindow(),
-    #   u"GéoPicardie",
-    #   os.path.dirname(os.path.abspath(__file__)),
-    #   QMessageBox.Ok)
 
     GpicGlobals.Instance().updateGlobals(os.path.dirname(os.path.abspath(__file__)), self.iface)
 
@@ -227,10 +77,6 @@ class PluginGeoPicardie:
   def aboutMenuTriggered(self):
     """
     """
-    # QMessageBox.information(self.iface.mainWindow(),
-    #   u"GéoPicardie",
-    #   u"L'action de ce menu n'est pas encore implémentée",
-    #   QMessageBox.Ok)
 
     dialog = AboutBox(self.iface.mainWindow())
     dialog.exec_()
