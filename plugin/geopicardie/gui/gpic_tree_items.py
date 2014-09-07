@@ -58,6 +58,7 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
 
   def runAddToMapAction(self):
     """
+    Add the resource to the map
     """
 
     self.gpic_data.runAddToMapAction()
@@ -65,9 +66,10 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
 
   def runShowMetadataAction(self):
     """
+    Displays the resource metadata
     """
 
-    pass
+    self.gpic_data.runShowMetadataAction()
 
 
   def createMenu(self):
@@ -82,14 +84,14 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
     elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER:
       add_to_map_action = menu.addAction(u"Ajouter à la carte")
       add_to_map_action.triggered.connect(self.runAddToMapAction)
-      show_metadata_action = menu.addAction(u"Afficher les métadonnées...")
-      show_metadata_action.triggered.connect(self.runShowMetadataAction)
     elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER_STYLE:
       add_to_map_action = menu.addAction(u"Ajouter à la carte")
       add_to_map_action.triggered.connect(self.runAddToMapAction)
     elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
       add_to_map_action = menu.addAction(u"Ajouter à la carte")
       add_to_map_action.triggered.connect(self.runAddToMapAction)
+
+    if self.gpic_data.metadata_url:
       show_metadata_action = menu.addAction(u"Afficher les métadonnées...")
       show_metadata_action.triggered.connect(self.runShowMetadataAction)
 

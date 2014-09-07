@@ -45,6 +45,9 @@ Notes
 Version 0.3 :
 * ajout d'une info-bulle sur chaque nœud. Elle reprend le champ "description" du nœud
 * ajout d'un champ "icon" pour chaque nœud. Il permet d'afficher une icône différente de celle associée à la valeur du champ "node_type". Avec la valeur "warn", ce champ permet d'afficher une icône d'avertissement pour les nœuds qui sont en attente d'un paramétrage correct par exemple
+* ajout d'un menu contextuel avec les fonctions suivantes :
+** ajouter la ressource à la carte
+** afficher la fiche de métadonnées (si elle est renseignée dans le champ "metadata_url" du fichier de configuration)
 
 Version 0.2 :
 * Présentation des ressources dans un arbre affiché dans un panneau latéral encrable

@@ -17,6 +17,7 @@
               "title": "Scan 25 - IGN",
               "description": "Scan25 (version topographique) de l'IGN de la Picardie",
               "type": "wms_layer",
+              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=f3b9e304-c760-47af-ac87-b0a219d77eba",
               "params": {
                 "url": "http://www.geopicardie.fr/geoserver/wms",
                 "name": "geopicardie:picardie_scan25",
