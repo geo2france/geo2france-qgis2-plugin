@@ -35,7 +35,7 @@ Cet arbre contient pour l'instant (version 0.2 du plugin) :
 
 Pour ajouter une couche WMS ou une classe d'entités WFS sur la carte courante de QGIS : double-clic sur le noeud en question.
 
-L'arbre des ressources n'est pas entièrement renseigné, par conséquent, le double-clic sur certains nœuds peut ne rien ajouter à la carte courante.
+L'arbre des ressources n'est pas entièrement renseigné, par conséquent, le double-clic sur certains nœuds peut ne rien ajouter à la carte courante. Les ressources non correctement paramétrées dans le plugin sont marquées d'une icône avec un point d'exclamation.
 
 
 
@@ -48,6 +48,7 @@ Version 0.3 :
 * ajout d'un menu contextuel avec les fonctions suivantes :
 ** ajouter la ressource à la carte
 ** afficher la fiche de métadonnées (si elle est renseignée dans le champ "metadata_url" du fichier de configuration)
+** afficher ou masquer un ensemble de nœuds de l'arbre
 
 Version 0.2 :
 * Présentation des ressources dans un arbre affiché dans un panneau latéral encrable

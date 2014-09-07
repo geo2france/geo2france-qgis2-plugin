@@ -7,6 +7,50 @@ from geopicardie.utils.plugin_globals import GpicGlobals
 from geopicardie.utils.gpic_icons import *
 
 
+
+def expandItemAndSubitems(item):
+  """
+  """
+
+  if not item.isExpanded():
+    item.setExpanded(True)
+
+  nb_subitems = item.childCount()
+
+  for i in range(nb_subitems):
+    expandItemAndSubitems(item.child(i))
+
+
+def collapseItemAndSubitems(item):
+  """
+  """
+
+  if item.isExpanded():
+    item.setExpanded(False)
+
+  nb_subitems = item.childCount()
+
+  for i in range(nb_subitems):
+    collapseItemAndSubitems(item.child(i))
+
+
+def containsUnexpandedSubitems(item):
+  """
+  """
+
+  if not item.isExpanded():
+    return True
+
+  nb_subitems = item.childCount()
+
+  for i in range(nb_subitems):
+    if containsUnexpandedSubitems(item.child(i)):
+      return True
+
+  return False
+
+
+
 class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
   """
   An item of tree view.
@@ -72,6 +116,34 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
     self.gpic_data.runShowMetadataAction()
 
 
+  def containsUnexpandedSubitems(self):
+    """
+    Determines if subitems are not expanded
+    """
+
+    if not self.isExpanded():
+      return True
+    else:
+      return containsUnexpandedSubitems(self)
+
+
+  def runExpandAllSubItemsAction(self):
+    """
+    Expands all subitems
+    """
+
+    expandItemAndSubitems(self)
+
+
+  def runCollapseAllSubItemsAction(self):
+    """
+    Expands all subitems
+    """
+
+    collapseItemAndSubitems(self)
+
+
+
   def createMenu(self):
     """
     Creates a contextual menu
@@ -94,5 +166,13 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
     if self.gpic_data.metadata_url:
       show_metadata_action = menu.addAction(u"Afficher les métadonnées...")
       show_metadata_action.triggered.connect(self.runShowMetadataAction)
+
+    if self.childCount() > 0 and self.containsUnexpandedSubitems():
+      expand_all_subitems_action = menu.addAction(u"Afficher tous les descendants")
+      expand_all_subitems_action.triggered.connect(self.runExpandAllSubItemsAction)
+
+    if self.childCount() > 0 and self.isExpanded():
+      expand_all_subitems_action = menu.addAction(u"Masquer tous les descendants")
+      expand_all_subitems_action.triggered.connect(self.runCollapseAllSubItemsAction)
 
     return menu
