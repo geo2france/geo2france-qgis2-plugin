@@ -59,9 +59,9 @@ Auteurs :
 Source d'inspiration :
 * Nicolas Damiens
 
-
 Autres remerciements :
 * Auteurs des icônes de QGIS, reprises dans l'arbre des ressources
+* Pour le fichier plugin/geopicardie/images/Icon_Simple_Warn.png cf. http://commons.wikimedia.org/wiki/File:Icon_Simple_Warn.png
 
 
 Licence

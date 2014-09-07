@@ -21,10 +21,14 @@ class GpicGlobals():
   NODE_TYPE_WMS_LAYER_STYLE = "wms_layer_style"
   NODE_TYPE_WFS_FEATURE_TYPE = "wfs_feature_type"
 
+  # Node icon values
+  NODE_ICON_WARN = 'warn'
+
   # Images dir
   IMAGES_DIR_NAME = "images"
   LOGO_FILE_NAME = "logo_geopicardie.png"
 
+  ICON_WARN_FILE_NAME = "Icon_Simple_Warn.png"
   ICON_WMS_LAYER_FILE_NAME = "mIconWms.svg"
   ICON_WMS_STYLE_FILE_NAME = "mIconWmsStyle.svg"
   ICON_WFS_LAYER_FILE_NAME = "mIconWfs.svg"

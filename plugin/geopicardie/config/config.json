@@ -163,6 +163,7 @@
               "title": "Relief de la Somme (2008)",
               "description": "Altitude sur l'ensemble du département de la Somme issue de l'orthorectification des vues aériennes de 2008",
               "type": "folder",
+              "icon": "warn",
               "children": [
                 {
                   "title": "Relief de la Somme (2008) - couleurs",
@@ -199,6 +200,7 @@
               "title": "Région",
               "description": "Limites de la région",
               "type": "folder",
+              "icon": "warn",
               "children": []
             },
             {
@@ -234,24 +236,65 @@
               "title": "Pays de Picardie",
               "description": "Pays de Picardie",
               "type": "folder",
-              "children": []
+              "children": [
+                {
+                  "title": "Pays de Picardie - GeoFLA - polygones",
+                  "description": "Limites des pays de Picardie basées sur la base de données GeoFLA de l'IGN (objets surfaciques)",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "reg22:pays_picardie_BY_geofla",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Pays de Picardie - BDTOPO - polygones",
+                  "description": "Limites des pays de Picardie basées sur la base de données BDTOPO de l'IGN (objets surfaciques)",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "reg22:pays_picardie_BY_bdtopo",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
             },
             {
               "title": "EPCI à fiscalité propre",
               "description": "EPCI à fiscalité propre",
               "type": "folder",
-              "children": []
-            },
-            {
-              "title": "Parcs naturels régionaux",
-              "description": "Parcs naturels régionaux",
-              "type": "folder",
-              "children": []
+              "children": [
+                {
+                  "title": "EPCI - GeoFLA - polygones",
+                  "description": "Limites des EPCI à fiscalité propre basées sur la base de données GeoFLA de l'IGN (objets surfaciques)",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "reg22:epci_reels_picardie_BY_geofla",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "EPCI - BDTOPO - polygones",
+                  "description": "Limites des EPCI à fiscalité propre basées sur la base de données BDTOPO de l'IGN (objets surfaciques)",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "reg22:epci_reels_picardie_BY_bdtopo",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
             },
             {
               "title": "Cantons électoraux",
               "description": "Cantons électoraux",
               "type": "folder",
+              "icon": "warn",
               "children": []
             }
           ]
@@ -265,18 +308,28 @@
               "title": "SCoT",
               "description": "Schéma de Cohérence Territoriale",
               "type": "folder",
+              "icon": "warn",
               "children": []
             },
             {
               "title": "PLU, PLUI et cartes communales",
               "description": "PLU, PLUI et cartes communales",
               "type": "folder",
+              "icon": "warn",
               "children": []
             },
             {
               "title": "SUP",
               "description": "Servitudes d'utilité publique",
               "type": "folder",
+              "icon": "warn",
+              "children": []
+            },
+            {
+              "title": "Parcs naturels régionaux",
+              "description": "Parcs naturels régionaux",
+              "type": "folder",
+              "icon": "warn",
               "children": []
             }
           ]
@@ -286,6 +339,108 @@
           "description": "Données concernant les transports",
           "type": "folder",
           "children": [
+            {
+              "title": "Transport routier",
+              "description": "Transport routier",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "Lignes routières régionales",
+                  "description": "Lignes routières régionales",
+                  "type": "wfs_feature_type",
+                  "icon": "warn",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "reg22:lycees_adresses",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Arrêts des lignes routières régionales",
+                  "description": "Arrêts des lignes routières régionales",
+                  "type": "wfs_feature_type",
+                  "icon": "warn",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "reg22:lycees_adresses",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Taxi TER",
+                  "description": "Taxi TER",
+                  "type": "wfs_feature_type",
+                  "icon": "warn",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "reg22:lycees_adresses",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Transport ferroviaire",
+              "description": "Transport ferroviaire",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "Lignes TER ferroviaires",
+                  "description": "Lignes TER ferroviaires",
+                  "type": "wfs_feature_type",
+                  "icon": "warn",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "reg22:lycees_adresses",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Gares et points d'arrêt ferroviaires",
+                  "description": "Gares et points d'arrêt ferroviaires",
+                  "type": "wfs_feature_type",
+                  "icon": "warn",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "reg22:lycees_adresses",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Transport fluvial",
+              "description": "Transport fluvial",
+              "type": "folder",
+              "icon": "warn",
+              "children": []
+            },
+            {
+              "title": "Transport maritime",
+              "description": "Transport maritime",
+              "type": "folder",
+              "icon": "warn",
+              "children": []
+            },
+            {
+              "title": "Transport aérien",
+              "description": "Transport aérien",
+              "type": "folder",
+              "icon": "warn",
+              "children": []
+            },
+            {
+              "title": "Aménagements cyclables",
+              "description": "Aménagements cyclables",
+              "type": "folder",
+              "icon": "warn",
+              "children": []
+            }
           ]
         },
         {
@@ -308,8 +463,55 @@
                     "name": "reg22:lycees_adresses",
                     "srs": "epsg:2154"
                   }
+                },
+                {
+                  "title": "Collèges publiques de l'Aisne",
+                  "description": "Localisation des collèges publiques de l'Aisne",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "dept02:COLLEGES_AISNE",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Collèges publiques de l'Oise",
+                  "description": "Localisation des collèges publiques de l'Oise",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "dept60:Colleges_Publics_CG60",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Collèges publiques de la Somme",
+                  "description": "Localisation des collèges publiques de la Somme",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://geo.somme.fr/arcgis/services/ENS_CANTON_COLLEGE/MapServer/WFSServer",
+                    "version": "1.0.0",
+                    "name": "ENS_CANTON_COLLEGE:Colleges",
+                    "srs": "epsg:2154"
+                  }
                 }
               ]
+            },
+            {
+              "title": "Établissements d'enseignement supérieur",
+              "description": "Données relatives aux établissements d'enseignement supérieur",
+              "type": "folder",
+              "icon": "warn",
+              "children": []
+            },
+            {
+              "title": "Centres de Formation d'Apprentis (CFA)",
+              "description": "Données relatives aux centres de formation d'apprentis",
+              "type": "folder",
+              "icon": "warn",
+              "children": []
             }
           ]
         },
@@ -318,6 +520,41 @@
           "description": "Données concernant les activités économiques",
           "type": "folder",
           "children": [
+            {
+              "title": "Pôles d'activités économiques",
+              "description": "Pôles d'activités économiques",
+              "type": "wfs_feature_type",
+              "icon": "warn",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "geopicardie:xxx",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Sites d'activités économiques",
+              "description": "Sites d'activités économiques",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "geopicardie:activite_eco_sites",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Localisation des établissements",
+              "description": "Localisation des établissements",
+              "type": "wfs_feature_type",
+              "icon": "warn",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "geopicardie:xxx",
+                "srs": "epsg:2154"
+              }
+            }
           ]
         },
         {
@@ -325,6 +562,117 @@
           "description": "Données concernant l'environnement : faune, flore et paysages",
           "type": "folder",
           "children": [
+            {
+              "title": "Espaces naturels protégés",
+              "description": "Espaces naturels protégés",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "Réserves naturelles",
+                  "description": "Réserves naturelles",
+                  "type": "folder",
+                  "icon": "warn",
+                  "children": []
+                },
+                {
+                  "title": "Espaces naturels sensibles",
+                  "description": "Espaces naturels sensibles",
+                  "type": "folder",
+                  "children": [
+                    {
+                      "title": "Espaces naturels sensibles de l'Aisne",
+                      "description": "Périmètres des ENS de l'Aisne",
+                      "type": "wfs_feature_type",
+                      "params": {
+                        "url": "http://www.geopicardie.fr/geoserver/wfs",
+                        "version": "1.0.0",
+                        "name": "dept02:ENS_CG02",
+                        "srs": "epsg:2154"
+                      }
+                    },
+                    {
+                      "title": "Espaces naturels sensibles de l'Oise",
+                      "description": "Périmètres des ENS de l'Oise",
+                      "type": "wfs_feature_type",
+                      "icon": "warn",
+                      "params": {
+                        "url": "http://www.geopicardie.fr/geoserver/wfs",
+                        "version": "1.0.0",
+                        "name": "dept60:ENS_CG60",
+                        "srs": "epsg:2154"
+                      }
+                    },
+                    {
+                      "title": "Espaces naturels sensibles de la Somme",
+                      "description": "Périmètres des ENS de la Somme",
+                      "type": "wfs_feature_type",
+                      "params": {
+                        "url": "http://geo.somme.fr/arcgis/services/ENS_CANTON_COLLEGE/MapServer/WFSServer",
+                        "version": "1.0.0",
+                        "name": "ENS_CANTON_COLLEGE:Espaces_naturels_sensibles",
+                        "srs": "epsg:2154"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "Parcs naturels",
+                  "description": "Parcs naturels",
+                  "type": "folder",
+                  "icon": "warn",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "title": "Inventaires nature-biodiversité",
+              "description": "Inventaires nature-biodiversité",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "ZICO",
+                  "description": "ZICO",
+                  "type": "folder",
+                  "icon": "warn",
+                  "children": []
+                },
+                {
+                  "title": "ZNIEFF",
+                  "description": "ZNIEFF",
+                  "type": "folder",
+                  "icon": "warn",
+                  "children": []
+                },
+                {
+                  "title": "Zones à dominate humide",
+                  "description": "Zones à dominate humide",
+                  "type": "folder",
+                  "icon": "warn",
+                  "children": []
+                },
+                {
+                  "title": "Natura 2000",
+                  "description": "Natura 2000",
+                  "type": "folder",
+                  "icon": "warn",
+                  "children": []
+                },
+                {
+                  "title": "Trames vertes et bleues",
+                  "description": "Trames vertes et bleues",
+                  "type": "folder",
+                  "icon": "warn",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "title": "Paysages",
+              "description": "Paysages",
+              "type": "folder",
+              "icon": "warn",
+              "children": []
+            }
           ]
         },
         {
@@ -368,6 +716,7 @@
                   "title": "Zones d'implantation favorables",
                   "description": "Limites des zones d'implantation favorables des parcs éoliens",
                   "type": "wms_layer",
+                  "icon": "warn",
                   "params": {
                     "url": "http://www.geopicardie.fr/geoserver/wms",
                     "name": "geopicardie:vent40m",
@@ -379,6 +728,7 @@
                   "title": "Zones d'implantation favorables sous condition",
                   "description": "Limites des zones d'implantation favorables sous condition des parcs éoliens",
                   "type": "wms_layer",
+                  "icon": "warn",
                   "params": {
                     "url": "http://www.geopicardie.fr/geoserver/wms",
                     "name": "geopicardie:vent40m",
@@ -390,6 +740,7 @@
                   "title": "Implantations d'éoliennes",
                   "description": "Localisation des mats d'éoliennes",
                   "type": "wms_layer",
+                  "icon": "warn",
                   "params": {
                     "url": "http://www.geopicardie.fr/geoserver/wms",
                     "name": "geopicardie:vent40m",
@@ -402,10 +753,29 @@
           ]
         },
         {
-          "title": "Tourisme et loisir",
-          "description": "Données concernant le tourisme et les activités de loisir",
+          "title": "Culture, tourisme et loisir",
+          "description": "Données concernant le patrimoine culturel, le tourisme et les activités de loisir",
           "type": "folder",
-          "children": []
+          "children": [
+            {
+              "title": "Patrimoine",
+              "description": "Patrimoine",
+              "icon": "warn",
+              "type": "folder"
+            },
+            {
+              "title": "Itinéraires et circuits",
+              "description": "Itinéraires et circuits",
+              "icon": "warn",
+              "type": "folder"
+            },
+            {
+              "title": "Équipements touristiques",
+              "description": "Équipements touristiques",
+              "icon": "warn",
+              "type": "folder"
+            }
+          ]
         }
       ]
     },

@@ -24,6 +24,10 @@ class GpicIcons():
     self.folder_icon.addPixmap(style.standardPixmap(QtGui.QStyle.SP_DirClosedIcon),
       QtGui.QIcon.Normal, QtGui.QIcon.Off)
 
+    warn_icon_path = os.path.join(GpicGlobals.Instance().images_dir_path,
+      GpicGlobals.Instance().ICON_WARN_FILE_NAME)
+    self.warn_icon = QtGui.QIcon(warn_icon_path)
+
     wms_layer_icon_path = os.path.join(GpicGlobals.Instance().images_dir_path,
       GpicGlobals.Instance().ICON_WMS_LAYER_FILE_NAME)
     self.wms_layer_icon = QtGui.QIcon(wms_layer_icon_path)

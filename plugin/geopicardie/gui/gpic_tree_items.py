@@ -3,9 +3,8 @@
 from PyQt4.QtCore import *
 from PyQt4 import QtGui
 
-from geopicardie.utils.gpic_node_types import *
+from geopicardie.utils.plugin_globals import GpicGlobals
 from geopicardie.utils.gpic_icons import *
-
 
 
 class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
@@ -25,13 +24,15 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
     gpicIcons = GpicIcons.Instance()
     icon = None
 
-    if self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_FOLDER:
+    if self.gpic_data.icon == GpicGlobals.Instance().NODE_ICON_WARN:
+      icon = gpicIcons.warn_icon
+    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_FOLDER:
       icon = gpicIcons.folder_icon
-    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER:
+    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER:
       icon = gpicIcons.wms_layer_icon
-    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER_STYLE:
+    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER_STYLE:
       icon = gpicIcons.wms_style_icon
-    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
+    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
       icon = gpicIcons.wfs_layer_icon
 
     if icon != None:
@@ -44,13 +45,13 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
     """
     """
 
-    if self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_FOLDER:
+    if self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_FOLDER:
       pass
-    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER:
+    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER:
       self.runAddToMapAction()
-    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER_STYLE:
+    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER_STYLE:
       self.runAddToMapAction()
-    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
+    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
       self.runAddToMapAction()
 
 
@@ -75,17 +76,17 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
 
     menu = QtGui.QMenu()
 
-    if self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_FOLDER:
+    if self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_FOLDER:
       menu.addAction(u"Envoyer des chouquettes à l'administrateur de GéoPicardie...")
-    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER:
+    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER:
       add_to_map_action = menu.addAction(u"Ajouter à la carte")
       add_to_map_action.triggered.connect(self.runAddToMapAction)
       show_metadata_action = menu.addAction(u"Afficher les métadonnées...")
       show_metadata_action.triggered.connect(self.runShowMetadataAction)
-    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WMS_LAYER_STYLE:
+    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER_STYLE:
       add_to_map_action = menu.addAction(u"Ajouter à la carte")
       add_to_map_action.triggered.connect(self.runAddToMapAction)
-    elif self.gpic_data.node_type == GpicNodeTypes.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
+    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
       add_to_map_action = menu.addAction(u"Ajouter à la carte")
       add_to_map_action.triggered.connect(self.runAddToMapAction)
       show_metadata_action = menu.addAction(u"Afficher les métadonnées...")
