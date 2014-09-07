@@ -20,6 +20,7 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
 
     self.gpic_data = gpic_data
     self.setText(0, gpic_data.title)
+    self.setToolTip (0, gpic_data.description)
 
     gpicIcons = GpicIcons.Instance()
     icon = None
