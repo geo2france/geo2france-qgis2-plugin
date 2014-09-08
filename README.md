@@ -35,12 +35,22 @@ Cet arbre contient pour l'instant (version 0.2 du plugin) :
 
 Pour ajouter une couche WMS ou une classe d'entités WFS sur la carte courante de QGIS : double-clic sur le noeud en question.
 
-L'arbre des ressources n'est pas entièrement renseigné, par conséquent, le double-clic sur certains nœuds peut ne rien ajouter à la carte courante.
+L'arbre des ressources n'est pas entièrement renseigné, par conséquent, le double-clic sur certains nœuds peut ne rien ajouter à la carte courante. Les ressources non correctement paramétrées dans le plugin sont marquées d'une icône avec un point d'exclamation.
 
 
 
 Notes
 -----
+
+Version 0.3 :
+* ajout d'une info-bulle sur chaque nœud. Elle reprend le champ "description" du nœud
+* ajout d'un champ "icon" pour chaque nœud. Il permet d'afficher une icône différente de celle associée à la valeur du champ "node_type". Avec la valeur "warn", ce champ permet d'afficher une icône d'avertissement pour les nœuds qui sont en attente d'un paramétrage correct par exemple
+* ajout d'un menu contextuel avec les fonctions suivantes :
+** ajouter la ressource à la carte
+** afficher la fiche de métadonnées (si elle est renseignée dans le champ "metadata_url" du fichier de configuration)
+** afficher ou masquer un ensemble de nœuds de l'arbre
+** signaler une anomalie (masqué des utilisateurs pour l'instant)
+* compléments apportés à l'arbre des ressources
 
 Version 0.2 :
 * Présentation des ressources dans un arbre affiché dans un panneau latéral encrable
@@ -59,9 +69,9 @@ Auteurs :
 Source d'inspiration :
 * Nicolas Damiens
 
-
 Autres remerciements :
 * Auteurs des icônes de QGIS, reprises dans l'arbre des ressources
+* Pour le fichier plugin/geopicardie/images/Icon_Simple_Warn.png cf. http://commons.wikimedia.org/wiki/File:Icon_Simple_Warn.png
 
 
 Licence
