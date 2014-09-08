@@ -49,6 +49,8 @@ Version 0.3 :
 ** ajouter la ressource à la carte
 ** afficher la fiche de métadonnées (si elle est renseignée dans le champ "metadata_url" du fichier de configuration)
 ** afficher ou masquer un ensemble de nœuds de l'arbre
+** signaler une anomalie (masqué des utilisateurs pour l'instant)
+* compléments apportés à l'arbre des ressources
 
 Version 0.2 :
 * Présentation des ressources dans un arbre affiché dans un panneau latéral encrable

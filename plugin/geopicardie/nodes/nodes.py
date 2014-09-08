@@ -113,6 +113,15 @@ class FavoritesTreeNode:
       webbrowser.open_new_tab(self.metadata_url)
 
 
+  def runReportIssueAction(self):
+    """
+    Opens the default mail client to let the user send an issue report by email
+    """
+
+    # import webbrowser
+    # webbrowser.open('mailto:')
+    pass
+
 
 class FavoriteTreeNodeFactory:
   """

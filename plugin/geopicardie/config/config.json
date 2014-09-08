@@ -40,6 +40,7 @@
               "title": "Occupation du sol de Picardie",
               "description": "Cartographie de l'occupation du sol de la Picardie de 1992 à 2010",
               "type": "wms_layer",
+              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=3f7cdf36-55b9-4464-8f37-4f92ffe54cdd",
               "params": {
                 "url": "http://www.geopicardie.fr/geoserver/wms",
                 "name": "geopicardie:mos_picardie",
@@ -71,20 +72,10 @@
                   }
                 },
                 {
-                  "title": "Vue aérienne de l'Oise 2008-2009 - visible",
-                  "description": "Orthophotographie aérienne de l'Oise de 2008-2009 dans le domaine visible (résolution de 20 cm)",
-                  "type": "wms_layer",
-                  "params": {
-                    "url": "http://www.geopicardie.fr/geoserver/wms",
-                    "name": "reg22:oise_ortho_2008_vis",
-                    "format": "image/jpeg",
-                    "srs": "epsg:2154"
-                  }
-                },
-                {
                   "title": "Vue aérienne de l'Aisne 2009 - visible",
                   "description": "Orthophotographie aérienne de l'Aisne de 2009 dans le domaine visible (résolution de 25 cm)",
                   "type": "wms_layer",
+                  "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=1e49ac01-abec-4ba6-8309-d5705f14b5dc",
                   "params": {
                     "url": "http://www.geopicardie.fr/geoserver/wms",
                     "name": "geopicardie:aisne_ortho_2009_vis",
@@ -93,9 +84,22 @@
                   }
                 },
                 {
+                  "title": "Vue aérienne de l'Oise 2008-2009 - visible",
+                  "description": "Orthophotographie aérienne de l'Oise de 2008-2009 dans le domaine visible (résolution de 20 cm)",
+                  "type": "wms_layer",
+                  "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=bd427799-8035-4ff8-b0fb-4c75fe9b4848",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wms",
+                    "name": "reg22:oise_ortho_2008_vis",
+                    "format": "image/jpeg",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
                   "title": "Vue aérienne de la Somme 2008 - visible",
                   "description": "Orthophotographie aérienne de la Somme de 2008 dans le domaine visible (résolution de 20 cm)",
                   "type": "wms_layer",
+                  "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=80ccc6c8-6e93-42fb-b99e-6d7491f48f5b",
                   "params": {
                     "url": "http://www.geopicardie.fr/geoserver/wms",
                     "name": "geopicardie:somme_ortho_2008_vis",
@@ -114,6 +118,7 @@
                   "title": "Vue aérienne de l'Aisne 2009 - infrarouge",
                   "description": "Orthophotographie aérienne de l'Aisne de 2009 dans le domaine infrarouge (résolution de 25 cm)",
                   "type": "wms_layer",
+                  "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=4635b9cc-bc9a-4f25-851e-040cf647d974",
                   "params": {
                     "url": "http://www.geopicardie.fr/geoserver/wms",
                     "name": "geopicardie:aisne_ortho_2009_ir",
@@ -132,6 +137,7 @@
                   "title": "Vue aérienne de Picardie 2001-2002",
                   "description": "Orthophotographie aérienne de la Picardie de 2001-2002 (résolution de 1,25 m)",
                   "type": "wms_layer",
+                  "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=e5ae91ad-e49c-4878-b3ed-6f483f864169",
                   "params": {
                     "url": "http://www.geopicardie.fr/geoserver/wms",
                     "name": "geopicardie:picardie_ortho_2002",
@@ -143,6 +149,7 @@
                   "title": "Vue aérienne côte normande et picarde 1947 (ROLNP)",
                   "description": "Orthophotographie aérienne de la côte normand-picarde de 1947",
                   "type": "wms_layer",
+                  "metadata_url": "http://www.rolnp.fr/geoportal/catalog/search/resource/details.page?uuid=%7B5442DF2F-C02D-42A4-834A-21B450FBDA34%7D",
                   "params": {
                     "url": "http://www.rolnp.fr/arcgis/services/Imagerie/Orthos_historiques_1947/MapServer/WMSServer",
                     "name": "0",
@@ -202,7 +209,30 @@
               "description": "Limites de la région",
               "type": "folder",
               "icon": "warn",
-              "children": []
+              "children": [
+                {
+                  "title": "Région - GeoFLA - polygones",
+                  "description": "Limites de la région basée sur la base de données GeoFLA de l'IGN (objets surfaciques)",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "autres:ign_geofla_departements",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Région - GeoFLA - polylignes",
+                  "description": "Limites de la région basée sur la base de données GeoFLA de l'IGN (objets linéaires)",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "autres:ign_geofla_limites_dept",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
             },
             {
               "title": "Départements",
@@ -290,13 +320,6 @@
                   }
                 }
               ]
-            },
-            {
-              "title": "Cantons électoraux",
-              "description": "Cantons électoraux",
-              "type": "folder",
-              "icon": "warn",
-              "children": []
             }
           ]
         },
@@ -341,31 +364,42 @@
           "type": "folder",
           "children": [
             {
-              "title": "Transport routier",
-              "description": "Transport routier",
+              "title": "Transport Express Régional",
+              "description": "Transport Express Régional",
               "type": "folder",
               "children": [
                 {
-                  "title": "Lignes routières régionales",
-                  "description": "Lignes routières régionales",
+                  "title": "Lignes du réseau de transport régional",
+                  "description": "Lignes du réseau de transport régional",
                   "type": "wfs_feature_type",
-                  "icon": "warn",
                   "params": {
                     "url": "http://www.geopicardie.fr/geoserver/wfs",
                     "version": "1.0.0",
-                    "name": "reg22:lycees_adresses",
+                    "name": "reg22:reseau_TER_100_L93",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Gares et points d'arrêt ferroviaires",
+                  "description": "Gares et points d'arrêt ferroviaires",
+                  "type": "wfs_feature_type",
+                  "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=e8b71073-144a-44c0-9a03-2d52440b3afc",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "reg22:sommet_ferrovaire4TER_gare_avril2012",
                     "srs": "epsg:2154"
                   }
                 },
                 {
                   "title": "Arrêts des lignes routières régionales",
-                  "description": "Arrêts des lignes routières régionales",
+                  "description": "Points d'arrêt routiers du réseau de Transport Express Régional de Picardie",
                   "type": "wfs_feature_type",
-                  "icon": "warn",
+                  "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=2359ebf7-8e2f-4abb-bdeb-43caad02f99d",
                   "params": {
                     "url": "http://www.geopicardie.fr/geoserver/wfs",
                     "version": "1.0.0",
-                    "name": "reg22:lycees_adresses",
+                    "name": "reg22:points_arret_LRR",
                     "srs": "epsg:2154"
                   }
                 },
@@ -374,41 +408,11 @@
                   "description": "Taxi TER",
                   "type": "wfs_feature_type",
                   "icon": "warn",
+                  "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=2359ebf7-8e2f-4abb-bdeb-43caad02f99d",
                   "params": {
                     "url": "http://www.geopicardie.fr/geoserver/wfs",
                     "version": "1.0.0",
-                    "name": "reg22:lycees_adresses",
-                    "srs": "epsg:2154"
-                  }
-                }
-              ]
-            },
-            {
-              "title": "Transport ferroviaire",
-              "description": "Transport ferroviaire",
-              "type": "folder",
-              "children": [
-                {
-                  "title": "Lignes TER ferroviaires",
-                  "description": "Lignes TER ferroviaires",
-                  "type": "wfs_feature_type",
-                  "icon": "warn",
-                  "params": {
-                    "url": "http://www.geopicardie.fr/geoserver/wfs",
-                    "version": "1.0.0",
-                    "name": "reg22:lycees_adresses",
-                    "srs": "epsg:2154"
-                  }
-                },
-                {
-                  "title": "Gares et points d'arrêt ferroviaires",
-                  "description": "Gares et points d'arrêt ferroviaires",
-                  "type": "wfs_feature_type",
-                  "icon": "warn",
-                  "params": {
-                    "url": "http://www.geopicardie.fr/geoserver/wfs",
-                    "version": "1.0.0",
-                    "name": "reg22:lycees_adresses",
+                    "name": "reg22:points_arret_LRR",
                     "srs": "epsg:2154"
                   }
                 }
@@ -595,7 +599,6 @@
                       "title": "Espaces naturels sensibles de l'Oise",
                       "description": "Périmètres des ENS de l'Oise",
                       "type": "wfs_feature_type",
-                      "icon": "warn",
                       "params": {
                         "url": "http://www.geopicardie.fr/geoserver/wfs",
                         "version": "1.0.0",
@@ -717,34 +720,55 @@
                   "title": "Zones d'implantation favorables",
                   "description": "Limites des zones d'implantation favorables des parcs éoliens",
                   "type": "wms_layer",
-                  "icon": "warn",
+                  "metadata_url": "http://www.sigpicardie.fr/geonetwork/apps/search/?id=6813",
                   "params": {
-                    "url": "http://www.geopicardie.fr/geoserver/wms",
-                    "name": "geopicardie:vent40m",
+                    "url": "http://carto.sigpicardie.fr/cgi-bin/mapserv",
+                    "name": "EOLIEN-SchemaRegional-Zonesfavorables",
                     "format": "image/png",
                     "srs": "epsg:2154"
                   }
                 },
                 {
-                  "title": "Zones d'implantation favorables sous condition",
-                  "description": "Limites des zones d'implantation favorables sous condition des parcs éoliens",
+                  "title": "Zones d'implantation favorables sous conditions",
+                  "description": "Limites des zones d'implantation favorables sous conditions des parcs éoliens",
                   "type": "wms_layer",
-                  "icon": "warn",
+                  "metadata_url": "http://www.sigpicardie.fr/geonetwork/apps/search/?id=6814",
                   "params": {
-                    "url": "http://www.geopicardie.fr/geoserver/wms",
-                    "name": "geopicardie:vent40m",
+                    "url": "http://carto.sigpicardie.fr/cgi-bin/mapserv",
+                    "name": "EOLIEN-SchemaRegional-Zonesfavorablessousconditions",
                     "format": "image/png",
                     "srs": "epsg:2154"
                   }
                 },
                 {
-                  "title": "Implantations d'éoliennes",
-                  "description": "Localisation des mats d'éoliennes",
+                  "title": "Implantations d'éoliennes dans l'Aisne",
+                  "description": "Localisation des mats d'éoliennes dans l'Aisne",
                   "type": "wms_layer",
-                  "icon": "warn",
                   "params": {
-                    "url": "http://www.geopicardie.fr/geoserver/wms",
-                    "name": "geopicardie:vent40m",
+                    "url": "http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/DDT_02/SIG_eolien_DDT02.www.map",
+                    "name": "c_N_MAT_EOLIEN_CONSTRUITS_002",
+                    "format": "image/png",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Implantations d'éoliennes dans l'Oise",
+                  "description": "Localisation des mats d'éoliennes dans l'Oise",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/DDT_60/Eolien_usageWMS.www.map",
+                    "name": "c_Eoliennes_Construites",
+                    "format": "image/png",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Implantations d'éoliennes dans la Somme",
+                  "description": "Localisation des mats d'éoliennes dans la Somme",
+                  "type": "wms_layer",
+                  "params": {
+                    "url": "http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/DDTM_80/eolien_internet.www.map",
+                    "name": "c_N_MAT_EOLIEN_code_8",
                     "format": "image/png",
                     "srs": "epsg:2154"
                   }

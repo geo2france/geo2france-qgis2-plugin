@@ -143,6 +143,14 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
     collapseItemAndSubitems(self)
 
 
+  def runReportIssueAction(self):
+    """
+    Report an issue
+    """
+    
+    self.gpic_data.runReportIssueAction()
+
+
 
   def createMenu(self):
     """
@@ -151,8 +159,11 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
 
     menu = QtGui.QMenu()
 
+    # report_issue_action = menu.addAction(u"Signaler une anomalie...")
+    # report_issue_action.triggered.connect(self.runReportIssueAction)
+
     if self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_FOLDER:
-      menu.addAction(u"Envoyer des chouquettes à l'administrateur de GéoPicardie...")
+      pass
     elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER:
       add_to_map_action = menu.addAction(u"Ajouter à la carte")
       add_to_map_action.triggered.connect(self.runAddToMapAction)
