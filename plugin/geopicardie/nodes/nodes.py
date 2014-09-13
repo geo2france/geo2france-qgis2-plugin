@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 from geopicardie.utils.plugin_globals import GpicGlobals
 
 
@@ -41,8 +42,18 @@ class FavoritesTreeNode:
     elif self.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
       self.service_url = params.get("url")
       self.feature_type_name = params.get("name")
+      self.filter = params.get("filter")
       self.wfs_version = params.get("version", "1.0.0")
       self.layer_srs = params.get("srs")
+
+    elif self.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE_FILTER:
+      self.filter = params.get("filter")
+
+    elif self.node_type == GpicGlobals.Instance().NODE_TYPE_GDAL_WMS_CONFIG_FILE:
+      self.gdal_config_file_path = os.path.join(
+        GpicGlobals.Instance().config_dir_path,
+        params.get("file_path"))
+
 
 
   def runAddToMapAction(self):
@@ -57,6 +68,10 @@ class FavoritesTreeNode:
       self.addWMTSLayer()
     elif self.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
       self.addWFSLayer()
+    elif self.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE_FILTER:
+      self.addWFSLayerWithFilter()
+    elif self.node_type == GpicGlobals.Instance().NODE_TYPE_GDAL_WMS_CONFIG_FILE:
+      self.addWMSGDALRasterLayer()
 
 
   def addWMSLayer(self):
@@ -100,7 +115,33 @@ class FavoritesTreeNode:
       first_param_prefix = '&'
     layer_url = u"{}{}SERVICE=WFS&VERSION={}&REQUEST=GetFeature&TYPENAME={}&SRSNAME={}".format(
       self.service_url, first_param_prefix, self.wfs_version, self.feature_type_name, self.layer_srs)
+    if self.filter:
+      layer_url += "&Filter={}".format(self.filter)
     GpicGlobals.Instance().iface.addVectorLayer(layer_url, self.title, "WFS")
+
+
+  def addWFSLayerWithFilter(self):
+    """
+    Add the WFS feature type to the map with a filter
+    """
+
+    if self.parent_node != None:
+      first_param_prefix = '?'
+      if '?' in self.parent_node.service_url:
+        first_param_prefix = '&'
+      layer_url = u"{}{}SERVICE=WFS&VERSION={}&REQUEST=GetFeature&TYPENAME={}&SRSNAME={}".format(
+        self.parent_node.service_url, first_param_prefix, self.parent_node.wfs_version, self.parent_node.feature_type_name, self.parent_node.layer_srs)
+      if self.filter:
+        layer_url += "&Filter={}".format(self.filter)
+      GpicGlobals.Instance().iface.addVectorLayer(layer_url, self.title, "WFS")
+
+
+  def addWMSGDALRasterLayer(self):
+    """
+    Add the preconfigured TMS layer to the map
+    """
+
+    GpicGlobals.Instance().iface.addRasterLayer(self.gdal_config_file_path, self.title)
 
 
   def runShowMetadataAction(self):

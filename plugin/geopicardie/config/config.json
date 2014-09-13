@@ -26,6 +26,18 @@
               }
             },
             {
+              "title": "Occupation du sol de Picardie",
+              "description": "Cartographie de l'occupation du sol de la Picardie de 1992 à 2010",
+              "type": "wms_layer",
+              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=3f7cdf36-55b9-4464-8f37-4f92ffe54cdd",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:mos_picardie",
+                "format": "image/png",
+                "srs": "epsg:2154"
+              }
+            },
+            {
               "title": "OpenStreetMap - apparence GéoPicardie - contrasté",
               "description": "Apparence d'OpenStreetMap élaborée par GéoPicardie - version contrastée",
               "type": "wms_layer",
@@ -37,15 +49,35 @@
               }
             },
             {
-              "title": "Occupation du sol de Picardie",
-              "description": "Cartographie de l'occupation du sol de la Picardie de 1992 à 2010",
-              "type": "wms_layer",
-              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=3f7cdf36-55b9-4464-8f37-4f92ffe54cdd",
+              "title": "MapQuest",
+              "description": "Fond cartographique de MapQuest basé sur OpenStreetMap",
+              "type": "gdal_wms_config_file",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:mos_picardie",
-                "format": "image/png",
-                "srs": "epsg:2154"
+                "file_path": "tms_osm_mapquest.xml"
+              }
+            },
+            {
+              "title": "OpenStreetMap - apparence standard",
+              "description": "Apparence à destination des contributeurs des contributeurs d'OpenStreetMap",
+              "type": "gdal_wms_config_file",
+              "params": {
+                "file_path": "tms_osm_mapnik.xml"
+              }
+            },
+            {
+              "title": "Stamen toner",
+              "description": "Apparence photocopieur d'OpenStreetMap",
+              "type": "gdal_wms_config_file",
+              "params": {
+                "file_path": "tms_stamen_toner.xml"
+              }
+            },
+            {
+              "title": "Stamen watercolor",
+              "description": "Apparence aquarelle d'OpenStreetMap",
+              "type": "gdal_wms_config_file",
+              "params": {
+                "file_path": "tms_stamen_watercolor.xml"
               }
             }      
           ]
@@ -377,6 +409,44 @@
                     "version": "1.0.0",
                     "name": "reg22:reseau_TER_100_L93",
                     "srs": "epsg:2154"
+                  },
+                  "children": [
+                    {
+                      "title": "Lignes routières du réseau de transport régional",
+                      "description": "Lignes routières du réseau de transport régional",
+                      "type": "wfs_feature_type_filter",
+                      "params": {
+                        "filter": "<Filter><PropertyIsEqualTo><PropertyName>AUTOCAR</PropertyName><Literal>1</Literal></PropertyIsEqualTo></Filter>"
+                      }
+                    },
+                    {
+                      "title": "Lignes ferroviaires du réseau de transport régional",
+                      "description": "Lignes ferroviaires du réseau de transport régional",
+                      "type": "wfs_feature_type_filter",
+                      "params": {
+                        "filter": "<Filter><PropertyIsEqualTo><PropertyName>AUTOCAR</PropertyName><Literal>0</Literal></PropertyIsEqualTo></Filter>"
+                      }
+                    },
+                    {
+                      "title": "Lignes ferroviaires à grande vitesse",
+                      "description": "Lignes ferroviaires à grande vitesse",
+                      "type": "wfs_feature_type_filter",
+                      "params": {
+                        "filter": "<Filter><PropertyIsEqualTo><PropertyName>AUTOCAR</PropertyName><Literal>2</Literal></PropertyIsEqualTo></Filter>"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "Lignes routières du réseau de transport régional",
+                  "description": "Lignes routières du réseau de transport régional",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "filter": "<Filter><PropertyIsEqualTo><PropertyName>AUTOCAR</PropertyName><Literal>1</Literal></PropertyIsEqualTo></Filter>",
+                    "version": "1.0.0",
+                    "name": "reg22:reseau_TER_100_L93",
+                    "srs": "epsg:2154"
                   }
                 },
                 {
@@ -557,6 +627,19 @@
                 "url": "http://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
                 "name": "geopicardie:xxx",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Zonage des Aides à Finalités Régionales en Picardie",
+              "description": "Zonage communal et infracommunal pour les AFR (Aides à finalités régionales) en Picardie pour la période 2014-2020. Seule la commune d'Amiens est découpée en zones infracommunales.",
+              "type": "wfs_feature_type",
+              "icon": "warn",
+              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=bc4d0c39-897c-470e-932c-7cfebaf59e91",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "reg22:zonage_AFR_Picardie__2014_2020",
                 "srs": "epsg:2154"
               }
             }

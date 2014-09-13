@@ -79,6 +79,10 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
       icon = gpicIcons.wms_style_icon
     elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
       icon = gpicIcons.wfs_layer_icon
+    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE_FILTER:
+      icon = gpicIcons.wfs_layer_icon
+    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_GDAL_WMS_CONFIG_FILE:
+      icon = gpicIcons.raster_layer_icon
 
     if icon != None:
       self.setIcon(0, icon)
@@ -97,6 +101,10 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
     elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER_STYLE:
       self.runAddToMapAction()
     elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
+      self.runAddToMapAction()
+    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE_FILTER:
+      self.runAddToMapAction()
+    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_GDAL_WMS_CONFIG_FILE:
       self.runAddToMapAction()
 
 
@@ -171,6 +179,12 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
       add_to_map_action = menu.addAction(u"Ajouter à la carte")
       add_to_map_action.triggered.connect(self.runAddToMapAction)
     elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
+      add_to_map_action = menu.addAction(u"Ajouter à la carte")
+      add_to_map_action.triggered.connect(self.runAddToMapAction)
+    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE_FILTER:
+      add_to_map_action = menu.addAction(u"Ajouter à la carte")
+      add_to_map_action.triggered.connect(self.runAddToMapAction)
+    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_GDAL_WMS_CONFIG_FILE:
       add_to_map_action = menu.addAction(u"Ajouter à la carte")
       add_to_map_action.triggered.connect(self.runAddToMapAction)
 

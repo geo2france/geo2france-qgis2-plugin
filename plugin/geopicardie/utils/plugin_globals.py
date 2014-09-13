@@ -20,6 +20,8 @@ class GpicGlobals():
   NODE_TYPE_WMTS_LAYER = "wmts_layer"
   NODE_TYPE_WMS_LAYER_STYLE = "wms_layer_style"
   NODE_TYPE_WFS_FEATURE_TYPE = "wfs_feature_type"
+  NODE_TYPE_WFS_FEATURE_TYPE_FILTER = "wfs_feature_type_filter"
+  NODE_TYPE_GDAL_WMS_CONFIG_FILE = "gdal_wms_config_file"
 
   # Node icon values
   NODE_ICON_WARN = 'warn'
@@ -32,6 +34,7 @@ class GpicGlobals():
   ICON_WMS_LAYER_FILE_NAME = "mIconWms.svg"
   ICON_WMS_STYLE_FILE_NAME = "mIconWmsStyle.svg"
   ICON_WFS_LAYER_FILE_NAME = "mIconWfs.svg"
+  ICON_RASTER_LAYER_FILE_NAME = "mIconRaster.svg"
 
   # Config files dir
   CONFIG_DIR_NAME = "config"

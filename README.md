@@ -42,6 +42,9 @@ L'arbre des ressources n'est pas entièrement renseigné, par conséquent, le do
 Notes
 -----
 
+Version 0.4 :
+* support de filtres pour les couches WFS
+
 Version 0.3 :
 * ajout d'une info-bulle sur chaque nœud. Elle reprend le champ "description" du nœud
 * ajout d'un champ "icon" pour chaque nœud. Il permet d'afficher une icône différente de celle associée à la valeur du champ "node_type". Avec la valeur "warn", ce champ permet d'afficher une icône d'avertissement pour les nœuds qui sont en attente d'un paramétrage correct par exemple
@@ -53,7 +56,7 @@ Version 0.3 :
 * compléments apportés à l'arbre des ressources
 
 Version 0.2 :
-* Présentation des ressources dans un arbre affiché dans un panneau latéral encrable
+* Présentation des ressources dans un arbre affiché dans un panneau latéral ancrable
 * Ajout du support de styles WMS
 * Ajout du support de WFS
 * Ajout de support de WMTS (non testé faute de disposer d'un service WMTS opérationnel)
