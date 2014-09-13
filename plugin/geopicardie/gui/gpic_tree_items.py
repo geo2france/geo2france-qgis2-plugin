@@ -69,7 +69,7 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
     gpicIcons = GpicIcons.Instance()
     icon = None
 
-    if self.gpic_data.icon == GpicGlobals.Instance().NODE_ICON_WARN:
+    if self.gpic_data.status == GpicGlobals.Instance().NODE_STATUS_WARN:
       icon = gpicIcons.warn_icon
     elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_FOLDER:
       icon = gpicIcons.folder_icon

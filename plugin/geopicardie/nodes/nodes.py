@@ -9,7 +9,7 @@ class FavoritesTreeNode:
   """
 
   def __init__(self, title, node_type=GpicGlobals.Instance().NODE_TYPE_FOLDER,
-    description=None, icon = None, metadata_url = None, params=None, parent_node=None):
+    description=None, status = None, metadata_url = None, params=None, parent_node=None):
     """
     """
 
@@ -17,7 +17,7 @@ class FavoritesTreeNode:
     self.node_type = node_type
     self.title = title
     self.description = description
-    self.icon = icon
+    self.status = status
     self.metadata_url = metadata_url
     self.children = []
 
@@ -178,13 +178,13 @@ class FavoriteTreeNodeFactory:
     node_title = tree_config.get('title', None)
     node_description = tree_config.get('description', None)
     node_type = tree_config.get('type', None)
-    node_icon = tree_config.get('icon', None)
+    node_status = tree_config.get('status', None)
     node_metadata_url = tree_config.get('metadata_url', None)
     node_params = tree_config.get('params', None)
 
     if node_title:
       # Creation of the node
-      node = FavoritesTreeNode(node_title, node_type, node_description, node_icon, node_metadata_url, node_params, parent_node)
+      node = FavoritesTreeNode(node_title, node_type, node_description, node_status, node_metadata_url, node_params, parent_node)
 
       # Creation of the node children
       node_children = tree_config.get('children', [])

@@ -203,7 +203,7 @@
               "title": "Relief de la Somme (2008)",
               "description": "Altitude sur l'ensemble du département de la Somme issue de l'orthorectification des vues aériennes de 2008",
               "type": "folder",
-              "icon": "warn",
+              "status": "warn",
               "children": [
                 {
                   "title": "Relief de la Somme (2008) - couleurs",
@@ -240,7 +240,7 @@
               "title": "Région",
               "description": "Limites de la région",
               "type": "folder",
-              "icon": "warn",
+              "status": "warn",
               "children": [
                 {
                   "title": "Région - GeoFLA - polygones",
@@ -364,28 +364,28 @@
               "title": "SCoT",
               "description": "Schéma de Cohérence Territoriale",
               "type": "folder",
-              "icon": "warn",
+              "status": "warn",
               "children": []
             },
             {
               "title": "PLU, PLUI et cartes communales",
               "description": "PLU, PLUI et cartes communales",
               "type": "folder",
-              "icon": "warn",
+              "status": "warn",
               "children": []
             },
             {
               "title": "SUP",
               "description": "Servitudes d'utilité publique",
               "type": "folder",
-              "icon": "warn",
+              "status": "warn",
               "children": []
             },
             {
               "title": "Parcs naturels régionaux",
               "description": "Parcs naturels régionaux",
               "type": "folder",
-              "icon": "warn",
+              "status": "warn",
               "children": []
             }
           ]
@@ -477,7 +477,7 @@
                   "title": "Taxi TER",
                   "description": "Taxi TER",
                   "type": "wfs_feature_type",
-                  "icon": "warn",
+                  "status": "warn",
                   "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=2359ebf7-8e2f-4abb-bdeb-43caad02f99d",
                   "params": {
                     "url": "http://www.geopicardie.fr/geoserver/wfs",
@@ -492,28 +492,28 @@
               "title": "Transport fluvial",
               "description": "Transport fluvial",
               "type": "folder",
-              "icon": "warn",
+              "status": "warn",
               "children": []
             },
             {
               "title": "Transport maritime",
               "description": "Transport maritime",
               "type": "folder",
-              "icon": "warn",
+              "status": "warn",
               "children": []
             },
             {
               "title": "Transport aérien",
               "description": "Transport aérien",
               "type": "folder",
-              "icon": "warn",
+              "status": "warn",
               "children": []
             },
             {
               "title": "Aménagements cyclables",
               "description": "Aménagements cyclables",
               "type": "folder",
-              "icon": "warn",
+              "status": "warn",
               "children": []
             }
           ]
@@ -578,14 +578,14 @@
               "title": "Établissements d'enseignement supérieur",
               "description": "Données relatives aux établissements d'enseignement supérieur",
               "type": "folder",
-              "icon": "warn",
+              "status": "warn",
               "children": []
             },
             {
               "title": "Centres de Formation d'Apprentis (CFA)",
               "description": "Données relatives aux centres de formation d'apprentis",
               "type": "folder",
-              "icon": "warn",
+              "status": "warn",
               "children": []
             }
           ]
@@ -599,7 +599,7 @@
               "title": "Pôles d'activités économiques",
               "description": "Pôles d'activités économiques",
               "type": "wfs_feature_type",
-              "icon": "warn",
+              "status": "warn",
               "params": {
                 "url": "http://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
@@ -622,7 +622,7 @@
               "title": "Localisation des établissements",
               "description": "Localisation des établissements",
               "type": "wfs_feature_type",
-              "icon": "warn",
+              "status": "warn",
               "params": {
                 "url": "http://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
@@ -634,7 +634,7 @@
               "title": "Zonage des Aides à Finalités Régionales en Picardie",
               "description": "Zonage communal et infracommunal pour les AFR (Aides à finalités régionales) en Picardie pour la période 2014-2020. Seule la commune d'Amiens est découpée en zones infracommunales.",
               "type": "wfs_feature_type",
-              "icon": "warn",
+              "status": "warn",
               "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=bc4d0c39-897c-470e-932c-7cfebaf59e91",
               "params": {
                 "url": "http://www.geopicardie.fr/geoserver/wfs",
@@ -659,7 +659,7 @@
                   "title": "Réserves naturelles",
                   "description": "Réserves naturelles",
                   "type": "folder",
-                  "icon": "warn",
+                  "status": "warn",
                   "children": []
                 },
                 {
@@ -706,7 +706,7 @@
                   "title": "Parcs naturels",
                   "description": "Parcs naturels",
                   "type": "folder",
-                  "icon": "warn",
+                  "status": "warn",
                   "children": []
                 }
               ]
@@ -720,35 +720,35 @@
                   "title": "ZICO",
                   "description": "ZICO",
                   "type": "folder",
-                  "icon": "warn",
+                  "status": "warn",
                   "children": []
                 },
                 {
                   "title": "ZNIEFF",
                   "description": "ZNIEFF",
                   "type": "folder",
-                  "icon": "warn",
+                  "status": "warn",
                   "children": []
                 },
                 {
                   "title": "Zones à dominate humide",
                   "description": "Zones à dominate humide",
                   "type": "folder",
-                  "icon": "warn",
+                  "status": "warn",
                   "children": []
                 },
                 {
                   "title": "Natura 2000",
                   "description": "Natura 2000",
                   "type": "folder",
-                  "icon": "warn",
+                  "status": "warn",
                   "children": []
                 },
                 {
                   "title": "Trames vertes et bleues",
                   "description": "Trames vertes et bleues",
                   "type": "folder",
-                  "icon": "warn",
+                  "status": "warn",
                   "children": []
                 }
               ]
@@ -757,7 +757,7 @@
               "title": "Paysages",
               "description": "Paysages",
               "type": "folder",
-              "icon": "warn",
+              "status": "warn",
               "children": []
             }
           ]
@@ -868,19 +868,19 @@
             {
               "title": "Patrimoine",
               "description": "Patrimoine",
-              "icon": "warn",
+              "status": "warn",
               "type": "folder"
             },
             {
               "title": "Itinéraires et circuits",
               "description": "Itinéraires et circuits",
-              "icon": "warn",
+              "status": "warn",
               "type": "folder"
             },
             {
               "title": "Équipements touristiques",
               "description": "Équipements touristiques",
-              "icon": "warn",
+              "status": "warn",
               "type": "folder"
             }
           ]

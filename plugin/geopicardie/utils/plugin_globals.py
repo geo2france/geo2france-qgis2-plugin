@@ -23,8 +23,8 @@ class GpicGlobals():
   NODE_TYPE_WFS_FEATURE_TYPE_FILTER = "wfs_feature_type_filter"
   NODE_TYPE_GDAL_WMS_CONFIG_FILE = "gdal_wms_config_file"
 
-  # Node icon values
-  NODE_ICON_WARN = 'warn'
+  # Node status values
+  NODE_STATUS_WARN = 'warn'
 
   # Images dir
   IMAGES_DIR_NAME = "images"
