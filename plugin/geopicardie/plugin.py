@@ -2,9 +2,12 @@
 
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
+from qgis.gui import *
+from qgis.core import *
 
 import os
 import json
+import urllib2
 
 from geopicardie.utils.plugin_globals import GpicGlobals
 from geopicardie.gui.gpic_dock import GpicDockWidget
@@ -28,13 +31,31 @@ class PluginGeoPicardie:
 
     GpicGlobals.Instance().updateGlobals(os.path.dirname(os.path.abspath(__file__)), self.iface)
 
-    # Read the config file
     config_struct = None
-    with open(GpicGlobals.Instance().config_file_path) as f:
-      config_string = "".join(f.readlines())
-      config_struct = json.loads(config_string)
+    config_string = ""
+    self.ressources_tree = None
+    try:
 
-    self.ressources_tree = FavoriteTreeNodeFactory().build_tree(config_struct)
+      # Download the config file
+      config_file_url ="https://raw.githubusercontent.com/bchartier/qgis-favorites-resources-trees/master/geopicardie.json"
+      config_file = urllib2.urlopen(config_file_url)
+      with open(GpicGlobals.Instance().config_file_path, 'wb') as f:
+        f.write(config_file.read())
+
+      # Read the config file
+      with open(GpicGlobals.Instance().config_file_path) as f:
+        config_string = "".join(f.readlines())
+        config_struct = json.loads(config_string)
+        self.ressources_tree = FavoriteTreeNodeFactory().build_tree(config_struct)
+    except IOError:
+      self.iface.messageBar().pushMessage("Erreur", u"Le fichier de configuration du plugin GéoPicardie n'a pas pu être trouvé.", level=QgsMessageBar.CRITICAL)
+      QgsMessageLog.logMessage(u"Le fichier de configuration du plugin GéoPicardie n'a pas pu être trouvé.", tag=u"GéoPicardie",level=QgsMessageLog.CRITICAL)
+    except ValueError:
+      self.iface.messageBar().pushMessage("Erreur", u"Le fichier de configuration du plugin GéoPicardie contient des erreurs.", level=QgsMessageBar.CRITICAL)
+      QgsMessageLog.logMessage(u"Le fichier de configuration du plugin GéoPicardie contient des erreurs.", tag=u"GéoPicardie",level=QgsMessageLog.CRITICAL)
+    except AttributeError:
+      self.iface.messageBar().pushMessage("Erreur", u"Le fichier de configuration du plugin GéoPicardie contient des erreurs.", level=QgsMessageBar.CRITICAL)
+      QgsMessageLog.logMessage(u"Le fichier de configuration du plugin GéoPicardie contient des erreurs.", tag=u"GéoPicardie", level=QgsMessageLog.CRITICAL)
 
 
   def initGui(self):

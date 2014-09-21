@@ -62,7 +62,9 @@ class GpicDockWidget(QDockWidget):
         for child in subtree.children:
           createSubItem(child, subitem)
 
-    if resources_tree.children != None and len(resources_tree.children) > 0:
+    if resources_tree == None:
+      QgsMessageLog.logMessage(u"Faute de fichier de configuration valide, aucune ressource ne peut être chargée dans le panneau de l'extension GéoPicardie.", tag=u"GéoPicardie", level=QgsMessageLog.WARNING)
+    elif resources_tree.children != None and len(resources_tree.children) > 0:
       for child in resources_tree.children:
         createSubItem(child, self.explorerWidget)
 
@@ -71,7 +73,6 @@ class GpicDockWidget(QDockWidget):
     """
     Handles double clic on an item of the tre view
     """
-
     item.runDefaultAction()
 
 
@@ -81,17 +82,6 @@ class GpicDockWidget(QDockWidget):
     """
     selected_item = self.explorerWidget.currentItem()
     menu = selected_item.createMenu()
-
-  #   indexes = self.treeView.selectedIndexes()
-
-  # 51         if len(indexes) > 0:
-  # 52         
-  # 53             level = 0
-  # 54             index = indexes[0]
-  # 55             while index.parent().isValid():
-  # 56                 index = index.parent()
-  # 57                 level += 1
-
     menu.exec_(self.explorerWidget.viewport().mapToGlobal(position))
 
 

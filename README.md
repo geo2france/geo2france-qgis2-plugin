@@ -45,6 +45,7 @@ Notes
 Version 0.4 :
 * support de filtres pour les couches WFS
 * support de raster GDAL_WMS préconfigurés (stockés dans le répertoire config pour l'instant)
+* récupération des fichiers de configuration JSON sur le web
 
 Version 0.3 :
 * ajout d'une info-bulle sur chaque nœud. Elle reprend le champ "description" du nœud
