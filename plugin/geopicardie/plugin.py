@@ -37,10 +37,11 @@ class PluginGeoPicardie:
     try:
 
       # Download the config file
-      config_file_url = GpicGlobals.Instance().CONFIG_FILE_URLS[0]
-      config_file = urllib2.urlopen(config_file_url)
-      with open(GpicGlobals.Instance().config_file_path, 'wb') as f:
-        f.write(config_file.read())
+      if GpicGlobals.Instance().CONFIG_FILES_DOWNLOAD_AT_STARTUP > 0 :
+        config_file_url = GpicGlobals.Instance().CONFIG_FILE_URLS[0]
+        config_file = urllib2.urlopen(config_file_url)
+        with open(GpicGlobals.Instance().config_file_path, 'wb') as f:
+          f.write(config_file.read())
 
       # Read the config file
       with open(GpicGlobals.Instance().config_file_path) as f:

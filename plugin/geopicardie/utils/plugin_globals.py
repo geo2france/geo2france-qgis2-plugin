@@ -42,6 +42,7 @@ class GpicGlobals():
   ICON_RASTER_LAYER_FILE_NAME = "mIconRaster.svg"
 
   # Config files dir
+  CONFIG_FILES_DOWNLOAD_AT_STARTUP = 0 # 1 for yes, 0 for no
   CONFIG_DIR_NAME = "config"
   CONFIG_FILE_NAMES = ["config.json"]
   CONFIG_FILE_URLS = ["https://raw.githubusercontent.com/bchartier/qgis-favorites-resources-trees/master/geopicardie.json"]
@@ -60,6 +61,7 @@ class GpicGlobals():
     
     # Read the qgis plugin settings
     s = QSettings()
+    self.CONFIG_FILES_DOWNLOAD_AT_STARTUP = s.value(u"{0}/config_files_download_at_stratup".format(self.PLUGIN_TAG), self.CONFIG_FILES_DOWNLOAD_AT_STARTUP)
     self.CONFIG_DIR_NAME = s.value(u"{0}/config_dir_name".format(self.PLUGIN_TAG), self.CONFIG_DIR_NAME)
     self.CONFIG_FILE_NAMES = s.value(u"{0}/config_file_names".format(self.PLUGIN_TAG), self.CONFIG_FILE_NAMES)
     self.CONFIG_FILE_URLS = s.value(u"{0}/config_file_urls".format(self.PLUGIN_TAG), self.CONFIG_FILE_URLS)
