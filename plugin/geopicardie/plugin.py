@@ -12,6 +12,7 @@ import urllib2
 from geopicardie.utils.plugin_globals import GpicGlobals
 from geopicardie.gui.gpic_dock import GpicDockWidget
 from geopicardie.gui.about_box import AboutBox
+from geopicardie.gui.param_box import ParamBox
 from geopicardie.nodes.nodes import FavoriteTreeNodeFactory
 from geopicardie.nodes.nodes import FavoritesTreeNode
 
@@ -92,6 +93,10 @@ class PluginGeoPicardie:
     show_gpic_panel_action.triggered.connect(self.showGpicPanelMenuTriggered)
     self.gpic_menu.addAction(show_gpic_panel_action)
 
+    param_action = QAction(u'Paramétrage…', self.iface.mainWindow())        
+    param_action.triggered.connect(self.paramMenuTriggered)
+    self.gpic_menu.addAction(param_action)
+
     about_action = QAction(u'À propos…', self.iface.mainWindow())        
     about_action.triggered.connect(self.aboutMenuTriggered)
     self.gpic_menu.addAction(about_action)
@@ -110,6 +115,15 @@ class PluginGeoPicardie:
     """
 
     dialog = AboutBox(self.iface.mainWindow())
+    dialog.exec_()
+
+
+  def paramMenuTriggered(self):
+    """
+    Shows the Param box
+    """
+
+    dialog = ParamBox(self.iface.mainWindow())
     dialog.exec_()
 
 

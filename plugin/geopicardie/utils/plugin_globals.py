@@ -47,6 +47,9 @@ class GpicGlobals():
   CONFIG_FILE_NAMES = ["config.json"]
   CONFIG_FILE_URLS = ["https://raw.githubusercontent.com/bchartier/qgis-favorites-resources-trees/master/geopicardie.json"]
 
+  # Mask resources with status = warn
+  MASK_RESOURCES_WITH_WARN_STATUS = 1 # 1 for yes, 0 for no
+
 
   def __init__(self):
     """
@@ -65,6 +68,7 @@ class GpicGlobals():
     self.CONFIG_DIR_NAME = s.value(u"{0}/config_dir_name".format(self.PLUGIN_TAG), self.CONFIG_DIR_NAME)
     self.CONFIG_FILE_NAMES = s.value(u"{0}/config_file_names".format(self.PLUGIN_TAG), self.CONFIG_FILE_NAMES)
     self.CONFIG_FILE_URLS = s.value(u"{0}/config_file_urls".format(self.PLUGIN_TAG), self.CONFIG_FILE_URLS)
+    self.MASK_RESOURCES_WITH_WARN_STATUS = s.value(u"{0}/mask_resources_with_warn_status".format(self.PLUGIN_TAG), self.MASK_RESOURCES_WITH_WARN_STATUS)
 
 
 
@@ -76,3 +80,15 @@ class GpicGlobals():
 
     self.images_dir_path = os.path.join(self.plugin_path, self.IMAGES_DIR_NAME)
     self.geopic_logo_file_path = os.path.join(self.images_dir_path, self.LOGO_FILE_NAME)
+
+
+  def resetToDefaults(self):
+    """
+    Reset global variables to default values
+    """
+
+    s = QSettings()
+    s.setValue(u"{0}/mask_resources_with_warn_status".format(self.PLUGIN_TAG), 1)
+    s.setValue(u"{0}/config_files_download_at_stratup".format(self.PLUGIN_TAG), 0)
+    s.setValue(u"{0}/config_file_names".format(self.PLUGIN_TAG), ["config.json"])
+    s.setValue(u"{0}/config_file_urls".format(self.PLUGIN_TAG), ["https://raw.githubusercontent.com/bchartier/qgis-favorites-resources-trees/master/geopicardie.json"])
