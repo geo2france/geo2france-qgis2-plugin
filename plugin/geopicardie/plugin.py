@@ -37,7 +37,7 @@ class PluginGeoPicardie:
     try:
 
       # Download the config file
-      config_file_url ="https://raw.githubusercontent.com/bchartier/qgis-favorites-resources-trees/master/geopicardie.json"
+      config_file_url = GpicGlobals.Instance().CONFIG_FILE_URLS[0]
       config_file = urllib2.urlopen(config_file_url)
       with open(GpicGlobals.Instance().config_file_path, 'wb') as f:
         f.write(config_file.read())
@@ -47,15 +47,19 @@ class PluginGeoPicardie:
         config_string = "".join(f.readlines())
         config_struct = json.loads(config_string)
         self.ressources_tree = FavoriteTreeNodeFactory().build_tree(config_struct)
+
     except IOError:
-      self.iface.messageBar().pushMessage("Erreur", u"Le fichier de configuration du plugin GéoPicardie n'a pas pu être trouvé.", level=QgsMessageBar.CRITICAL)
-      QgsMessageLog.logMessage(u"Le fichier de configuration du plugin GéoPicardie n'a pas pu être trouvé.", tag=u"GéoPicardie",level=QgsMessageLog.CRITICAL)
+      message = u"Le fichier de configuration du plugin {0} n'a pas pu être trouvé.".format(GpicGlobals.Instance().PLUGIN_TAG)
+      self.iface.messageBar().pushMessage("Erreur", message, level=QgsMessageBar.CRITICAL)
+      QgsMessageLog.logMessage(message, tag=GpicGlobals.Instance().PLUGIN_TAG, level=QgsMessageLog.CRITICAL)
     except ValueError:
-      self.iface.messageBar().pushMessage("Erreur", u"Le fichier de configuration du plugin GéoPicardie contient des erreurs.", level=QgsMessageBar.CRITICAL)
-      QgsMessageLog.logMessage(u"Le fichier de configuration du plugin GéoPicardie contient des erreurs.", tag=u"GéoPicardie",level=QgsMessageLog.CRITICAL)
+      message = u"Le fichier de configuration du plugin {0} contient des erreurs.".format(GpicGlobals.Instance().PLUGIN_TAG)
+      self.iface.messageBar().pushMessage("Erreur", message, level=QgsMessageBar.CRITICAL)
+      QgsMessageLog.logMessage(message, tag=GpicGlobals.Instance().PLUGIN_TAG, level=QgsMessageLog.CRITICAL)
     except AttributeError:
-      self.iface.messageBar().pushMessage("Erreur", u"Le fichier de configuration du plugin GéoPicardie contient des erreurs.", level=QgsMessageBar.CRITICAL)
-      QgsMessageLog.logMessage(u"Le fichier de configuration du plugin GéoPicardie contient des erreurs.", tag=u"GéoPicardie", level=QgsMessageLog.CRITICAL)
+      message = u"Le fichier de configuration du plugin {0} contient des erreurs.".format(GpicGlobals.Instance().PLUGIN_TAG)
+      self.iface.messageBar().pushMessage("Erreur", message, level=QgsMessageBar.CRITICAL)
+      QgsMessageLog.logMessage(message, tag=GpicGlobals.Instance().PLUGIN_TAG, level=QgsMessageLog.CRITICAL)
 
 
   def initGui(self):

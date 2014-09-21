@@ -25,11 +25,11 @@ class AboutBox(QtGui.QDialog):
 
 
     title = u"À propos de l'extension GéoPicardie…"
-    description = u"""Extension pour GéoPicardie
-Accès simplifié aux ressources géographiques utiles aux partenaires de GéoPicardie
-Version 0.2
-Réalisé par Benjamin Chartier
-    """
+    description = u"""Extension pour QGIS donnant un accès simplifié aux ressources géographiques utiles aux partenaires de GéoPicardie
+Version {0}
+Plus d'informations à l'adresse suivante : {1}
+    """.format(GpicGlobals.Instance().PLUGIN_VERSION,
+        GpicGlobals.Instance().PLUGIN_SOURCE_REPOSITORY)
 
     self.textArea = QtGui.QTextEdit()
     self.textArea.setReadOnly(True)

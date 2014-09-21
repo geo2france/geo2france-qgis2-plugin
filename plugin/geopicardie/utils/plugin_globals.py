@@ -2,7 +2,7 @@
 
 import os
 from geopicardie.utils.singleton import *
-
+from PyQt4.QtCore import QSettings
 
 
 @Singleton
@@ -12,6 +12,11 @@ class GpicGlobals():
 
   iface = None
   plugin_path = None
+
+  # Plugin infos
+  PLUGIN_TAG = u"GéoPicardie"
+  PLUGIN_VERSION = u"0.4"
+  PLUGIN_SOURCE_REPOSITORY = u"https://github.com/bchartier/geopicardie-qgis-plugin/"
 
   # Tree nodes types
   NODE_TYPE_FOLDER = "folder"
@@ -38,7 +43,8 @@ class GpicGlobals():
 
   # Config files dir
   CONFIG_DIR_NAME = "config"
-  CONFIG_FILE_NAME = "config.json"
+  CONFIG_FILE_NAMES = ["config.json"]
+  CONFIG_FILE_URLS = ["https://raw.githubusercontent.com/bchartier/qgis-favorites-resources-trees/master/geopicardie.json"]
 
 
   def __init__(self):
@@ -49,13 +55,22 @@ class GpicGlobals():
 
   def updateGlobals(self, plugin_path, iface):
     """
+    Update the global variables of the plugin
     """
     
+    # Read the qgis plugin settings
+    s = QSettings()
+    self.CONFIG_DIR_NAME = s.value(u"{0}/config_dir_name".format(self.PLUGIN_TAG), self.CONFIG_DIR_NAME)
+    self.CONFIG_FILE_NAMES = s.value(u"{0}/config_file_names".format(self.PLUGIN_TAG), self.CONFIG_FILE_NAMES)
+    self.CONFIG_FILE_URLS = s.value(u"{0}/config_file_urls".format(self.PLUGIN_TAG), self.CONFIG_FILE_URLS)
+
+
+
     self.iface=iface
     self.plugin_path=plugin_path
 
     self.config_dir_path = os.path.join(self.plugin_path, self.CONFIG_DIR_NAME)
-    self.config_file_path = os.path.join(self.config_dir_path, self.CONFIG_FILE_NAME)
+    self.config_file_path = os.path.join(self.config_dir_path, self.CONFIG_FILE_NAMES[0])
 
     self.images_dir_path = os.path.join(self.plugin_path, self.IMAGES_DIR_NAME)
     self.geopic_logo_file_path = os.path.join(self.images_dir_path, self.LOGO_FILE_NAME)
