@@ -30,11 +30,22 @@ class PluginGeoPicardie:
 
     self.iface = iface
 
-    GpicGlobals.Instance().updateGlobals(os.path.dirname(os.path.abspath(__file__)), self.iface)
+    GpicGlobals.Instance().setPluginPath(os.path.dirname(os.path.abspath(__file__)))
+    GpicGlobals.Instance().setPluginIFace(self.iface)
+    GpicGlobals.Instance().reloadGlobalsFromQgisSettings()
 
     config_struct = None
     config_string = ""
+    self.downloadConfigFile()
+
+
+  def downloadConfigFile(self):
+    """
+    Download and read the config file (containing the resource tree)
+    """
+
     self.ressources_tree = None
+
     try:
 
       # Download the config file
@@ -125,6 +136,14 @@ class PluginGeoPicardie:
 
     dialog = ParamBox(self.iface.mainWindow())
     dialog.exec_()
+
+    if GpicGlobals.Instance().RESOURCES_TREE_NEED_DOWNLOAD:
+      self.downloadConfigFile()
+
+    if GpicGlobals.Instance().RESOURCES_TREE_NEED_RELOAD:
+      self.dock.setTreeContents(self.ressources_tree)
+
+    GpicGlobals.Instance().resetFlags()
 
 
   def unload(self):

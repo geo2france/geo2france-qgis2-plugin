@@ -6,7 +6,8 @@ from qgis.core import *
 from qgis.gui import *
 
 from geopicardie.gui.gpic_tree_items import GpicTreeWidgetItem
-   
+from geopicardie.utils.plugin_globals import GpicGlobals
+
 class GpicDockWidget(QDockWidget):
   """
   The dock widget containing the tree view displaying the GéoPicardie resources
@@ -50,22 +51,26 @@ class GpicDockWidget(QDockWidget):
 
   def setTreeContents(self, resources_tree):
     """
+    Creates the items of the explorer widget
     """
 
     def createSubItem(subtree, parent_item = self.explorerWidget):
       """
       """
 
-      subitem = GpicTreeWidgetItem(parent_item, subtree)
+      if (not GpicGlobals.Instance().MASK_RESOURCES_WITH_WARN_STATUS or subtree.status != GpicGlobals.Instance().NODE_STATUS_WARN):
+        subitem = GpicTreeWidgetItem(parent_item, subtree)
+        if subtree.children != None and len(subtree.children) > 0:
+          for child in subtree.children:
+            createSubItem(child, subitem)
 
-      if subtree.children != None and len(subtree.children) > 0:
-        for child in subtree.children:
-          createSubItem(child, subitem)
+    self.explorerWidget.clear()
 
     if resources_tree == None:
       QgsMessageLog.logMessage(u"Faute de fichier de configuration valide, aucune ressource ne peut être chargée dans le panneau de l'extension GéoPicardie.", tag=u"GéoPicardie", level=QgsMessageLog.WARNING)
     elif resources_tree.children != None and len(resources_tree.children) > 0:
       for child in resources_tree.children:
+
         createSubItem(child, self.explorerWidget)
 
 
