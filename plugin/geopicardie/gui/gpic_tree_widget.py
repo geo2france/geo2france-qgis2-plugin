@@ -61,8 +61,6 @@ class GpicTreeWidget(QTreeWidget):
       for child in resources_tree.children:
         createSubItem(child, self)
 
-    QgsMessageLog.logMessage(u"Faute de fichier de configuration valide, aucune ressource ne peut être chargée dans le panneau de l'extension GéoPicardie.", tag=u"GéoPicardie", level=QgsMessageLog.WARNING)
-
   def treeItemDoubleClicked(self, item, column):
     """
     Handles double clic on an item
