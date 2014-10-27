@@ -55,6 +55,34 @@ class FavoritesTreeNode:
         params.get("file_path"))
 
 
+  def layerMimeData(self):
+    """
+    """
+
+    layerMimeData = None
+
+    if self.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER:
+      layerType = "raster"
+      layerProvider = "wms"
+      escapedLayerName = self.title.replace( ":", "\\:" )
+      layerUrl = u"crs={}&featureCount=10&format={}&layers={}&maxHeight=256&maxWidth=256&styles={}&url={}".format(
+      self.layer_srs, self.layer_format, self.layer_name, self.layer_style_name, self.service_url)
+      escapedLayerUrl = layerUrl.replace( ":", "\\:" )
+      layerMimeData = ':'.join([layerType, layerProvider, escapedLayerName, escapedLayerUrl])
+
+    elif self.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER_STYLE:
+      pass
+    elif self.node_type == GpicGlobals.Instance().NODE_TYPE_WMTS_LAYER:
+      pass
+    elif self.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
+      pass
+    elif self.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE_FILTER:
+      pass
+    elif self.node_type == GpicGlobals.Instance().NODE_TYPE_GDAL_WMS_CONFIG_FILE:
+      pass
+
+    return layerMimeData
+
 
   def runAddToMapAction(self):
     """

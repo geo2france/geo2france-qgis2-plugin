@@ -53,7 +53,7 @@ def containsUnexpandedSubitems(item):
 
 class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
   """
-  An item of tree view.
+  An item of the GéoPicardie tree view
   """
 
   def __init__(self, parent, gpic_data = None):
@@ -62,10 +62,14 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
 
     QtGui.QTreeWidgetItem.__init__(self, parent)
 
+    # Item data
     self.gpic_data = gpic_data
+
+    # Item title and description
     self.setText(0, gpic_data.title)
     self.setToolTip (0, gpic_data.description)
 
+    #Item icon
     gpicIcons = GpicIcons.Instance()
     icon = None
 
@@ -86,8 +90,10 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
 
     if icon != None:
       self.setIcon(0, icon)
-      
-    self.setFlags(Qt.ItemIsEnabled | Qt.ItemIsSelectable)
+    
+    # QT flags
+    # Enable selection and drag of the item
+    self.setFlags(Qt.ItemIsDragEnabled | Qt.ItemIsEnabled | Qt.ItemIsSelectable)
 
 
   def runDefaultAction(self):

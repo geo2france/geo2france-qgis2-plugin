@@ -3,10 +3,10 @@
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from qgis.core import *
-from qgis.gui import *
 
 from geopicardie.gui.gpic_tree_items import GpicTreeWidgetItem
 from geopicardie.utils.plugin_globals import GpicGlobals
+
 
 class GpicTreeWidget(QTreeWidget):
   """
@@ -18,10 +18,9 @@ class GpicTreeWidget(QTreeWidget):
     objectName = 'GpicTreeWidget'
 
     super(GpicTreeWidget, self).__init__()
-    # QTreeWidget.__init__(self, None)
 
     # Selection
-    self.setSelectionMode(QAbstractItemView.ExtendedSelection)
+    self.setSelectionMode(QAbstractItemView.SingleSelection)
 
     # Columns and headers
     self.setColumnCount(1)
@@ -30,18 +29,13 @@ class GpicTreeWidget(QTreeWidget):
 
     # Events
     self.itemDoubleClicked.connect(self.treeItemDoubleClicked)
-    # self.itemExpanded.connect(self.treeItemExpanded)
-    # self.itemClicked.connect(self.treeItemClicked)
 
     # Context menu
     self.setContextMenuPolicy(Qt.CustomContextMenu)
     self.customContextMenuRequested.connect(self.openMenu)
 
-    # Drag and drop mode
-    self.setDragDropMode(QTreeWidget.DragDrop)
-    # self.setAcceptDrops(True)
-    # self.setDropIndicatorShown(True)
-    # self.setAutoScroll(True)
+    # Enable drag of tree items
+    self.setDragEnabled(True)
 
 
   def setTreeContents(self, resources_tree):
@@ -67,6 +61,7 @@ class GpicTreeWidget(QTreeWidget):
       for child in resources_tree.children:
         createSubItem(child, self)
 
+    QgsMessageLog.logMessage(u"Faute de fichier de configuration valide, aucune ressource ne peut être chargée dans le panneau de l'extension GéoPicardie.", tag=u"GéoPicardie", level=QgsMessageLog.WARNING)
 
   def treeItemDoubleClicked(self, item, column):
     """
@@ -83,3 +78,22 @@ class GpicTreeWidget(QTreeWidget):
     menu = selected_item.createMenu()
     menu.exec_(self.viewport().mapToGlobal(position))
 
+
+  # Constant and methods used for drag and drop of tree items onto the map
+
+  QGIS_URI_MIME = "application/x-vnd.qgis.qgis.uri"
+
+  def mimeTypes(self):
+    return ["application/x-qabstractitemmodeldatalist", self.QGIS_URI_MIME]
+
+  def mimeData(self, items):
+    mimeData = QTreeWidget.mimeData(self, items)
+    encodedData = QByteArray()
+    stream = QDataStream(encodedData, QIODevice.WriteOnly)
+
+    for item in items:
+      layerMimeData = item.gpic_data.layerMimeData()
+      stream.writeQString(layerMimeData)
+
+    mimeData.setData(self.QGIS_URI_MIME, encodedData)
+    return mimeData
