@@ -61,6 +61,7 @@ class GpicTreeWidget(QTreeWidget):
       for child in resources_tree.children:
         createSubItem(child, self)
 
+
   def treeItemDoubleClicked(self, item, column):
     """
     Handles double clic on an item
