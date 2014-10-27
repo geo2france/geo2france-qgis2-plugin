@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import os
+
 from geopicardie.utils.plugin_globals import GpicGlobals
+from geopicardie.utils.gpic_icons import *
 
 
 class FavoritesTreeNode:
@@ -20,6 +22,8 @@ class FavoritesTreeNode:
     self.status = status
     self.metadata_url = metadata_url
     self.children = []
+    self.can_be_added_to_map = False
+    self.icon = None
 
 
   def layerMimeData(self):
@@ -70,6 +74,12 @@ class FolderTreeNode(FavoritesTreeNode):
 
     FavoritesTreeNode.__init__(self, title, node_type, description, status, metadata_url, params, parent_node)
 
+    # Icon
+    gpicIcons = GpicIcons.Instance()
+    self.icon = gpicIcons.folder_icon
+    if self.status == GpicGlobals.Instance().NODE_STATUS_WARN:
+      self.icon = gpicIcons.warn_icon
+
 
 class WmsLayerTreeNode(FavoritesTreeNode):
   """
@@ -88,6 +98,13 @@ class WmsLayerTreeNode(FavoritesTreeNode):
     self.layer_format = params.get("format")
     self.layer_srs = params.get("srs")
     self.layer_style_name = params.get("style", "")
+    self.can_be_added_to_map = True
+
+    # Icon
+    gpicIcons = GpicIcons.Instance()
+    self.icon = gpicIcons.wms_layer_icon
+    if self.status == GpicGlobals.Instance().NODE_STATUS_WARN:
+      self.icon = gpicIcons.warn_icon
 
 
   def runAddToMapAction(self):
@@ -128,6 +145,13 @@ class WmsStyleLayerTreeNode(FavoritesTreeNode):
     FavoritesTreeNode.__init__(self, title, node_type, description, status, metadata_url, params, parent_node)
 
     self.layer_style_name = params.get("name")
+    self.can_be_added_to_map = True
+
+    # Icon
+    gpicIcons = GpicIcons.Instance()
+    self.icon = gpicIcons.wms_style_icon
+    if self.status == GpicGlobals.Instance().NODE_STATUS_WARN:
+      self.icon = gpicIcons.warn_icon
 
 
   def runAddToMapAction(self):
@@ -160,6 +184,13 @@ class WmtsLayerTreeNode(FavoritesTreeNode):
     self.layer_format = params.get("format")
     self.layer_srs = params.get("srs")
     self.layer_style_name = params.get("style", "")
+    self.can_be_added_to_map = True
+
+    # Icon
+    gpicIcons = GpicIcons.Instance()
+    self.icon = gpicIcons.wms_style_icon
+    if self.status == GpicGlobals.Instance().NODE_STATUS_WARN:
+      self.icon = gpicIcons.warn_icon
 
 
   def runAddToMapAction(self):
@@ -189,6 +220,13 @@ class WfsFeatureTypeTreeNode(FavoritesTreeNode):
     self.filter = params.get("filter")
     self.wfs_version = params.get("version", "1.0.0")
     self.layer_srs = params.get("srs")
+    self.can_be_added_to_map = True
+
+    # Icon
+    gpicIcons = GpicIcons.Instance()
+    self.icon = gpicIcons.wfs_layer_icon
+    if self.status == GpicGlobals.Instance().NODE_STATUS_WARN:
+      self.icon = gpicIcons.warn_icon
 
 
   def runAddToMapAction(self):
@@ -206,7 +244,6 @@ class WfsFeatureTypeTreeNode(FavoritesTreeNode):
     GpicGlobals.Instance().iface.addVectorLayer(layer_url, self.title, "WFS")
 
 
-
 class WfsFeatureTypeFilterTreeNode(FavoritesTreeNode):
   """
   Tree node for a WFS feature type filter
@@ -220,6 +257,13 @@ class WfsFeatureTypeFilterTreeNode(FavoritesTreeNode):
     FavoritesTreeNode.__init__(self, title, node_type, description, status, metadata_url, params, parent_node)
 
     self.filter = params.get("filter")
+    self.can_be_added_to_map = True
+
+    # Icon
+    gpicIcons = GpicIcons.Instance()
+    self.icon = gpicIcons.wfs_layer_icon
+    if self.status == GpicGlobals.Instance().NODE_STATUS_WARN:
+      self.icon = gpicIcons.warn_icon
 
 
   def runAddToMapAction(self):
@@ -253,7 +297,14 @@ class GdalWmsConfigFileTreeNode(FavoritesTreeNode):
     self.gdal_config_file_path = os.path.join(
       GpicGlobals.Instance().config_dir_path,
       params.get("file_path"))
+    self.can_be_added_to_map = True
 
+    # Icon
+    gpicIcons = GpicIcons.Instance()
+    self.icon = gpicIcons.raster_layer_icon
+    if self.status == GpicGlobals.Instance().NODE_STATUS_WARN:
+      self.icon = gpicIcons.warn_icon
+      
 
   def runAddToMapAction(self):
     """

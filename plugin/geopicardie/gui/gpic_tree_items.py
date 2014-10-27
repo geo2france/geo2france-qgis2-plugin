@@ -4,7 +4,6 @@ from PyQt4.QtCore import *
 from PyQt4 import QtGui
 
 from geopicardie.utils.plugin_globals import GpicGlobals
-from geopicardie.utils.gpic_icons import *
 
 
 
@@ -70,47 +69,23 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
     self.setToolTip (0, gpic_data.description)
 
     #Item icon
-    gpicIcons = GpicIcons.Instance()
-    icon = None
-
-    if self.gpic_data.status == GpicGlobals.Instance().NODE_STATUS_WARN:
-      icon = gpicIcons.warn_icon
-    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_FOLDER:
-      icon = gpicIcons.folder_icon
-    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER:
-      icon = gpicIcons.wms_layer_icon
-    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER_STYLE:
-      icon = gpicIcons.wms_style_icon
-    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
-      icon = gpicIcons.wfs_layer_icon
-    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE_FILTER:
-      icon = gpicIcons.wfs_layer_icon
-    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_GDAL_WMS_CONFIG_FILE:
-      icon = gpicIcons.raster_layer_icon
-
+    icon = self.gpic_data.icon
     if icon != None:
       self.setIcon(0, icon)
     
     # QT flags
     # Enable selection and drag of the item
-    self.setFlags(Qt.ItemIsDragEnabled | Qt.ItemIsEnabled | Qt.ItemIsSelectable)
+    if self.gpic_data.can_be_added_to_map:
+      self.setFlags(Qt.ItemIsDragEnabled | Qt.ItemIsEnabled | Qt.ItemIsSelectable)
+    else:
+      self.setFlags(Qt.ItemIsEnabled | Qt.ItemIsSelectable)
 
 
   def runDefaultAction(self):
     """
     """
 
-    if self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_FOLDER:
-      pass
-    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER:
-      self.runAddToMapAction()
-    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER_STYLE:
-      self.runAddToMapAction()
-    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
-      self.runAddToMapAction()
-    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE_FILTER:
-      self.runAddToMapAction()
-    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_GDAL_WMS_CONFIG_FILE:
+    if self.gpic_data.can_be_added_to_map:
       self.runAddToMapAction()
 
 
@@ -176,21 +151,8 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
     # report_issue_action = menu.addAction(u"Signaler une anomalie...")
     # report_issue_action.triggered.connect(self.runReportIssueAction)
 
-    if self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_FOLDER:
-      pass
-    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER:
-      add_to_map_action = menu.addAction(u"Ajouter à la carte")
-      add_to_map_action.triggered.connect(self.runAddToMapAction)
-    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER_STYLE:
-      add_to_map_action = menu.addAction(u"Ajouter à la carte")
-      add_to_map_action.triggered.connect(self.runAddToMapAction)
-    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE:
-      add_to_map_action = menu.addAction(u"Ajouter à la carte")
-      add_to_map_action.triggered.connect(self.runAddToMapAction)
-    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_WFS_FEATURE_TYPE_FILTER:
-      add_to_map_action = menu.addAction(u"Ajouter à la carte")
-      add_to_map_action.triggered.connect(self.runAddToMapAction)
-    elif self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_GDAL_WMS_CONFIG_FILE:
+
+    if self.gpic_data.can_be_added_to_map:
       add_to_map_action = menu.addAction(u"Ajouter à la carte")
       add_to_map_action.triggered.connect(self.runAddToMapAction)
 
