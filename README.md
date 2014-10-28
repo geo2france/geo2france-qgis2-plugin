@@ -42,10 +42,12 @@ L'arbre des ressources n'est pas entièrement renseigné, par conséquent, le do
 Notes
 -----
 
-Version 0.4 :
+Version 0.4.1 :
 * support de filtres pour les couches WFS
 * support de raster GDAL_WMS préconfigurés (stockés dans le répertoire config pour l'instant)
 * récupération des fichiers de configuration JSON sur le web
+* ajout d'une fenêtre de paramétrage
+* ajout du glisser-déposer vers la carte
 
 Version 0.3 :
 * ajout d'une info-bulle sur chaque nœud. Elle reprend le champ "description" du nœud
