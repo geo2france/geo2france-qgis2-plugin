@@ -28,9 +28,18 @@ class FavoritesTreeNode:
 
   def layerMimeData(self):
     """
+    Return the mime data used by the drag and drop process
+    and needed by QGIS to add the right layer to the map
     """
 
-    pass
+    qgis_layer_details = self.getQgisLayerDetails()
+    layerMimeData = ':'.join([
+      qgis_layer_details["type"],
+      qgis_layer_details["provider"],
+      qgis_layer_details["title"].replace( ":", "\\:" ),
+      qgis_layer_details["uri"].replace( ":", "\\:" )])
+
+    return layerMimeData
 
 
   def runAddToMapAction(self):
@@ -107,29 +116,33 @@ class WmsLayerTreeNode(FavoritesTreeNode):
       self.icon = gpicIcons.warn_icon
 
 
+  def getQgisLayerDetails(self):
+    """
+    Return the details of the layer used by QGIS to add the layer to the map.
+    This dictionary is used by the runAddToMapAction and layerMimeData methods.
+    """
+
+    qgis_layer_uri_details = {
+      "type": "raster",
+      "provider": "wms",
+      "title": self.title,
+      "uri": u"crs={}&featureCount=10&format={}&layers={}&maxHeight=256&maxWidth=256&styles={}&url={}".format(
+      self.layer_srs, self.layer_format, self.layer_name, self.layer_style_name, self.service_url)
+    }
+
+    return qgis_layer_uri_details
+
+
   def runAddToMapAction(self):
     """
     Add the WMS layer with the specified style to the map
     """
 
-    layer_url = u"crs={}&featureCount=10&format={}&layers={}&maxHeight=256&maxWidth=256&styles={}&url={}".format(
-      self.layer_srs, self.layer_format, self.layer_name, self.layer_style_name, self.service_url)
-    GpicGlobals.Instance().iface.addRasterLayer(layer_url, self.title, "wms")
-
-
-  def layerMimeData(self):
-    """
-    """
-
-    layerType = "raster"
-    layerProvider = "wms"
-    escapedLayerName = self.title.replace( ":", "\\:" )
-    layerUrl = u"crs={}&featureCount=10&format={}&layers={}&maxHeight=256&maxWidth=256&styles={}&url={}".format(
-    self.layer_srs, self.layer_format, self.layer_name, self.layer_style_name, self.service_url)
-    escapedLayerUrl = layerUrl.replace( ":", "\\:" )
-    layerMimeData = ':'.join([layerType, layerProvider, escapedLayerName, escapedLayerUrl])
-
-    return layerMimeData
+    qgis_layer_details = self.getQgisLayerDetails()
+    GpicGlobals.Instance().iface.addRasterLayer(
+      qgis_layer_details["uri"],
+      qgis_layer_details["title"],
+      qgis_layer_details["provider"])
 
 
 class WmsStyleLayerTreeNode(FavoritesTreeNode):
@@ -154,16 +167,37 @@ class WmsStyleLayerTreeNode(FavoritesTreeNode):
       self.icon = gpicIcons.warn_icon
 
 
+  def getQgisLayerDetails(self):
+    """
+    Return the details of the layer used by QGIS to add the layer to the map.
+    This dictionary is used by the runAddToMapAction and layerMimeData methods.
+    """
+
+    if self.parent_node == None:
+      return None
+
+    qgis_layer_uri_details = {
+      "type": "raster",
+      "provider": "wms",
+      "title": self.title,
+      "uri": u"crs={}&featureCount=10&format={}&layers={}&maxHeight=256&maxWidth=256&styles={}&url={}".format(
+        self.parent_node.layer_srs, self.parent_node.layer_format, self.parent_node.layer_name, self.layer_style_name, self.parent_node.service_url)
+    }
+
+    return qgis_layer_uri_details
+
+
   def runAddToMapAction(self):
     """
     Add the WMS layer with the specified style to the map
     """
 
-    if self.parent_node != None:
-      layer_url = u"crs={}&featureCount=10&format={}&layers={}&maxHeight=256&maxWidth=256&styles={}&url={}".format(
-        self.parent_node.layer_srs, self.parent_node.layer_format, self.parent_node.layer_name, self.layer_style_name, self.parent_node.service_url)
-      GpicGlobals.Instance().iface.addRasterLayer(layer_url, self.parent_node.title, "wms")
-
+    qgis_layer_details = self.getQgisLayerDetails()
+    if qgis_layer_details != None:
+      GpicGlobals.Instance().iface.addRasterLayer(
+        qgis_layer_details["uri"],
+        qgis_layer_details["title"],
+        qgis_layer_details["provider"])
 
 
 class WmtsLayerTreeNode(FavoritesTreeNode):
@@ -193,14 +227,34 @@ class WmtsLayerTreeNode(FavoritesTreeNode):
       self.icon = gpicIcons.warn_icon
 
 
+  def getQgisLayerDetails(self):
+    """
+    Return the details of the layer used by QGIS to add the layer to the map.
+    This dictionary is used by the runAddToMapAction and layerMimeData methods.
+    """
+
+    qgis_layer_uri_details = {
+      "type": "raster",
+      "provider": "wms",
+      "title": self.title,
+      "uri": u"tileMatrixSet={}&crs={}&featureCount=10&format={}&layers={}&maxHeight=256&maxWidth=256&styles={}&url={}".format(
+      self.layer_tilematrixset_name, self.layer_srs, self.layer_format, self.layer_name, self.layer_style_name, self.service_url)
+    }
+
+    return qgis_layer_uri_details
+
+
   def runAddToMapAction(self):
     """
     Add the WMTS layer to the map
     """
 
-    layer_url = u"tileMatrixSet={}&crs={}&featureCount=10&format={}&layers={}&maxHeight=256&maxWidth=256&styles={}&url={}".format(
-      self.layer_tilematrixset_name, self.layer_srs, self.layer_format, self.layer_name, self.layer_style_name, self.service_url)
-    GpicGlobals.Instance().iface.addRasterLayer(layer_url, self.title, "wms")
+    qgis_layer_details = self.getQgisLayerDetails()
+    if qgis_layer_details != None:
+      GpicGlobals.Instance().iface.addRasterLayer(
+        qgis_layer_details["uri"],
+        qgis_layer_details["title"],
+        qgis_layer_details["provider"])
 
 
 class WfsFeatureTypeTreeNode(FavoritesTreeNode):
@@ -229,19 +283,43 @@ class WfsFeatureTypeTreeNode(FavoritesTreeNode):
       self.icon = gpicIcons.warn_icon
 
 
+  def getQgisLayerDetails(self):
+    """
+    Return the details of the layer used by QGIS to add the layer to the map.
+    This dictionary is used by the runAddToMapAction and layerMimeData methods.
+    """
+
+    first_param_prefix = '?'
+    if '?' in self.service_url:
+      first_param_prefix = '&'
+
+    uri = u"{}{}SERVICE=WFS&VERSION={}&REQUEST=GetFeature&TYPENAME={}&SRSNAME={}".format(
+      self.service_url, first_param_prefix, self.wfs_version, self.feature_type_name, self.layer_srs)
+
+    if self.filter:
+      uri += "&Filter={}".format(self.filter)
+
+    qgis_layer_uri_details = {
+      "type": "vector",
+      "provider": "WFS",
+      "title": self.title,
+      "uri": uri
+    }
+
+    return qgis_layer_uri_details
+
+
   def runAddToMapAction(self):
     """
     Add the WFS feature type to the map
     """
-    
-    first_param_prefix = '?'
-    if '?' in self.service_url:
-      first_param_prefix = '&'
-    layer_url = u"{}{}SERVICE=WFS&VERSION={}&REQUEST=GetFeature&TYPENAME={}&SRSNAME={}".format(
-      self.service_url, first_param_prefix, self.wfs_version, self.feature_type_name, self.layer_srs)
-    if self.filter:
-      layer_url += "&Filter={}".format(self.filter)
-    GpicGlobals.Instance().iface.addVectorLayer(layer_url, self.title, "WFS")
+
+    qgis_layer_details = self.getQgisLayerDetails()
+    if qgis_layer_details != None:
+      GpicGlobals.Instance().iface.addVectorLayer(
+        qgis_layer_details["uri"],
+        qgis_layer_details["title"],
+        qgis_layer_details["provider"])
 
 
 class WfsFeatureTypeFilterTreeNode(FavoritesTreeNode):
@@ -266,20 +344,46 @@ class WfsFeatureTypeFilterTreeNode(FavoritesTreeNode):
       self.icon = gpicIcons.warn_icon
 
 
+  def getQgisLayerDetails(self):
+    """
+    Return the details of the layer used by QGIS to add the layer to the map.
+    This dictionary is used by the runAddToMapAction and layerMimeData methods.
+    """
+
+    if self.parent_node == None:
+      return None
+
+    first_param_prefix = '?'
+    if '?' in self.parent_node.service_url:
+      first_param_prefix = '&'
+
+    uri = u"{}{}SERVICE=WFS&VERSION={}&REQUEST=GetFeature&TYPENAME={}&SRSNAME={}".format(
+        self.parent_node.service_url, first_param_prefix, self.parent_node.wfs_version, self.parent_node.feature_type_name, self.parent_node.layer_srs)
+
+    if self.filter:
+      uri += "&Filter={}".format(self.filter)
+
+    qgis_layer_uri_details = {
+      "type": "vector",
+      "provider": "WFS",
+      "title": self.title,
+      "uri": uri
+    }
+
+    return qgis_layer_uri_details
+
+
   def runAddToMapAction(self):
     """
     Add the WFS feature type to the map with a filter
     """
     
-    if self.parent_node != None:
-      first_param_prefix = '?'
-      if '?' in self.parent_node.service_url:
-        first_param_prefix = '&'
-      layer_url = u"{}{}SERVICE=WFS&VERSION={}&REQUEST=GetFeature&TYPENAME={}&SRSNAME={}".format(
-        self.parent_node.service_url, first_param_prefix, self.parent_node.wfs_version, self.parent_node.feature_type_name, self.parent_node.layer_srs)
-      if self.filter:
-        layer_url += "&Filter={}".format(self.filter)
-      GpicGlobals.Instance().iface.addVectorLayer(layer_url, self.title, "WFS")
+    qgis_layer_details = self.getQgisLayerDetails()
+    if qgis_layer_details != None:
+      GpicGlobals.Instance().iface.addVectorLayer(
+        qgis_layer_details["uri"],
+        qgis_layer_details["title"],
+        qgis_layer_details["provider"])
 
 
 class GdalWmsConfigFileTreeNode(FavoritesTreeNode):
@@ -304,14 +408,35 @@ class GdalWmsConfigFileTreeNode(FavoritesTreeNode):
     self.icon = gpicIcons.raster_layer_icon
     if self.status == GpicGlobals.Instance().NODE_STATUS_WARN:
       self.icon = gpicIcons.warn_icon
-      
+
+
+  def getQgisLayerDetails(self):
+    """
+    Return the details of the layer used by QGIS to add the layer to the map.
+    This dictionary is used by the runAddToMapAction and layerMimeData methods.
+    """
+
+    qgis_layer_uri_details = {
+      "type": "raster",
+      "provider": "gdal",
+      "title": self.title,
+      "uri": self.gdal_config_file_path.replace("\\", "/")
+    }
+
+    return qgis_layer_uri_details
+
 
   def runAddToMapAction(self):
     """
     Add the preconfigured TMS layer to the map
     """
 
-    GpicGlobals.Instance().iface.addRasterLayer(self.gdal_config_file_path, self.title)
+    # GpicGlobals.Instance().iface.addRasterLayer(self.gdal_config_file_path, self.title)
+    qgis_layer_details = self.getQgisLayerDetails()
+    if qgis_layer_details != None:
+      GpicGlobals.Instance().iface.addRasterLayer(
+        qgis_layer_details["uri"],
+        qgis_layer_details["title"])
 
 
 
