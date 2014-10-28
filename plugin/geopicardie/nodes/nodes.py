@@ -460,10 +460,7 @@ class FavoriteTreeNodeFactory:
 
     if node_title:
       # Creation of the node
-      if node_type == GpicGlobals.Instance().NODE_TYPE_FOLDER:
-        node = FolderTreeNode(node_title, node_type, node_description, node_status, node_metadata_url, node_params, parent_node)
-
-      elif node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER:
+      if node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER:
         node = WmsLayerTreeNode(node_title, node_type, node_description, node_status, node_metadata_url, node_params, parent_node)
 
       elif node_type == GpicGlobals.Instance().NODE_TYPE_WMS_LAYER_STYLE:
@@ -482,7 +479,7 @@ class FavoriteTreeNodeFactory:
         node = GdalWmsConfigFileTreeNode(node_title, node_type, node_description, node_status, node_metadata_url, node_params, parent_node)
 
       else:
-        node = FavoritesTreeNode(node_title, node_type, node_description, node_status, node_metadata_url, node_params, parent_node)
+        node = FolderTreeNode(node_title, node_type, node_description, node_status, node_metadata_url, node_params, parent_node)
 
       # Creation of the node children
       node_children = tree_config.get('children', [])
