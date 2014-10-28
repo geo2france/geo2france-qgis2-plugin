@@ -5,5 +5,5 @@ description=Plugin simplifiant la connexion aux ressources de GéoPicardie
 author=GéoPicardie
 email=contact@geopicardie.fr
 icon=images/geopicardie.png
-version=version 0.4
+version=version 0.4.1
 deprecated=False
