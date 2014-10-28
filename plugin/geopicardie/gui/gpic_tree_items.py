@@ -3,7 +3,7 @@
 from PyQt4.QtCore import *
 from PyQt4 import QtGui
 
-from geopicardie.utils.plugin_globals import GpicGlobals
+# from geopicardie.utils.plugin_globals import GpicGlobals
 
 
 
