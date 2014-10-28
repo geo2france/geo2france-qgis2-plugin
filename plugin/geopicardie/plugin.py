@@ -2,13 +2,17 @@
 
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
+from qgis.gui import *
+from qgis.core import *
 
 import os
 import json
+import urllib2
 
 from geopicardie.utils.plugin_globals import GpicGlobals
 from geopicardie.gui.gpic_dock import GpicDockWidget
 from geopicardie.gui.about_box import AboutBox
+from geopicardie.gui.param_box import ParamBox
 from geopicardie.nodes.nodes import FavoriteTreeNodeFactory
 from geopicardie.nodes.nodes import FavoritesTreeNode
 
@@ -26,15 +30,49 @@ class PluginGeoPicardie:
 
     self.iface = iface
 
-    GpicGlobals.Instance().updateGlobals(os.path.dirname(os.path.abspath(__file__)), self.iface)
+    GpicGlobals.Instance().setPluginPath(os.path.dirname(os.path.abspath(__file__)))
+    GpicGlobals.Instance().setPluginIFace(self.iface)
+    GpicGlobals.Instance().reloadGlobalsFromQgisSettings()
 
-    # Read the config file
     config_struct = None
-    with open(GpicGlobals.Instance().config_file_path) as f:
-      config_string = "".join(f.readlines())
-      config_struct = json.loads(config_string)
+    config_string = ""
+    self.downloadConfigFile()
 
-    self.ressources_tree = FavoriteTreeNodeFactory().build_tree(config_struct)
+
+  def downloadConfigFile(self):
+    """
+    Download and read the config file (containing the resource tree)
+    """
+
+    self.ressources_tree = None
+
+    try:
+
+      # Download the config file
+      if GpicGlobals.Instance().CONFIG_FILES_DOWNLOAD_AT_STARTUP > 0 :
+        config_file_url = GpicGlobals.Instance().CONFIG_FILE_URLS[0]
+        config_file = urllib2.urlopen(config_file_url)
+        with open(GpicGlobals.Instance().config_file_path, 'wb') as f:
+          f.write(config_file.read())
+
+      # Read the config file
+      with open(GpicGlobals.Instance().config_file_path) as f:
+        config_string = "".join(f.readlines())
+        config_struct = json.loads(config_string)
+        self.ressources_tree = FavoriteTreeNodeFactory().build_tree(config_struct)
+
+    except IOError:
+      message = u"Le fichier de configuration du plugin {0} n'a pas pu être trouvé.".format(GpicGlobals.Instance().PLUGIN_TAG)
+      self.iface.messageBar().pushMessage("Erreur", message, level=QgsMessageBar.CRITICAL)
+      QgsMessageLog.logMessage(message, tag=GpicGlobals.Instance().PLUGIN_TAG, level=QgsMessageLog.CRITICAL)
+    except ValueError:
+      message = u"Le fichier de configuration du plugin {0} contient des erreurs.".format(GpicGlobals.Instance().PLUGIN_TAG)
+      self.iface.messageBar().pushMessage("Erreur", message, level=QgsMessageBar.CRITICAL)
+      QgsMessageLog.logMessage(message, tag=GpicGlobals.Instance().PLUGIN_TAG, level=QgsMessageLog.CRITICAL)
+    except AttributeError:
+      message = u"Le fichier de configuration du plugin {0} contient des erreurs.".format(GpicGlobals.Instance().PLUGIN_TAG)
+      self.iface.messageBar().pushMessage("Erreur", message, level=QgsMessageBar.CRITICAL)
+      QgsMessageLog.logMessage(message, tag=GpicGlobals.Instance().PLUGIN_TAG, level=QgsMessageLog.CRITICAL)
 
 
   def initGui(self):
@@ -66,6 +104,10 @@ class PluginGeoPicardie:
     show_gpic_panel_action.triggered.connect(self.showGpicPanelMenuTriggered)
     self.gpic_menu.addAction(show_gpic_panel_action)
 
+    param_action = QAction(u'Paramétrage…', self.iface.mainWindow())        
+    param_action.triggered.connect(self.paramMenuTriggered)
+    self.gpic_menu.addAction(param_action)
+
     about_action = QAction(u'À propos…', self.iface.mainWindow())        
     about_action.triggered.connect(self.aboutMenuTriggered)
     self.gpic_menu.addAction(about_action)
@@ -85,6 +127,23 @@ class PluginGeoPicardie:
 
     dialog = AboutBox(self.iface.mainWindow())
     dialog.exec_()
+
+
+  def paramMenuTriggered(self):
+    """
+    Shows the Param box
+    """
+
+    dialog = ParamBox(self.iface.mainWindow())
+    dialog.exec_()
+
+    if GpicGlobals.Instance().RESOURCES_TREE_NEED_DOWNLOAD:
+      self.downloadConfigFile()
+
+    if GpicGlobals.Instance().RESOURCES_TREE_NEED_RELOAD:
+      self.dock.setTreeContents(self.ressources_tree)
+
+    GpicGlobals.Instance().resetFlags()
 
 
   def unload(self):

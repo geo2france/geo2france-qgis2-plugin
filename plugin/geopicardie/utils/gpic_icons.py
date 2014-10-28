@@ -39,3 +39,7 @@ class GpicIcons():
     wfs_layer_icon_path = os.path.join(GpicGlobals.Instance().images_dir_path,
       GpicGlobals.Instance().ICON_WFS_LAYER_FILE_NAME)
     self.wfs_layer_icon = QtGui.QIcon(wfs_layer_icon_path)
+
+    raster_layer_icon_path = os.path.join(GpicGlobals.Instance().images_dir_path,
+      GpicGlobals.Instance().ICON_RASTER_LAYER_FILE_NAME)
+    self.raster_layer_icon = QtGui.QIcon(raster_layer_icon_path)
