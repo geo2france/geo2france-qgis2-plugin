@@ -36,6 +36,7 @@ class GpicTreeWidget(QTreeWidget):
 
     # Enable drag of tree items
     self.setDragEnabled(True)
+    self.setAcceptDrops(True)
 
 
   def setTreeContents(self, resources_tree):
@@ -103,3 +104,13 @@ class GpicTreeWidget(QTreeWidget):
 
     mimeData.setData(self.QGIS_URI_MIME, encodedData)
     return mimeData
+
+
+  def dropMimeData(self, parent, index, data, action):
+    """
+    """
+
+    if action == Qt.IgnoreAction:
+      return True
+
+    return False
