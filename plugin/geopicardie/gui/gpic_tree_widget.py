@@ -83,9 +83,16 @@ class GpicTreeWidget(QTreeWidget):
   QGIS_URI_MIME = "application/x-vnd.qgis.qgis.uri"
 
   def mimeTypes(self):
-    return ["application/x-qabstractitemmodeldatalist", self.QGIS_URI_MIME]
+    """
+    """
+
+    return [self.QGIS_URI_MIME]
+
 
   def mimeData(self, items):
+    """
+    """
+
     mimeData = QTreeWidget.mimeData(self, items)
     encodedData = QByteArray()
     stream = QDataStream(encodedData, QIODevice.WriteOnly)
