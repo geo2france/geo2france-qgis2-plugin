@@ -1,7 +1,7 @@
 geopicardie-qgis-plugin
 =======================
 
-Plugin pour QGIS donnant un accès simple aux données de GéoPicardie.
+Plugin pour QGIS fournissant un accès simple aux données de GéoPicardie et d'autres ressources géographiques utiles en Picardie.
 
 
 Installation
@@ -10,7 +10,7 @@ Installation
 Pré-requis :
 * Installation opérationnelle de QGIS 2.0 ou plus récent sur votre ordinateur
 
-Processus d'installation (manuelle pour l'instant) :
+Installation manuelle :
 * Installation :
   * Télécharger le répertoire ./plugin/geopicardie
   * Copier ce répertoire dans le répertoire des plugin de votre répertoire personnel (typiquement ~/.qgis2/python/plugins)
@@ -20,6 +20,12 @@ Processus d'installation (manuelle pour l'instant) :
   * Activer le plugin "GeoPicardie" dans le gestionnaire d'extensions
   * Fermer le gestionnaire d'extensions
 
+Installation automatique (via le gestionnaire d'extensions de QGIS) :
+* Déclarer et activer le dépôt suivant : http://www.geopicardie.fr/files/qgis/plugins.xml
+* Autoriser le chargement des extensions expérimentales
+* Rechercher et charger l'extension intitulée "GéoPicardie"
+
+
 
 Utilisation
 -----------
@@ -27,13 +33,17 @@ Utilisation
 Affichage des ressources mises à disposition des utilisateurs via l'extension :
 * Dans le menu de QGIS : Extension > GéoPicardie > Afficher le panneau GéoPicardie
 
-Un nouveau panneau latéral apparaît alors. Il contient un vue arbosrescente des ressources utiles aux partenaires de GéoPicardie.
-Cet arbre contient pour l'instant (version 0.2 du plugin) :
+Un nouveau panneau latéral apparaît alors. Il contient une vue arbosrescente des ressources utiles aux partenaires de GéoPicardie.
+Cet arbre contient pour l'instant (version 0.4.1 du plugin) :
 * des couches et des styles issues de services internet WMS
-* des feature types (classes d'entités) de services internet WFS
+* des feature types (classes d'entités) de services internet WFS (avec la possibilité de définir un filtre sur certaines entités)
+* des couches TMS préconfigurées (MapQuest, OpenStreetMap, Stamen) via des fichiers de configuration GDAL
 * des répertoires facilitant l'organisation et la présentation des ressources décrites ci-dessus
 
-Pour ajouter une couche WMS ou une classe d'entités WFS sur la carte courante de QGIS : double-clic sur le noeud en question.
+Pour ajouter une couche WMS ou une classe d'entités WFS sur la carte courante de QGIS vous pouvez utiliser l'une des opérations suivantes :
+* double-clic sur le nœud en question
+* clic-droit sur le nœud en question et menu contextuel "Ajouter à la carte"
+* glisser-déposer du nœud sur la carte de QGIS
 
 L'arbre des ressources n'est pas entièrement renseigné, par conséquent, le double-clic sur certains nœuds peut ne rien ajouter à la carte courante. Les ressources non correctement paramétrées dans le plugin sont marquées d'une icône avec un point d'exclamation.
 
@@ -41,6 +51,9 @@ L'arbre des ressources n'est pas entièrement renseigné, par conséquent, le do
 
 Notes
 -----
+
+Version 0.4.2 :
+* correction du ticket #25 (cf. https://github.com/bchartier/geopicardie-qgis-plugin/issues/25) : support des caractères spéciaux dans le nom du répertoire de l'utilisateur sous Windows
 
 Version 0.4.1 :
 * support de filtres pour les couches WFS
