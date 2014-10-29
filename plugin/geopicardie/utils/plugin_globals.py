@@ -16,7 +16,7 @@ class GpicGlobals():
 
   # Plugin infos
   PLUGIN_TAG = u"GéoPicardie"
-  PLUGIN_VERSION = u"0.4"
+  PLUGIN_VERSION = u"0.4.2"
   PLUGIN_SOURCE_REPOSITORY = u"https://github.com/bchartier/geopicardie-qgis-plugin/"
 
   # Tree nodes types
