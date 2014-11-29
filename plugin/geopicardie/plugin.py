@@ -51,7 +51,9 @@ class PluginGeoPicardie:
       # Download the config file
       if GpicGlobals.Instance().CONFIG_FILES_DOWNLOAD_AT_STARTUP > 0 :
         config_file_url = GpicGlobals.Instance().CONFIG_FILE_URLS[0]
-        config_file = urllib2.urlopen(config_file_url)
+        http_req = urllib2.Request(config_file_url)
+        http_req.add_header("Cache-Control", "no-cache")
+        config_file = urllib2.urlopen(http_req)
         with open(GpicGlobals.Instance().config_file_path, 'wb') as f:
           f.write(config_file.read())
 
