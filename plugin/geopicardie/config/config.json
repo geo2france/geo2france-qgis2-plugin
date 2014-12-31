@@ -1,0 +1,1060 @@
+{
+  "title": "GéoPicardie",
+  "description": "",
+  "type": "folder",
+  "children": [
+    {
+      "title": "Fonds topographiques",
+      "description": "Fonds cartographique décrivant la nature du terrain",
+      "type": "folder",
+      "children": [
+        {
+          "title": "Scan 25 - IGN",
+          "description": "Scan25 (version topographique) de l'IGN de la Picardie",
+          "type": "wms_layer",
+          "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=f3b9e304-c760-47af-ac87-b0a219d77eba",
+          "params": {
+            "url": "http://www.geopicardie.fr/geoserver/wms",
+            "name": "geopicardie:picardie_scan25",
+            "format": "image/png",
+            "srs": "epsg:2154"
+          }
+        },
+        {
+          "title": "Occupation du sol de Picardie",
+          "description": "Cartographie de l'occupation du sol de la Picardie de 1992 à 2010",
+          "type": "wms_layer",
+          "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=3f7cdf36-55b9-4464-8f37-4f92ffe54cdd",
+          "params": {
+            "url": "http://www.geopicardie.fr/geoserver/wms",
+            "name": "geopicardie:mos_picardie",
+            "format": "image/png",
+            "srs": "epsg:2154"
+          }
+        },
+        {
+          "title": "OpenStreetMap - apparence GéoPicardie - contrasté",
+          "description": "Apparence d'OpenStreetMap élaborée par GéoPicardie - version contrastée",
+          "type": "wms_layer",
+          "params": {
+            "url": "http://www.geopicardie.fr/geoserver/wms",
+            "name": "autres:osm_geopicardie_bright",
+            "format": "image/jpeg",
+            "srs": "epsg:3857"
+          }
+        },
+        {
+          "title": "OpenStreetMap - apparence GéoPicardie - clair",
+          "description": "Apparence d'OpenStreetMap élaborée par GéoPicardie - version en demi-teintes",
+          "type": "wms_layer",
+          "params": {
+            "url": "http://www.geopicardie.fr/geoserver/wms",
+            "name": "autres:osm_geopicardie",
+            "format": "image/jpeg",
+            "srs": "epsg:3857"
+          }
+        },
+        {
+          "title": "OpenStreetMap - apparence GéoPicardie - niveaux de gris",
+          "description": "Apparence d'OpenStreetMap élaborée par GéoPicardie - version en niveaux de gris",
+          "type": "wms_layer",
+          "params": {
+            "url": "http://www.geopicardie.fr/geoserver/wms",
+            "name": "autres:osm_geopicardie_grey",
+            "format": "image/jpeg",
+            "srs": "epsg:3857"
+          }
+        },
+        {
+          "title": "MapQuest",
+          "description": "Fond cartographique de MapQuest basé sur OpenStreetMap",
+          "type": "gdal_wms_config_file",
+          "status": "warn",
+          "params": {
+            "file_path": "tms_osm_mapquest.xml"
+          }
+        },
+        {
+          "title": "OpenStreetMap - apparence standard",
+          "description": "Apparence à destination des contributeurs des contributeurs d'OpenStreetMap",
+          "type": "gdal_wms_config_file",
+          "status": "warn",
+          "params": {
+            "file_path": "tms_osm_mapnik.xml"
+          }
+        },
+        {
+          "title": "Stamen toner",
+          "description": "Apparence photocopieur d'OpenStreetMap",
+          "type": "gdal_wms_config_file",
+          "status": "warn",
+          "params": {
+            "file_path": "tms_stamen_toner.xml"
+          }
+        },
+        {
+          "title": "Stamen watercolor",
+          "description": "Apparence aquarelle d'OpenStreetMap",
+          "type": "gdal_wms_config_file",
+          "status": "warn",
+          "params": {
+            "file_path": "tms_stamen_watercolor.xml"
+          }
+        }      
+      ]
+    },
+    {
+      "title": "Vues aériennes",
+      "description": "Photographies aériennes",
+      "type": "folder",
+      "children": [
+        {
+          "title": "Vues aériennes récentes - domaine visible",
+          "description": "Photographies aériennes prises dans le domaine visible depuis 2007",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Vue aérienne de la Picardie 2008-2009",
+              "description": "Orthophotographie aérienne composite de la Picardie de 2008-2009 (résolution de 0,25 m)",
+              "type": "wms_layer",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:picardie_ortho_composite_2008_2009_vis",
+                "format": "image/jpeg",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Vue aérienne de l'Aisne 2009 - visible",
+              "description": "Orthophotographie aérienne de l'Aisne de 2009 dans le domaine visible (résolution de 25 cm)",
+              "type": "wms_layer",
+              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=1e49ac01-abec-4ba6-8309-d5705f14b5dc",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:aisne_ortho_2009_vis",
+                "format": "image/jpeg",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Vue aérienne de l'Oise 2013 - visible",
+              "description": "Orthophotographie aérienne de l'Oise de 2013 dans le domaine visible (résolution de 15 cm)",
+              "type": "wms_layer",
+              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=49c5b5df-e767-4c61-9d43-4ae85b3ed39a",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:oise_ortho_2013_vis",
+                "format": "image/png",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Vue aérienne de l'Oise 2008-2009 - visible",
+              "description": "Orthophotographie aérienne de l'Oise de 2008-2009 dans le domaine visible (résolution de 20 cm)",
+              "type": "wms_layer",
+              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=bd427799-8035-4ff8-b0fb-4c75fe9b4848",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "reg22:oise_ortho_2008_vis",
+                "format": "image/jpeg",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Vue aérienne de la Somme 2008 - visible",
+              "description": "Orthophotographie aérienne de la Somme de 2008 dans le domaine visible (résolution de 20 cm)",
+              "type": "wms_layer",
+              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=80ccc6c8-6e93-42fb-b99e-6d7491f48f5b",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:somme_ortho_2008_vis",
+                "format": "image/jpeg",
+                "srs": "epsg:2154"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Vues aériennes récentes - domaine infrarouge",
+          "description": "Photographies aériennes prises dans le domaine infrarouge depuis 2007",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Vue aérienne de l'Aisne 2009 - infrarouge",
+              "description": "Orthophotographie aérienne de l'Aisne de 2009 dans le domaine infrarouge (résolution de 25 cm)",
+              "type": "wms_layer",
+              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=4635b9cc-bc9a-4f25-851e-040cf647d974",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:aisne_ortho_2009_ir",
+                "format": "image/jpeg",
+                "srs": "epsg:2154"
+              }
+            }      
+          ]
+        },
+        {
+          "title": "Vues aériennes anciennes",
+          "description": "Photographies aériennes anciennes",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Vue aérienne de Picardie 2001-2002",
+              "description": "Orthophotographie aérienne de la Picardie de 2001-2002 (résolution de 1,25 m)",
+              "type": "wms_layer",
+              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=e5ae91ad-e49c-4878-b3ed-6f483f864169",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:picardie_ortho_2002",
+                "format": "image/jpeg",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Vue aérienne côte normande et picarde 1947 (ROLNP)",
+              "description": "Orthophotographie aérienne de la côte normand-picarde de 1947",
+              "type": "wms_layer",
+              "metadata_url": "http://www.rolnp.fr/geoportal/catalog/search/resource/details.page?uuid=%7B5442DF2F-C02D-42A4-834A-21B450FBDA34%7D",
+              "params": {
+                "url": "http://www.rolnp.fr/arcgis/services/Imagerie/Orthos_historiques_1947/MapServer/WMSServer",
+                "name": "0",
+                "format": "image/png8",
+                "srs": "epsg:2154",
+                "style": "default"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Relief",
+      "description": "Données altimétriques",
+      "type": "folder",
+      "children": [
+        {
+          "title": "Relief de la Somme (2008)",
+          "description": "Altitude sur l'ensemble du département de la Somme issue de l'orthorectification des vues aériennes de 2008",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Relief de la Somme (2008) - couleurs",
+              "description": "Altitude sur l'ensemble du département de la Somme issue de l'orthorectification des vues aériennes de 2008 - images en couleurs",
+              "type": "wms_layer",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:somme_mnt_2008_img_slope_shade_color_5m",
+                "format": "image/jpeg",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Relief de la Somme (2008) - niveaux de gris",
+              "description": "Altitude sur l'ensemble du département de la Somme issue de l'orthorectification des vues aériennes de 2008 - images en niveaux de gris",
+              "type": "wms_layer",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:somme_mnt_2008_img_slope_shade_5m",
+                "format": "image/jpeg",
+                "srs": "epsg:2154"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Limites administratives",
+      "description": "Données concernant les limites administratives",
+      "type": "folder",
+      "children": [
+        {
+          "title": "Région",
+          "description": "Limites de la région",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Région - GEOFLA - polygones",
+              "description": "Limites de la région basée sur la base de données GEOFLA de l'IGN (objet surfacique)",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "reg22:reg_Picardie_FLA",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Région - BDTOPO - polygones",
+              "description": "Limites de la région basée sur la base de données BDTOPO de l'IGN (objet surfacique)",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "reg22:Region_Pic_BdTopo",
+                "srs": "epsg:2154"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Départements",
+          "description": "Limites des départements",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Départements - GEOFLA - polygones",
+              "description": "Limites des départements basées sur la base de données GEOFLA de l'IGN (objets surfaciques)",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "autres:ign_geofla_departements",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Départements - GEOFLA - polylignes",
+              "description": "Limites des départements basées sur la base de données GEOFLA de l'IGN (objets linéaires)",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "autres:ign_geofla_limites_dept",
+                "srs": "epsg:2154"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Pays de Picardie",
+          "description": "Pays de Picardie",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Pays de Picardie - GEOFLA - polygones",
+              "description": "Limites des pays de Picardie basées sur la base de données GEOFLA de l'IGN (objets surfaciques)",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "reg22:pays_picardie_BY_geofla",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Pays de Picardie - BDTOPO - polygones",
+              "description": "Limites des pays de Picardie basées sur la base de données BDTOPO de l'IGN (objets surfaciques)",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "reg22:pays_picardie_BY_bdtopo",
+                "srs": "epsg:2154"
+              }
+            }
+          ]
+        },
+        {
+          "title": "EPCI à fiscalité propre",
+          "description": "EPCI à fiscalité propre",
+          "type": "folder",
+          "children": [
+            {
+              "title": "EPCI - GEOFLA - polygones",
+              "description": "Limites des EPCI à fiscalité propre basées sur la base de données GEOFLA de l'IGN (objets surfaciques)",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "reg22:epci_reels_picardie_BY_geofla",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "EPCI - BDTOPO - polygones",
+              "description": "Limites des EPCI à fiscalité propre basées sur la base de données BDTOPO de l'IGN (objets surfaciques)",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "reg22:epci_reels_picardie_BY_bdtopo",
+                "srs": "epsg:2154"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Aménagement & urbanisme",
+      "description": "Données concernant l'aménagement et l'urbanisme",
+      "type": "folder",
+      "children": [
+        {
+          "title": "SCoT",
+          "description": "Schéma de Cohérence Territoriale",
+          "type": "folder",
+          "status": "warn",
+          "children": []
+        },
+        {
+          "title": "PLU, PLUI et cartes communales",
+          "description": "PLU, PLUI et cartes communales",
+          "type": "folder",
+          "status": "warn",
+          "children": []
+        },
+        {
+          "title": "SUP",
+          "description": "Servitudes d'utilité publique",
+          "type": "folder",
+          "status": "warn",
+          "children": []
+        },
+        {
+          "title": "Parcs naturels régionaux",
+          "description": "Parcs naturels régionaux",
+          "type": "folder",
+          "status": "warn",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Transports",
+      "description": "Données concernant les transports",
+      "type": "folder",
+      "children": [
+        {
+          "title": "Transport Express Régional",
+          "description": "Transport Express Régional",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Lignes du réseau de transport régional",
+              "description": "Lignes du réseau de transport régional",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "reg22:reseau_TER_100_L93",
+                "srs": "epsg:2154"
+              },
+              "children": [
+                {
+                  "title": "Lignes routières du réseau de transport régional",
+                  "description": "Lignes routières du réseau de transport régional",
+                  "type": "wfs_feature_type_filter",
+                  "params": {
+                    "filter": "<Filter><PropertyIsEqualTo><PropertyName>AUTOCAR</PropertyName><Literal>1</Literal></PropertyIsEqualTo></Filter>"
+                  }
+                },
+                {
+                  "title": "Lignes ferroviaires du réseau de transport régional",
+                  "description": "Lignes ferroviaires du réseau de transport régional",
+                  "type": "wfs_feature_type_filter",
+                  "params": {
+                    "filter": "<Filter><PropertyIsEqualTo><PropertyName>AUTOCAR</PropertyName><Literal>0</Literal></PropertyIsEqualTo></Filter>"
+                  }
+                },
+                {
+                  "title": "Lignes ferroviaires à grande vitesse",
+                  "description": "Lignes ferroviaires à grande vitesse",
+                  "type": "wfs_feature_type_filter",
+                  "params": {
+                    "filter": "<Filter><PropertyIsEqualTo><PropertyName>AUTOCAR</PropertyName><Literal>2</Literal></PropertyIsEqualTo></Filter>"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Lignes routières du réseau de transport régional",
+              "description": "Lignes routières du réseau de transport régional",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "filter": "<Filter><PropertyIsEqualTo><PropertyName>AUTOCAR</PropertyName><Literal>1</Literal></PropertyIsEqualTo></Filter>",
+                "version": "1.0.0",
+                "name": "reg22:reseau_TER_100_L93",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Gares et points d'arrêt ferroviaires",
+              "description": "Gares et points d'arrêt ferroviaires",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=e8b71073-144a-44c0-9a03-2d52440b3afc",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "reg22:sommet_ferrovaire4TER_gare_avril2012",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Arrêts des lignes routières régionales",
+              "description": "Points d'arrêt routiers du réseau de Transport Express Régional de Picardie",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=2359ebf7-8e2f-4abb-bdeb-43caad02f99d",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "reg22:points_arret_LRR",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Taxi TER",
+              "description": "Taxi TER",
+              "type": "wfs_feature_type",
+              "status": "warn",
+              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=2359ebf7-8e2f-4abb-bdeb-43caad02f99d",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "reg22:points_arret_LRR",
+                "srs": "epsg:2154"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Transport fluvial",
+          "description": "Transport fluvial",
+          "type": "folder",
+          "status": "warn",
+          "children": []
+        },
+        {
+          "title": "Transport maritime",
+          "description": "Transport maritime",
+          "type": "folder",
+          "status": "warn",
+          "children": []
+        },
+        {
+          "title": "Transport aérien",
+          "description": "Transport aérien",
+          "type": "folder",
+          "status": "warn",
+          "children": []
+        },
+        {
+          "title": "Aménagements cyclables",
+          "description": "Aménagements cyclables",
+          "type": "folder",
+          "status": "warn",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Éducation & formation",
+      "description": "Données concernant l'enseignement, la formation et l'éducation",
+      "type": "folder",
+      "children": [
+        {
+          "title": "Établissements d'enseignement secondaire",
+          "description": "Données relatives aux établissements d'enseignement secondaire",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Lycées de Picardie - adresse",
+              "description": "Localisation à l'adresse des lycées publics et privés de Picardie",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "reg22:lycees_adresses",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Collèges publiques de l'Aisne",
+              "description": "Localisation des collèges publiques de l'Aisne",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "dept02:COLLEGES_AISNE",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Collèges publiques de l'Oise",
+              "description": "Localisation des collèges publiques de l'Oise",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "dept60:Colleges_Publics_CG60",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Collèges publiques de la Somme",
+              "description": "Localisation des collèges publiques de la Somme",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://geo.somme.fr/arcgis/services/SIG_CG_SOMME/MapServer/WFSServer",
+                "version": "1.0.0",
+                "name": "ENS_CANTON_COLLEGE:Colleges",
+                "srs": "epsg:2154"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Établissements d'enseignement supérieur",
+          "description": "Données relatives aux établissements d'enseignement supérieur",
+          "type": "folder",
+          "status": "warn",
+          "children": []
+        },
+        {
+          "title": "Centres de Formation d'Apprentis (CFA)",
+          "description": "Données relatives aux centres de formation d'apprentis",
+          "type": "folder",
+          "status": "warn",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Activités économiques",
+      "description": "Données concernant les activités économiques",
+      "type": "folder",
+      "children": [
+        {
+          "title": "Pôles d'activités économiques",
+          "description": "Pôles d'activités économiques",
+          "type": "wfs_feature_type",
+          "status": "warn",
+          "params": {
+            "url": "http://www.geopicardie.fr/geoserver/wfs",
+            "version": "1.0.0",
+            "name": "geopicardie:xxx",
+            "srs": "epsg:2154"
+          }
+        },
+        {
+          "title": "Sites d'activités économiques",
+          "description": "Sites d'activités économiques",
+          "type": "wfs_feature_type",
+          "params": {
+            "url": "http://www.geopicardie.fr/geoserver/wfs",
+            "version": "1.0.0",
+            "name": "geopicardie:activite_eco_sites",
+            "srs": "epsg:2154"
+          }
+        },
+        {
+          "title": "Localisation des établissements",
+          "description": "Localisation des établissements",
+          "type": "wfs_feature_type",
+          "status": "warn",
+          "params": {
+            "url": "http://www.geopicardie.fr/geoserver/wfs",
+            "version": "1.0.0",
+            "name": "geopicardie:xxx",
+            "srs": "epsg:2154"
+          }
+        },
+        {
+          "title": "Zonage des Aides à Finalités Régionales en Picardie",
+          "description": "Zonage communal et infracommunal pour les AFR (Aides à finalités régionales) en Picardie pour la période 2014-2020. Seule la commune d'Amiens est découpée en zones infracommunales.",
+          "type": "wfs_feature_type",
+          "status": "warn",
+          "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=bc4d0c39-897c-470e-932c-7cfebaf59e91",
+          "params": {
+            "url": "http://www.geopicardie.fr/geoserver/wfs",
+            "version": "1.0.0",
+            "name": "reg22:zonage_AFR_Picardie__2014_2020",
+            "srs": "epsg:2154"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Environnement",
+      "description": "Données concernant l'environnement : faune, flore et paysages",
+      "type": "folder",
+      "children": [
+        {
+          "title": "Espaces naturels protégés",
+          "description": "Espaces naturels protégés",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Réserves naturelles",
+              "description": "Réserves naturelles",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "Réserves naturelles nationales (MNHN-INPN)",
+                  "description": "Réserves naturelles nationales provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
+                  "type": "wfs_feature_type",
+                  "metadata_url": "http://www.geocatalogue.fr/geocat/Detail.do?fileIdentifier=97792AFC-1A3E-4F15-8872-076489973156",
+                  "params": {
+                    "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
+                    "version": "1.0.0",
+                    "name": "Reserves_naturelles_nationales",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Réserves naturelles régionales (MNHN-INPN)",
+                  "description": "Réserves naturelles régionales provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
+                    "version": "1.0.0",
+                    "name": "Reserves_naturelles_regionales",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Espaces naturels sensibles",
+              "description": "Espaces naturels sensibles",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "Espaces naturels sensibles de l'Aisne",
+                  "description": "Périmètres des ENS de l'Aisne",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "dept02:ENS_CG02",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Espaces naturels sensibles de l'Oise",
+                  "description": "Périmètres des ENS de l'Oise",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://www.geopicardie.fr/geoserver/wfs",
+                    "version": "1.0.0",
+                    "name": "dept60:ENS_CG60",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Espaces naturels sensibles de la Somme",
+                  "description": "Périmètres des ENS de la Somme",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://geo.somme.fr/arcgis/services/SIG_CG_SOMME/MapServer/WFSServer",
+                    "version": "1.0.0",
+                    "name": "ENS_CANTON_COLLEGE:Espaces_naturels_sensibles",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Parcs naturels",
+              "description": "Parcs naturels",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "Parcs naturels régionaux (MNHN-INPN)",
+                  "description": "Parcs naturels régionaux provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
+                  "type": "wfs_feature_type",
+                  "metadata_url": "http://www.geocatalogue.fr/Detail.do?id=158548",
+                  "params": {
+                    "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
+                    "version": "1.0.0",
+                    "name": "Parcs_naturels_regionaux",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Parcs naturels marins (MNHN-INPN)",
+                  "description": "Parcs naturels marins provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
+                  "type": "wfs_feature_type",
+                  "metadata_url": "http://www.geocatalogue.fr/Detail.do?id=158557",
+                  "params": {
+                    "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
+                    "version": "1.0.0",
+                    "name": "Parc_naturel_marin",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Inventaires nature-biodiversité",
+          "description": "Inventaires nature-biodiversité",
+          "type": "folder",
+          "children": [
+            {
+              "title": "ZICO (MNHN-INPN)",
+              "description": "Zone d'importance pour la conservation des oiseaux provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://metadata.carmen.developpement-durable.gouv.fr/geosource-27/apps/search/index.html#uuid=48ad4520-17fa-4f99-83c6-7d28185169fb",
+              "params": {
+                "url": "http://ws.carmen.developpement-durable.gouv.fr/cgi-bin/mapserv?map=/mnt/data_carmen/PIC/Publication/patrimoine_naturel_de_picardie.map",
+                "version": "1.0.0",
+                "name": "layer10",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "ZNIEFF",
+              "description": "ZNIEFF",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "ZNIEFF 1 continentales (DREAL Picardie)",
+                  "description": "Zones Naturelles d'Intérêt Ecologique, Faunistique et Floristique de type I provenant de la DREAL Picardie",
+                  "type": "wfs_feature_type",
+                  "metadata_url": "http://metadata.carmen.developpement-durable.gouv.fr/geosource-27/apps/search/index.html#uuid=748db929-0c16-4e5f-bbeb-5518819c710b",
+                  "params": {
+                    "url": "http://ws.carmen.developpement-durable.gouv.fr/cgi-bin/mapserv?map=/mnt/data_carmen/PIC/Publication/patrimoine_naturel_de_picardie.map",
+                    "version": "1.0.0",
+                    "name": "layer59",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "ZNIEFF 2 continentales (DREAL Picardie)",
+                  "description": "Zones Naturelles d'Intérêt Ecologique, Faunistique et Floristique de type II provenant de la DREAL Picardie",
+                  "type": "wfs_feature_type",
+                  "metadata_url": "http://metadata.carmen.developpement-durable.gouv.fr/geosource-27/apps/search/index.html#uuid=1a6c8f40-5e90-497f-a619-0b4de511ba23",
+                  "params": {
+                    "url": "http://ws.carmen.developpement-durable.gouv.fr/cgi-bin/mapserv?map=/mnt/data_carmen/PIC/Publication/patrimoine_naturel_de_picardie.map",
+                    "version": "1.0.0",
+                    "name": "layer60",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "ZNIEFF 1 continentales (MNHN-INPN)",
+                  "description": "Zones Naturelles d'Intérêt Ecologique, Faunistique et Floristique de type I provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
+                    "version": "1.0.0",
+                    "name": "Znieff1",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "ZNIEFF 2 continentales (MNHN-INPN)",
+                  "description": "Zones Naturelles d'Intérêt Ecologique, Faunistique et Floristique de type II provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
+                  "type": "wfs_feature_type",
+                  "params": {
+                    "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
+                    "version": "1.0.0",
+                    "name": "Znieff2",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Zones à dominante humide",
+              "description": "Zones à dominante humide",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "Zones à dominante humide (DREAL Picardie)",
+                  "description": "Zones à dominante humide provenant de la DREAL Picardie",
+                  "type": "wfs_feature_type",
+                  "metadata_url": "http://metadata.carmen.developpement-durable.gouv.fr/geosource-27/apps/search/index.html#uuid=3bcac346-c5df-45b7-a498-8297ccaf1198",
+                  "params": {
+                    "url": "http://ws.carmen.developpement-durable.gouv.fr/cgi-bin/mapserv?map=/mnt/data_carmen/PIC/Publication/patrimoine_naturel_de_picardie.map",
+                    "version": "1.0.0",
+                    "name": "layer28",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Natura 2000",
+              "description": "Natura 2000",
+              "type": "folder",
+              "children": [
+                {
+                  "title": "Natura 2000 - ZPS (MNHN-INPN)",
+                  "description": "Zones de protection spéciale provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
+                  "type": "wfs_feature_type",
+                  "metadata_url": "http://www.geocatalogue.fr/Detail.do?id=158570",
+                  "params": {
+                    "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
+                    "version": "1.0.0",
+                    "name": "Zones_de_protection_speciale",
+                    "srs": "epsg:2154"
+                  }
+                },
+                {
+                  "title": "Natura 2000 - SIC (MNHN-INPN)",
+                  "description": "Sites d'importance communautaire provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
+                  "type": "wfs_feature_type",
+                  "metadata_url": "http://www.geocatalogue.fr/Detail.do?id=158570",
+                  "params": {
+                    "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
+                    "version": "1.0.0",
+                    "name": "Sites_d_importance_communautaire",
+                    "srs": "epsg:2154"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Trames vertes et bleues",
+              "description": "Trames vertes et bleues",
+              "type": "folder",
+              "status": "warn",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Paysages",
+          "description": "Paysages",
+          "type": "folder",
+          "status": "warn",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Climat, air et énergie",
+      "description": "Données concernant le climat, la qualité de l'air et l'énergie",
+      "type": "folder",
+      "children": [
+        {
+          "title": "Énergie éolienne",
+          "description": "Données relatives à l'énergie éolienne",
+          "type": "folder",
+          "children": [
+            {
+              "title": "Vitesse du vent à 40 m en Picardie (2002)",
+              "description": "Modélisation de la vitesse du vent à 40 m au-dessus du sol en Picardie",
+              "type": "wms_layer",
+              "params": {
+                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "name": "geopicardie:vent40m",
+                "format": "image/png",
+                "srs": "epsg:2154"
+              },
+              "children": [
+                {
+                  "title": "Dégradé du bleu vers le rouge",
+                  "type": "wms_layer_style",
+                  "params": {
+                    "name": "vent_couleurs_rouge_bleu"
+                  }
+                },
+                {
+                  "title": "Dégradé de gris et de transparence",
+                  "type": "wms_layer_style",
+                  "params": {
+                    "name": "vent_niveaux_gris_et_transparence"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Zones d'implantation favorables",
+              "description": "Limites des zones d'implantation favorables des parcs éoliens",
+              "type": "wms_layer",
+              "metadata_url": "http://www.sigpicardie.fr/geonetwork/apps/search/?id=6813",
+              "params": {
+                "url": "http://carto.sigpicardie.fr/cgi-bin/mapserv",
+                "name": "EOLIEN-SchemaRegional-Zonesfavorables",
+                "format": "image/png",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Zones d'implantation favorables sous conditions",
+              "description": "Limites des zones d'implantation favorables sous conditions des parcs éoliens",
+              "type": "wms_layer",
+              "metadata_url": "http://www.sigpicardie.fr/geonetwork/apps/search/?id=6814",
+              "params": {
+                "url": "http://carto.sigpicardie.fr/cgi-bin/mapserv",
+                "name": "EOLIEN-SchemaRegional-Zonesfavorablessousconditions",
+                "format": "image/png",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Implantations d'éoliennes dans l'Aisne",
+              "description": "Localisation des mats d'éoliennes dans l'Aisne",
+              "type": "wms_layer",
+              "params": {
+                "url": "http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/DDT_02/SIG_eolien_DDT02.www.map",
+                "name": "c_N_MAT_EOLIEN_CONSTRUITS_002",
+                "format": "image/png",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Implantations d'éoliennes dans l'Oise",
+              "description": "Localisation des mats d'éoliennes dans l'Oise",
+              "type": "wms_layer",
+              "params": {
+                "url": "http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/DDT_60/Eolien_usageWMS.www.map",
+                "name": "c_Eoliennes_Construites",
+                "format": "image/png",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Implantations d'éoliennes dans la Somme",
+              "description": "Localisation des mats d'éoliennes dans la Somme",
+              "type": "wms_layer",
+              "params": {
+                "url": "http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/DDTM_80/eolien_internet.www.map",
+                "name": "c_N_MAT_EOLIEN_code_8",
+                "format": "image/png",
+                "srs": "epsg:2154"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Risques",
+      "description": "Données concernant les risques",
+      "type": "folder",
+      "children": []
+    },
+    {
+      "title": "Culture, tourisme et loisir",
+      "description": "Données concernant le patrimoine culturel, le tourisme et les activités de loisir",
+      "type": "folder",
+      "children": [
+        {
+          "title": "Patrimoine",
+          "description": "Patrimoine",
+          "status": "warn",
+          "type": "folder"
+        },
+        {
+          "title": "Itinéraires et circuits",
+          "description": "Itinéraires et circuits",
+          "status": "warn",
+          "type": "folder"
+        },
+        {
+          "title": "Équipements touristiques",
+          "description": "Équipements touristiques",
+          "status": "warn",
+          "type": "folder"
+        }
+      ]
+    }
+  ]
+}
