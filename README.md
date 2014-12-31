@@ -52,6 +52,9 @@ L'arbre des ressources n'est pas entièrement renseigné, par conséquent, le do
 Notes
 -----
 
+Version 0.4.4 :
+* correction des conditions de téléchargement du fichier de configuration
+
 Version 0.4.3 :
 * téléchargement du fichier de configuration sans utiliser de cache (utilisation de l'en-tête HTTP Cache-Control: no-cache). Permet d'avoir le fichier de configuration le plus à jour
 

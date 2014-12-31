@@ -36,12 +36,27 @@ class PluginGeoPicardie:
 
     config_struct = None
     config_string = ""
-    self.downloadConfigFile()
+    if self.needDownloadResourcesTreeFile():
+      self.downloadResourcesTreeFile()
+
+    self.updateResourcesTree()
 
 
-  def downloadConfigFile(self):
+  def needDownloadResourcesTreeFile(self):
     """
-    Download and read the config file (containing the resource tree)
+    Do we need to download a new version of the resources tree file?
+    2 possible reasons:
+    - the user wants it to be downloading at plugin start up
+    - the file is currently missing
+    """
+
+    return (GpicGlobals.Instance().CONFIG_FILES_DOWNLOAD_AT_STARTUP > 0 or
+      not os.path.isfile(GpicGlobals.Instance().config_file_path))
+
+
+  def downloadResourcesTreeFile(self):
+    """
+    Download the resources tree file
     """
 
     self.ressources_tree = None
@@ -49,32 +64,51 @@ class PluginGeoPicardie:
     try:
 
       # Download the config file
-      if GpicGlobals.Instance().CONFIG_FILES_DOWNLOAD_AT_STARTUP > 0 :
-        config_file_url = GpicGlobals.Instance().CONFIG_FILE_URLS[0]
-        http_req = urllib2.Request(config_file_url)
-        http_req.add_header("Cache-Control", "no-cache")
-        config_file = urllib2.urlopen(http_req)
-        with open(GpicGlobals.Instance().config_file_path, 'wb') as f:
-          f.write(config_file.read())
+      config_file_url = GpicGlobals.Instance().CONFIG_FILE_URLS[0]
+      http_req = urllib2.Request(config_file_url)
+      http_req.add_header("Cache-Control", "no-cache")
+      config_file = urllib2.urlopen(http_req)
+      with open(GpicGlobals.Instance().config_file_path, 'wb') as f:
+        f.write(config_file.read())
+
+
+    except Exception as e:
+      short_message = u"Le téléchargement du fichier de configuration du plugin {0} a échoué.".format(GpicGlobals.Instance().PLUGIN_TAG)
+      self.iface.messageBar().pushMessage("Erreur", short_message, level=QgsMessageBar.CRITICAL)
+
+      long_message = u"{0}\n{1}\n{2}".format(short_message, e.__doc__, e.message)
+      QgsMessageLog.logMessage(long_message, tag=GpicGlobals.Instance().PLUGIN_TAG, level=QgsMessageLog.CRITICAL)
+
+
+  def updateResourcesTree(self):
+    """
+    Read the resources tree file and update the GUI
+    """
+
+    self.ressources_tree = None
+
+    resourcesTreeFile = GpicGlobals.Instance().config_file_path
+    if not os.path.isfile(resourcesTreeFile):
+      message = u"Le fichier de configuration du plugin {0} n'a pas pu être trouvé.".format(GpicGlobals.Instance().PLUGIN_TAG)
+      self.iface.messageBar().pushMessage("Erreur", message, level=QgsMessageBar.CRITICAL)
+      QgsMessageLog.logMessage(message, tag=GpicGlobals.Instance().PLUGIN_TAG, level=QgsMessageLog.CRITICAL)
+      return
+
+
+    try:
 
       # Read the config file
-      with open(GpicGlobals.Instance().config_file_path) as f:
+      with open(resourcesTreeFile) as f:
         config_string = "".join(f.readlines())
         config_struct = json.loads(config_string)
         self.ressources_tree = FavoriteTreeNodeFactory().build_tree(config_struct)
 
-    except IOError:
-      message = u"Le fichier de configuration du plugin {0} n'a pas pu être trouvé.".format(GpicGlobals.Instance().PLUGIN_TAG)
-      self.iface.messageBar().pushMessage("Erreur", message, level=QgsMessageBar.CRITICAL)
-      QgsMessageLog.logMessage(message, tag=GpicGlobals.Instance().PLUGIN_TAG, level=QgsMessageLog.CRITICAL)
-    except ValueError:
-      message = u"Le fichier de configuration du plugin {0} contient des erreurs.".format(GpicGlobals.Instance().PLUGIN_TAG)
-      self.iface.messageBar().pushMessage("Erreur", message, level=QgsMessageBar.CRITICAL)
-      QgsMessageLog.logMessage(message, tag=GpicGlobals.Instance().PLUGIN_TAG, level=QgsMessageLog.CRITICAL)
-    except AttributeError:
-      message = u"Le fichier de configuration du plugin {0} contient des erreurs.".format(GpicGlobals.Instance().PLUGIN_TAG)
-      self.iface.messageBar().pushMessage("Erreur", message, level=QgsMessageBar.CRITICAL)
-      QgsMessageLog.logMessage(message, tag=GpicGlobals.Instance().PLUGIN_TAG, level=QgsMessageLog.CRITICAL)
+    except Exception as e:
+      short_message = u"La lecture du fichier de configuration du plugin {0} a produit des erreurs.".format(GpicGlobals.Instance().PLUGIN_TAG)
+      self.iface.messageBar().pushMessage("Erreur", short_message, level=QgsMessageBar.CRITICAL)
+
+      long_message = u"{0}\n{1}\n{2}".format(short_message, e.__doc__, e.message)
+      QgsMessageLog.logMessage(long_message, tag=GpicGlobals.Instance().PLUGIN_TAG, level=QgsMessageLog.CRITICAL)
 
 
   def initGui(self):
