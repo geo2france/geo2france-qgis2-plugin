@@ -174,10 +174,10 @@ class PluginGeoPicardie:
     dialog.exec_()
 
     if GpicGlobals.Instance().RESOURCES_TREE_NEED_DOWNLOAD:
-      self.downloadConfigFile()
+      self.downloadResourcesTreeFile()
 
     if GpicGlobals.Instance().RESOURCES_TREE_NEED_RELOAD:
-      self.dock.setTreeContents(self.ressources_tree)
+      self.updateResourcesTree()
 
     GpicGlobals.Instance().resetFlags()
 
