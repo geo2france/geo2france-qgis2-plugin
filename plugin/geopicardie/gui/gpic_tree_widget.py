@@ -48,11 +48,10 @@ class GpicTreeWidget(QTreeWidget):
       """
       """
 
-      if (not GpicGlobals.Instance().MASK_RESOURCES_WITH_WARN_STATUS or subtree.status != GpicGlobals.Instance().NODE_STATUS_WARN):
-        subitem = GpicTreeWidgetItem(parent_item, subtree)
-        if subtree.children != None and len(subtree.children) > 0:
-          for child in subtree.children:
-            createSubItem(child, subitem)
+      subitem = GpicTreeWidgetItem(parent_item, subtree)
+      if subtree.children != None and len(subtree.children) > 0:
+        for child in subtree.children:
+          createSubItem(child, subitem)
 
     self.clear()
 
@@ -61,6 +60,33 @@ class GpicTreeWidget(QTreeWidget):
     elif resources_tree.children != None and len(resources_tree.children) > 0:
       for child in resources_tree.children:
         createSubItem(child, self)
+
+
+  def updateVisibilityOfTreeItems(self):
+    """
+    Update the visibility of tree items:
+    - visibility of empty groups
+    - visibility of items with status = warn
+    """
+
+    hide_items_with_warn_status = GpicGlobals.Instance().HIDE_RESOURCES_WITH_WARN_STATUS
+    hide_empty_groups = GpicGlobals.Instance().HIDE_EMPTY_GROUPS
+
+    def updateVisibilityOfSubitems(item, hide_empty_groups, hide_items_with_warn_status):
+
+      if hasattr(item, "gpic_data") and item.gpic_data.status == GpicGlobals.Instance().NODE_STATUS_WARN:
+        item.setHidden(hide_items_with_warn_status)
+
+      child_count = item.childCount()
+      if child_count > 0:
+        for i in range(child_count):
+          sub_item = item.child(i)
+          if sub_item.isAnEmptyGroup():
+            sub_item.setHidden(hide_empty_groups)
+
+          updateVisibilityOfSubitems(sub_item, hide_empty_groups, hide_items_with_warn_status)
+
+    updateVisibilityOfSubitems(self.invisibleRootItem(), hide_empty_groups, hide_items_with_warn_status)
 
 
   def treeItemDoubleClicked(self, item, column):

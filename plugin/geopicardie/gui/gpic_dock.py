@@ -48,6 +48,17 @@ class GpicDockWidget(QDockWidget):
     """
 
     self.treeWidget.setTreeContents(resources_tree)
+    self.updateVisibilityOfTreeItems()
+
+
+  def updateVisibilityOfTreeItems(self):
+    """
+    Update the visibility of tree items:
+    - visibility of empty groups
+    - visibility of items with status = warn
+    """
+
+    self.treeWidget.updateVisibilityOfTreeItems()
 
 
   def dockStateChanged(self, floating):
@@ -58,4 +69,3 @@ class GpicDockWidget(QDockWidget):
       self.resize(300, 450)
     else:
       pass
-
