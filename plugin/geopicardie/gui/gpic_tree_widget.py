@@ -48,7 +48,7 @@ class GpicTreeWidget(QTreeWidget):
       """
       """
 
-      if (not GpicGlobals.Instance().MASK_RESOURCES_WITH_WARN_STATUS or subtree.status != GpicGlobals.Instance().NODE_STATUS_WARN):
+      if (not (GpicGlobals.Instance().HIDE_RESOURCES_WITH_WARN_STATUS in (u"1", "1", 1, True) and subtree.status == GpicGlobals.Instance().NODE_STATUS_WARN)):
         subitem = GpicTreeWidgetItem(parent_item, subtree)
         if subtree.children != None and len(subtree.children) > 0:
           for child in subtree.children:
@@ -61,6 +61,31 @@ class GpicTreeWidget(QTreeWidget):
     elif resources_tree.children != None and len(resources_tree.children) > 0:
       for child in resources_tree.children:
         createSubItem(child, self)
+
+
+  def showEmptyGroups(self, visible=None):
+    """
+    Make visible or invisible the empty tree groups
+    Visible can be None, True or False
+    """
+
+    if visible == None:
+      if GpicGlobals.Instance().HIDE_EMPTY_GROUPS in (u"1", "1", 1, True):
+        visible = False
+      else:
+        visible = True
+
+    def setVisibilityOfEmptySubGroups(item, visible):
+
+      child_count = item.childCount()
+      if child_count > 0:
+        for i in range(child_count):
+          sub_item = item.child(i)
+          if sub_item.isAnEmptyGroup():
+            sub_item.setHidden(not visible)
+          setVisibilityOfEmptySubGroups(sub_item, visible)
+
+    setVisibilityOfEmptySubGroups(self.invisibleRootItem(), visible)
 
 
   def treeItemDoubleClicked(self, item, column):

@@ -43,19 +43,17 @@ class GpicGlobals():
   ICON_RASTER_LAYER_FILE_NAME = "mIconRaster.svg"
 
   # Config files dir
-  CONFIG_FILES_DOWNLOAD_AT_STARTUP = 0 # 1 for yes, 0 for no
+  CONFIG_FILES_DOWNLOAD_AT_STARTUP = u"0" # 1 for yes, 0 for no
   CONFIG_DIR_NAME = "config"
   CONFIG_FILE_NAMES = ["config.json"]
   CONFIG_FILE_URLS = ["https://raw.githubusercontent.com/bchartier/qgis-favorites-resources-trees/master/geopicardie.json"]
 
-  # Mask resources with status = warn
-  MASK_RESOURCES_WITH_WARN_STATUS = 1 # 1 for yes, 0 for no
+  # Hide resources with status = warn
+  HIDE_RESOURCES_WITH_WARN_STATUS = u"1" # 1 for yes, 0 for no
 
-  # Flag to signal that the resources tree need to be reloaded
-  RESOURCES_TREE_NEED_RELOAD = False
+  # Hide empty group in the resources tree
+  HIDE_EMPTY_GROUPS = u"1" # 1 for yes, 0 for no
 
-  # Flag to signal that the resources tree need to be downloaded
-  RESOURCES_TREE_NEED_DOWNLOAD = False
 
   def __init__(self):
     """
@@ -89,7 +87,8 @@ class GpicGlobals():
     self.CONFIG_DIR_NAME = s.value(u"{0}/config_dir_name".format(self.PLUGIN_TAG), self.CONFIG_DIR_NAME)
     self.CONFIG_FILE_NAMES = s.value(u"{0}/config_file_names".format(self.PLUGIN_TAG), self.CONFIG_FILE_NAMES)
     self.CONFIG_FILE_URLS = s.value(u"{0}/config_file_urls".format(self.PLUGIN_TAG), self.CONFIG_FILE_URLS)
-    self.MASK_RESOURCES_WITH_WARN_STATUS = s.value(u"{0}/mask_resources_with_warn_status".format(self.PLUGIN_TAG), self.MASK_RESOURCES_WITH_WARN_STATUS)
+    self.HIDE_RESOURCES_WITH_WARN_STATUS = s.value(u"{0}/hide_resources_with_warn_status".format(self.PLUGIN_TAG), self.HIDE_RESOURCES_WITH_WARN_STATUS)
+    self.HIDE_EMPTY_GROUPS = s.value(u"{0}/hide_empty_groups".format(self.PLUGIN_TAG), self.HIDE_EMPTY_GROUPS)
 
     self.config_dir_path = os.path.join(self.plugin_path, self.CONFIG_DIR_NAME)
     self.config_file_path = os.path.join(self.config_dir_path, self.CONFIG_FILE_NAMES[0])
@@ -104,8 +103,9 @@ class GpicGlobals():
     """
 
     s = QSettings()
-    s.setValue(u"{0}/mask_resources_with_warn_status".format(self.PLUGIN_TAG), 1)
-    s.setValue(u"{0}/config_files_download_at_startup".format(self.PLUGIN_TAG), 0)
+    s.setValue(u"{0}/hide_resources_with_warn_status".format(self.PLUGIN_TAG), u"1")
+    s.setValue(u"{0}/hide_empty_groups".format(self.PLUGIN_TAG), u"1")
+    s.setValue(u"{0}/config_files_download_at_startup".format(self.PLUGIN_TAG), u"0")
     s.setValue(u"{0}/config_file_names".format(self.PLUGIN_TAG), ["config.json"])
     s.setValue(u"{0}/config_file_urls".format(self.PLUGIN_TAG), ["https://raw.githubusercontent.com/bchartier/qgis-favorites-resources-trees/master/geopicardie.json"])
 
@@ -118,19 +118,3 @@ class GpicGlobals():
     s = QSettings()
     s.setValue(u"{0}/{1}".format(self.PLUGIN_TAG, setting), value)
     self.reloadGlobalsFromQgisSettings()
-
-    if setting in ("config_file_urls", "config_dir_name", "config_file_names"):
-      self.RESOURCES_TREE_NEED_DOWNLOAD = True
-      self.RESOURCES_TREE_NEED_RELOAD = True
-
-    if setting in ("mask_resources_with_warn_status"):
-      self.RESOURCES_TREE_NEED_RELOAD = True
-
-
-  def resetFlags(self):
-    """
-    Reset the RESOURCES_TREE_NEED_DOWNLOAD and RESOURCES_TREE_NEED_RELOAD flags
-    """
-
-    self.RESOURCES_TREE_NEED_DOWNLOAD = False
-    self.RESOURCES_TREE_NEED_RELOAD = False

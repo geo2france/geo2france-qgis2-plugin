@@ -48,6 +48,16 @@ class GpicDockWidget(QDockWidget):
     """
 
     self.treeWidget.setTreeContents(resources_tree)
+    self.showEmptyGroups(None)
+
+
+  def showEmptyGroups(self, visible=None):
+    """
+    Make visible or invisible the empty tree groups
+    Visible can be None, True or False
+    """
+
+    self.treeWidget.showEmptyGroups(visible)
 
 
   def dockStateChanged(self, floating):
@@ -58,4 +68,3 @@ class GpicDockWidget(QDockWidget):
       self.resize(300, 450)
     else:
       pass
-

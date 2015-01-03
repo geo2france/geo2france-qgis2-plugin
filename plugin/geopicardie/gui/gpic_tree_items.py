@@ -3,7 +3,7 @@
 from PyQt4.QtCore import *
 from PyQt4 import QtGui
 
-# from geopicardie.utils.plugin_globals import GpicGlobals
+from geopicardie.utils.plugin_globals import GpicGlobals
 
 
 
@@ -148,10 +148,6 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
 
     menu = QtGui.QMenu()
 
-    # report_issue_action = menu.addAction(u"Signaler une anomalie...")
-    # report_issue_action.triggered.connect(self.runReportIssueAction)
-
-
     if self.gpic_data.can_be_added_to_map:
       add_to_map_action = menu.addAction(u"Ajouter à la carte")
       add_to_map_action.triggered.connect(self.runAddToMapAction)
@@ -169,3 +165,19 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
       expand_all_subitems_action.triggered.connect(self.runCollapseAllSubItemsAction)
 
     return menu
+
+
+  def isAnEmptyGroup(self):
+    """
+    Indicates if this tem is an empty group
+    """
+
+    child_count = self.childCount()
+
+    if child_count == 0 and self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_FOLDER:
+      return True
+    else:
+      for i in range(child_count):
+        if not self.child(i).isAnEmptyGroup(): return False
+
+    return False
