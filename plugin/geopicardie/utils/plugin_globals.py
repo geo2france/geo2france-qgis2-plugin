@@ -58,7 +58,14 @@ class GpicGlobals():
   def __init__(self):
     """
     """
-    pass
+    
+    self.default_qsettings = {
+        "CONFIG_FILES_DOWNLOAD_AT_STARTUP" : self.CONFIG_FILES_DOWNLOAD_AT_STARTUP,
+        "CONFIG_FILE_NAMES" : self.CONFIG_FILE_NAMES,
+        "CONFIG_FILE_URLS" : self.CONFIG_FILE_URLS,
+        "HIDE_RESOURCES_WITH_WARN_STATUS" : self.HIDE_RESOURCES_WITH_WARN_STATUS,
+        "HIDE_EMPTY_GROUPS" : self.HIDE_EMPTY_GROUPS
+        }
 
 
   def setPluginPath(self, plugin_path):
@@ -114,6 +121,13 @@ class GpicGlobals():
     s.setValue(u"{0}/config_files_download_at_startup".format(self.PLUGIN_TAG), u"0")
     s.setValue(u"{0}/config_file_names".format(self.PLUGIN_TAG), ["config.json"])
     s.setValue(u"{0}/config_file_urls".format(self.PLUGIN_TAG), ["https://raw.githubusercontent.com/bchartier/qgis-favorites-resources-trees/master/geopicardie.json"])
+
+
+  def getQgisSettingDefaultValue(self, setting):
+    """
+    """
+
+    return self.default_qsettings.get(setting, None)
 
 
   def setQgisSettingsValue(self, setting, value):
