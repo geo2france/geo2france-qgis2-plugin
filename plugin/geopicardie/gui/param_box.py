@@ -118,17 +118,17 @@ class ParamBox(QtGui.QDialog):
 
     # Download the file at startup
     self.download_cb.blockSignals(True)
-    self.download_cb.setChecked(GpicGlobals.Instance().CONFIG_FILES_DOWNLOAD_AT_STARTUP in (u"1", "1", 1, True))
+    self.download_cb.setChecked(GpicGlobals.Instance().CONFIG_FILES_DOWNLOAD_AT_STARTUP)
     self.download_cb.blockSignals(False)
 
     # Hide resources with a warn flag
     self.hide_resources_with_warn_status_cb.blockSignals(True)
-    self.hide_resources_with_warn_status_cb.setChecked(GpicGlobals.Instance().HIDE_RESOURCES_WITH_WARN_STATUS in (u"1", "1", 1))
+    self.hide_resources_with_warn_status_cb.setChecked(GpicGlobals.Instance().HIDE_RESOURCES_WITH_WARN_STATUS)
     self.hide_resources_with_warn_status_cb.blockSignals(False)
 
     # Hide empty groups in the resources tree
     self.hide_empty_groups_cb.blockSignals(True)
-    self.hide_empty_groups_cb.setChecked(GpicGlobals.Instance().HIDE_EMPTY_GROUPS in (u"1", "1", 1, True))
+    self.hide_empty_groups_cb.setChecked(GpicGlobals.Instance().HIDE_EMPTY_GROUPS)
     self.hide_empty_groups_cb.blockSignals(False)
 
 
@@ -139,16 +139,16 @@ class ParamBox(QtGui.QDialog):
     # Detect modifications
     fileUrlChanged = (self.config_file_url_edit.text() != GpicGlobals.Instance().CONFIG_FILE_URLS[0])
 
-    downloadAtStartupChanged = (self.download_cb.isChecked() != (GpicGlobals.Instance().CONFIG_FILES_DOWNLOAD_AT_STARTUP in (u"1", "1", 1, True)))
+    downloadAtStartupChanged = (self.download_cb.isChecked() != (GpicGlobals.Instance().CONFIG_FILES_DOWNLOAD_AT_STARTUP))
 
-    hideResourcesWithWarnStatusChanged = (self.hide_resources_with_warn_status_cb.isChecked() != (GpicGlobals.Instance().HIDE_RESOURCES_WITH_WARN_STATUS in (u"1", "1", 1, True)))
+    hideResourcesWithWarnStatusChanged = (self.hide_resources_with_warn_status_cb.isChecked() != (GpicGlobals.Instance().HIDE_RESOURCES_WITH_WARN_STATUS))
 
-    hideEmptyGroupsChanged = (self.hide_empty_groups_cb.isChecked() != (GpicGlobals.Instance().HIDE_EMPTY_GROUPS in (u"1", "1", 1, True)))
+    hideEmptyGroupsChanged = (self.hide_empty_groups_cb.isChecked() != (GpicGlobals.Instance().HIDE_EMPTY_GROUPS))
 
 
     # Init flags
-    self.needUpdateVisibilityOfEmptyGroups = hideEmptyGroupsChanged
-    self.needUpdateOfTreeContents = hideResourcesWithWarnStatusChanged or fileUrlChanged
+    self.needUpdateVisibilityOfTreeItems = hideEmptyGroupsChanged or hideResourcesWithWarnStatusChanged
+    self.needUpdateOfTreeContents = fileUrlChanged
     self.needSave = fileUrlChanged or downloadAtStartupChanged or hideResourcesWithWarnStatusChanged or hideEmptyGroupsChanged
 
     # Update state of the Save Button
@@ -206,15 +206,15 @@ class ParamBox(QtGui.QDialog):
     GpicGlobals.Instance().setQgisSettingsValue("config_file_urls", new_value)
 
     # Download the file at startup
-    new_value = u"1" if self.download_cb.isChecked() else u"0"
+    new_value = self.download_cb.isChecked()
     GpicGlobals.Instance().setQgisSettingsValue("config_files_download_at_startup", new_value)
 
     # Hide resources with a warn flag
-    new_value = u"1" if self.hide_resources_with_warn_status_cb.isChecked() else u"0"
+    new_value = self.hide_resources_with_warn_status_cb.isChecked()
     GpicGlobals.Instance().setQgisSettingsValue("hide_resources_with_warn_status", new_value)
     
     # Hide empty groups in the resources tree
-    new_value = u"1" if self.hide_empty_groups_cb.isChecked() else u"0"
+    new_value = self.hide_empty_groups_cb.isChecked()
     GpicGlobals.Instance().setQgisSettingsValue("hide_empty_groups", new_value)
 
     # Download, read the resources tree file and update the GUI
@@ -222,6 +222,10 @@ class ParamBox(QtGui.QDialog):
       downloadResourcesTreeFile(GpicGlobals.Instance().CONFIG_FILE_URLS[0])
       self.ressources_tree = FavoriteTreeNodeFactory(GpicGlobals.Instance().config_file_path).root_node
       self.tree_dock.setTreeContents(self.ressources_tree)
+
+    # Update the visibility of tree items
+    elif self.needUpdateVisibilityOfTreeItems:
+      self.tree_dock.updateVisibilityOfTreeItems()
 
     self.evaluateFlags()
 

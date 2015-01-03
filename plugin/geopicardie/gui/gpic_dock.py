@@ -48,16 +48,17 @@ class GpicDockWidget(QDockWidget):
     """
 
     self.treeWidget.setTreeContents(resources_tree)
-    self.showEmptyGroups(None)
+    self.updateVisibilityOfTreeItems()
 
 
-  def showEmptyGroups(self, visible=None):
+  def updateVisibilityOfTreeItems(self):
     """
-    Make visible or invisible the empty tree groups
-    Visible can be None, True or False
+    Update the visibility of tree items:
+    - visibility of empty groups
+    - visibility of items with status = warn
     """
 
-    self.treeWidget.showEmptyGroups(visible)
+    self.treeWidget.updateVisibilityOfTreeItems()
 
 
   def dockStateChanged(self, floating):

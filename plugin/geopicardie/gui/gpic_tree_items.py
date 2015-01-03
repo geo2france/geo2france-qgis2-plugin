@@ -174,10 +174,11 @@ class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
 
     child_count = self.childCount()
 
-    if child_count == 0 and self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_FOLDER:
-      return True
+    if child_count == 0:
+      return self.gpic_data.node_type == GpicGlobals.Instance().NODE_TYPE_FOLDER
     else:
       for i in range(child_count):
         if not self.child(i).isAnEmptyGroup(): return False
+      return True
 
     return False

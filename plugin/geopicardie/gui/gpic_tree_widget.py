@@ -48,11 +48,10 @@ class GpicTreeWidget(QTreeWidget):
       """
       """
 
-      if (not (GpicGlobals.Instance().HIDE_RESOURCES_WITH_WARN_STATUS in (u"1", "1", 1, True) and subtree.status == GpicGlobals.Instance().NODE_STATUS_WARN)):
-        subitem = GpicTreeWidgetItem(parent_item, subtree)
-        if subtree.children != None and len(subtree.children) > 0:
-          for child in subtree.children:
-            createSubItem(child, subitem)
+      subitem = GpicTreeWidgetItem(parent_item, subtree)
+      if subtree.children != None and len(subtree.children) > 0:
+        for child in subtree.children:
+          createSubItem(child, subitem)
 
     self.clear()
 
@@ -63,29 +62,31 @@ class GpicTreeWidget(QTreeWidget):
         createSubItem(child, self)
 
 
-  def showEmptyGroups(self, visible=None):
+  def updateVisibilityOfTreeItems(self):
     """
-    Make visible or invisible the empty tree groups
-    Visible can be None, True or False
+    Update the visibility of tree items:
+    - visibility of empty groups
+    - visibility of items with status = warn
     """
 
-    if visible == None:
-      if GpicGlobals.Instance().HIDE_EMPTY_GROUPS in (u"1", "1", 1, True):
-        visible = False
-      else:
-        visible = True
+    hide_items_with_warn_status = GpicGlobals.Instance().HIDE_RESOURCES_WITH_WARN_STATUS
+    hide_empty_groups = GpicGlobals.Instance().HIDE_EMPTY_GROUPS
 
-    def setVisibilityOfEmptySubGroups(item, visible):
+    def updateVisibilityOfSubitems(item, hide_empty_groups, hide_items_with_warn_status):
+
+      if hasattr(item, "gpic_data") and item.gpic_data.status == GpicGlobals.Instance().NODE_STATUS_WARN:
+        item.setHidden(hide_items_with_warn_status)
 
       child_count = item.childCount()
       if child_count > 0:
         for i in range(child_count):
           sub_item = item.child(i)
           if sub_item.isAnEmptyGroup():
-            sub_item.setHidden(not visible)
-          setVisibilityOfEmptySubGroups(sub_item, visible)
+            sub_item.setHidden(hide_empty_groups)
 
-    setVisibilityOfEmptySubGroups(self.invisibleRootItem(), visible)
+          updateVisibilityOfSubitems(sub_item, hide_empty_groups, hide_items_with_warn_status)
+
+    updateVisibilityOfSubitems(self.invisibleRootItem(), hide_empty_groups, hide_items_with_warn_status)
 
 
   def treeItemDoubleClicked(self, item, column):
