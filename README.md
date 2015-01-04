@@ -54,6 +54,8 @@ Notes
 
 Version 0.4.4 :
 * correction des conditions de téléchargement du fichier de configuration
+* améliorations de la fenêtre de paramétrage de l'extension
+* ajout d'un paramètre pour masquer les groupes de ressources vides
 
 Version 0.4.3 :
 * téléchargement du fichier de configuration sans utiliser de cache (utilisation de l'en-tête HTTP Cache-Control: no-cache). Permet d'avoir le fichier de configuration le plus à jour
