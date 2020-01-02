@@ -1,5 +1,5 @@
 {
-  "title": "GéoPicardie",
+  "title": "Géo2France",
   "description": "",
   "type": "folder",
   "children": [
@@ -12,7 +12,7 @@
           "title": "Scan 25 - IGN",
           "description": "Scan25 (version topographique) de l'IGN de la Picardie",
           "type": "wms_layer",
-          "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=f3b9e304-c760-47af-ac87-b0a219d77eba",
+          "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=f3b9e304-c760-47af-ac87-b0a219d77eba",
           "params": {
             "url": "http://www.geopicardie.fr/geoserver/wms",
             "name": "geopicardie:picardie_scan25",
@@ -24,7 +24,7 @@
           "title": "Occupation du sol de Picardie",
           "description": "Cartographie de l'occupation du sol de la Picardie de 1992 à 2010",
           "type": "wms_layer",
-          "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=3f7cdf36-55b9-4464-8f37-4f92ffe54cdd",
+          "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=3f7cdf36-55b9-4464-8f37-4f92ffe54cdd",
           "params": {
             "url": "http://www.geopicardie.fr/geoserver/wms",
             "name": "geopicardie:mos_picardie",
@@ -33,8 +33,8 @@
           }
         },
         {
-          "title": "OpenStreetMap - apparence GéoPicardie - contrasté",
-          "description": "Apparence d'OpenStreetMap élaborée par GéoPicardie - version contrastée",
+          "title": "OpenStreetMap - apparence Géo2France - contrasté",
+          "description": "Apparence d'OpenStreetMap élaborée par Géo2France - version contrastée",
           "type": "wms_layer",
           "params": {
             "url": "http://www.geopicardie.fr/geoserver/wms",
@@ -44,8 +44,8 @@
           }
         },
         {
-          "title": "OpenStreetMap - apparence GéoPicardie - clair",
-          "description": "Apparence d'OpenStreetMap élaborée par GéoPicardie - version en demi-teintes",
+          "title": "OpenStreetMap - apparence Géo2France - clair",
+          "description": "Apparence d'OpenStreetMap élaborée par Géo2France - version en demi-teintes",
           "type": "wms_layer",
           "params": {
             "url": "http://www.geopicardie.fr/geoserver/wms",
@@ -55,8 +55,8 @@
           }
         },
         {
-          "title": "OpenStreetMap - apparence GéoPicardie - niveaux de gris",
-          "description": "Apparence d'OpenStreetMap élaborée par GéoPicardie - version en niveaux de gris",
+          "title": "OpenStreetMap - apparence Géo2France - niveaux de gris",
+          "description": "Apparence d'OpenStreetMap élaborée par Géo2France - version en niveaux de gris",
           "type": "wms_layer",
           "params": {
             "url": "http://www.geopicardie.fr/geoserver/wms",
@@ -128,7 +128,7 @@
               "title": "Vue aérienne de l'Aisne 2009 - visible",
               "description": "Orthophotographie aérienne de l'Aisne de 2009 dans le domaine visible (résolution de 25 cm)",
               "type": "wms_layer",
-              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=1e49ac01-abec-4ba6-8309-d5705f14b5dc",
+              "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=1e49ac01-abec-4ba6-8309-d5705f14b5dc",
               "params": {
                 "url": "http://www.geopicardie.fr/geoserver/wms",
                 "name": "geopicardie:aisne_ortho_2009_vis",
@@ -140,7 +140,7 @@
               "title": "Vue aérienne de l'Oise 2013 - visible",
               "description": "Orthophotographie aérienne de l'Oise de 2013 dans le domaine visible (résolution de 15 cm)",
               "type": "wms_layer",
-              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=49c5b5df-e767-4c61-9d43-4ae85b3ed39a",
+              "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=49c5b5df-e767-4c61-9d43-4ae85b3ed39a",
               "params": {
                 "url": "http://www.geopicardie.fr/geoserver/wms",
                 "name": "geopicardie:oise_ortho_2013_vis",
@@ -152,7 +152,7 @@
               "title": "Vue aérienne de l'Oise 2008-2009 - visible",
               "description": "Orthophotographie aérienne de l'Oise de 2008-2009 dans le domaine visible (résolution de 20 cm)",
               "type": "wms_layer",
-              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=bd427799-8035-4ff8-b0fb-4c75fe9b4848",
+              "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=bd427799-8035-4ff8-b0fb-4c75fe9b4848",
               "params": {
                 "url": "http://www.geopicardie.fr/geoserver/wms",
                 "name": "reg22:oise_ortho_2008_vis",
@@ -164,7 +164,7 @@
               "title": "Vue aérienne de la Somme 2008 - visible",
               "description": "Orthophotographie aérienne de la Somme de 2008 dans le domaine visible (résolution de 20 cm)",
               "type": "wms_layer",
-              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=80ccc6c8-6e93-42fb-b99e-6d7491f48f5b",
+              "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=80ccc6c8-6e93-42fb-b99e-6d7491f48f5b",
               "params": {
                 "url": "http://www.geopicardie.fr/geoserver/wms",
                 "name": "geopicardie:somme_ortho_2008_vis",
@@ -183,7 +183,7 @@
               "title": "Vue aérienne de l'Aisne 2009 - infrarouge",
               "description": "Orthophotographie aérienne de l'Aisne de 2009 dans le domaine infrarouge (résolution de 25 cm)",
               "type": "wms_layer",
-              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=4635b9cc-bc9a-4f25-851e-040cf647d974",
+              "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=4635b9cc-bc9a-4f25-851e-040cf647d974",
               "params": {
                 "url": "http://www.geopicardie.fr/geoserver/wms",
                 "name": "geopicardie:aisne_ortho_2009_ir",
@@ -202,7 +202,7 @@
               "title": "Vue aérienne de Picardie 2001-2002",
               "description": "Orthophotographie aérienne de la Picardie de 2001-2002 (résolution de 1,25 m)",
               "type": "wms_layer",
-              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=e5ae91ad-e49c-4878-b3ed-6f483f864169",
+              "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=e5ae91ad-e49c-4878-b3ed-6f483f864169",
               "params": {
                 "url": "http://www.geopicardie.fr/geoserver/wms",
                 "name": "geopicardie:picardie_ortho_2002",
@@ -484,7 +484,7 @@
               "title": "Gares et points d'arrêt ferroviaires",
               "description": "Gares et points d'arrêt ferroviaires",
               "type": "wfs_feature_type",
-              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=e8b71073-144a-44c0-9a03-2d52440b3afc",
+              "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=e8b71073-144a-44c0-9a03-2d52440b3afc",
               "params": {
                 "url": "http://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
@@ -496,7 +496,7 @@
               "title": "Arrêts des lignes routières régionales",
               "description": "Points d'arrêt routiers du réseau de Transport Express Régional de Picardie",
               "type": "wfs_feature_type",
-              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=2359ebf7-8e2f-4abb-bdeb-43caad02f99d",
+              "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=2359ebf7-8e2f-4abb-bdeb-43caad02f99d",
               "params": {
                 "url": "http://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
@@ -666,7 +666,7 @@
           "description": "Zonage communal et infracommunal pour les AFR (Aides à finalités régionales) en Picardie pour la période 2014-2020. Seule la commune d'Amiens est découpée en zones infracommunales.",
           "type": "wfs_feature_type",
           "status": "warn",
-          "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=bc4d0c39-897c-470e-932c-7cfebaf59e91",
+          "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=bc4d0c39-897c-470e-932c-7cfebaf59e91",
           "params": {
             "url": "http://www.geopicardie.fr/geoserver/wfs",
             "version": "1.0.0",

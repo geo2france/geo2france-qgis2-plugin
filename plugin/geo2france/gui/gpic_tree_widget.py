@@ -4,13 +4,13 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from qgis.core import *
 
-from geopicardie.gui.gpic_tree_items import GpicTreeWidgetItem
-from geopicardie.utils.plugin_globals import GpicGlobals
+from geo2france.gui.gpic_tree_items import GpicTreeWidgetItem
+from geo2france.utils.plugin_globals import GpicGlobals
 
 
 class GpicTreeWidget(QTreeWidget):
   """
-  The tree widget used in the GéoPicardie dock
+  The tree widget used in the Géo2France dock
   """
 
   def __init__(self):
@@ -56,7 +56,7 @@ class GpicTreeWidget(QTreeWidget):
     self.clear()
 
     if resources_tree == None:
-      QgsMessageLog.logMessage(u"Faute de fichier de configuration valide, aucune ressource ne peut être chargée dans le panneau de l'extension GéoPicardie.", tag=u"GéoPicardie", level=QgsMessageLog.WARNING)
+      QgsMessageLog.logMessage(u"Faute de fichier de configuration valide, aucune ressource ne peut être chargée dans le panneau de l'extension Géo2France.", tag=u"Géo2France", level=QgsMessageLog.WARNING)
     elif resources_tree.children != None and len(resources_tree.children) > 0:
       for child in resources_tree.children:
         createSubItem(child, self)

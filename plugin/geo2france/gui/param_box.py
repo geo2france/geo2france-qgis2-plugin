@@ -7,9 +7,9 @@ from qgis.gui import *
 
 import os
 
-from geopicardie.utils.plugin_globals import GpicGlobals
-from geopicardie.nodes.treenodefactory import FavoriteTreeNodeFactory
-from geopicardie.nodes.treenodefactory import downloadResourcesTreeFile
+from geo2france.utils.plugin_globals import GpicGlobals
+from geo2france.nodes.treenodefactory import FavoriteTreeNodeFactory
+from geo2france.nodes.treenodefactory import downloadResourcesTreeFile
 
 
 class ParamBox(QtGui.QDialog):
@@ -94,7 +94,7 @@ class ParamBox(QtGui.QDialog):
     self.buttonBox.button(QtGui.QDialogButtonBox.Apply).clicked.connect(self.applyButtonClicked)
 
     # Dialog box title, layout, size and display
-    title = u"Paramétrage de l'extension GéoPicardie…"
+    title = u"Paramétrage de l'extension Géo2France…"
     self.setWindowTitle(title)
     dialogLayout.addWidget(self.buttonBox)
     self.setLayout(dialogLayout)

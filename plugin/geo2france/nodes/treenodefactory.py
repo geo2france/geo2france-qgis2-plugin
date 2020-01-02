@@ -7,7 +7,7 @@ import urllib2
 from qgis.gui import *
 from qgis.core import *
 
-from geopicardie.utils.plugin_globals import GpicGlobals
+from geo2france.utils.plugin_globals import GpicGlobals
 from nodes import *
 
 
