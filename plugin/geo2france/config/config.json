@@ -37,21 +37,21 @@
           "description": "Apparence d'OpenStreetMap élaborée par Géo2France - version contrastée",
           "type": "wms_layer",
           "params": {
-            "url": "http://www.geopicardie.fr/geoserver/wms",
-            "name": "autres:osm_geopicardie_bright",
+            "url": "https://osm.geo2france.fr/mapproxy/service",
+            "name": "bright",
             "format": "image/jpeg",
-            "srs": "epsg:3857"
+            "srs": "epsg:2154"
           }
         },
         {
-          "title": "OpenStreetMap - apparence Géo2France - clair",
+          "title": "OpenStreetMap - apparence Géo2France - demi-teintes",
           "description": "Apparence d'OpenStreetMap élaborée par Géo2France - version en demi-teintes",
           "type": "wms_layer",
           "params": {
-            "url": "http://www.geopicardie.fr/geoserver/wms",
-            "name": "autres:osm_geopicardie",
+            "url": "https://osm.geo2france.fr/mapproxy/service",
+            "name": "faded",
             "format": "image/jpeg",
-            "srs": "epsg:3857"
+            "srs": "epsg:2154"
           }
         },
         {
@@ -59,39 +59,45 @@
           "description": "Apparence d'OpenStreetMap élaborée par Géo2France - version en niveaux de gris",
           "type": "wms_layer",
           "params": {
-            "url": "http://www.geopicardie.fr/geoserver/wms",
-            "name": "autres:osm_geopicardie_grey",
+            "url": "https://osm.geo2france.fr/mapproxy/service",
+            "name": "grey",
             "format": "image/jpeg",
-            "srs": "epsg:3857"
+            "srs": "epsg:2154"
           }
         },
         {
-          "title": "OpenStreetMap - apparence standard",
-          "description": "Apparence à destination des contributeurs des contributeurs d'OpenStreetMap",
-          "type": "gdal_wms_config_file",
-          "status": "warn",
+          "title": "OpenStreetMap - apparence Géo2France - naturaliste",
+          "description": "Apparence d'OpenStreetMap élaborée par Géo2France - avec des ajouts pour naturalistes",
+          "type": "wms_layer",
           "params": {
-            "file_path": "tms_osm_mapnik.xml"
+            "url": "https://osm.geo2france.fr/mapproxy/service",
+            "name": "naturaliste",
+            "format": "image/jpeg",
+            "srs": "epsg:2154"
           }
         },
         {
-          "title": "Stamen toner",
-          "description": "Apparence photocopieur d'OpenStreetMap",
-          "type": "gdal_wms_config_file",
-          "status": "warn",
+          "title": "OpenStreetMap - apparence Géo2France - surcouche",
+          "description": "Apparence d'OpenStreetMap élaborée par Géo2France - surcouche contenant les réseaux et les toponymes",
+          "type": "wms_layer",
           "params": {
-            "file_path": "tms_stamen_toner.xml"
+            "url": "https://osm.geo2france.fr/mapproxy/service",
+            "name": "overlay",
+            "format": "image/jpeg",
+            "srs": "epsg:2154"
           }
         },
         {
-          "title": "Stamen watercolor",
-          "description": "Apparence aquarelle d'OpenStreetMap",
-          "type": "gdal_wms_config_file",
-          "status": "warn",
+          "title": "OpenStreetMap - apparence Géo2France - sans toponymes",
+          "description": "Apparence d'OpenStreetMap élaborée par Géo2France - sans toponymes",
+          "type": "wms_layer",
           "params": {
-            "file_path": "tms_stamen_watercolor.xml"
+            "url": "https://osm.geo2france.fr/mapproxy/service",
+            "name": "pure",
+            "format": "image/jpeg",
+            "srs": "epsg:2154"
           }
-        }      
+        }
       ]
     },
     {
