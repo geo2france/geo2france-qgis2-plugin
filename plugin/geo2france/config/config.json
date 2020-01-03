@@ -924,12 +924,97 @@
           "type": "folder",
           "children": [
             {
+              "title": "Parcs éoliens - Hauts-de-France",
+              "description": "Parc éolien des Hauts de France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-fdcf841d-0b1a-4acc-9494-52f3cedb4220",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/bbd9a09f-60ee-4d1e-b75b-03e18070ddd7.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_parc_eolien_s_r32",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Mats éoliens construits ou en projet - Hauts-de-France",
+              "description": "Mats éoliens construits ou en projet en Hauts de France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-f20f8125-877e-46dc-8cf8-2a8a372045eb",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/aab5f309-86ca-4e8b-8411-c8a02963b673.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_mat_eolien_p_r32",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Mats éoliens abandonnés - Hauts-de-France",
+              "description": "Mâts éoliens abandonnés en Hauts de France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-e092eb50-a84a-4155-b1be-a7d5577d18a9",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/5d84f279-f55c-46f9-b8b1-00384a7428de.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_mat_eolien_p_r32_etat_eolie_ab",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Mats éoliens refusés - Hauts-de-France",
+              "description": "Mâts éoliens refusés en Hauts de France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-6725602c-997d-4875-a206-057b36aa68a7",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/6b8854f9-6f49-41ef-bc1b-ecbc465708be.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_mat_eolien_p_r32_etat_eolie_re",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Mats éoliens en cours d'intruction - Hauts-de-France",
+              "description": "Mâts éoliens en cours d'intruction en Hauts de France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-7be23a97-cf60-4ebe-9312-f6af7f4741a9",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/120179a5-bb86-454b-b28d-5c8eda5e25d5.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_mat_eolien_p_r32_etat_eolie_ins",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Mats éoliens en travaux - Hauts-de-France",
+              "description": "Mâts éoliens en travaux en Hauts de France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-1be1ea3d-57e9-443a-91cd-72d991d014cf",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/2f6d04e6-aaca-4e2d-8902-e866eaf34aed.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_mat_eolien_p_r32_etat_eolie_tra",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Mats éoliens réalisés - Hauts-de-France",
+              "description": "Mâts éoliens réalisés en Hauts de France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-9f5dc716-0a4c-43be-bd15-9897d84c760b",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/cac35f5b-fa24-442f-8297-9e9495f06f36.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_mat_eolien_p_r32_etat_eolie_rea",
+                "srs": "epsg:2154"
+              }
+            },
+            {
               "title": "Vitesse du vent à 40 m en Picardie (2002)",
               "description": "Modélisation de la vitesse du vent à 40 m au-dessus du sol en Picardie",
               "type": "wms_layer",
+              "status": "warn",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:vent40m",
+                "url": "https://www.geopicardie.fr/geoserver/geopicardie/ows",
+                "name": "vent40m",
                 "format": "image/png",
                 "srs": "epsg:2154"
               },
@@ -949,63 +1034,6 @@
                   }
                 }
               ]
-            },
-            {
-              "title": "Zones d'implantation favorables",
-              "description": "Limites des zones d'implantation favorables des parcs éoliens",
-              "type": "wms_layer",
-              "metadata_url": "http://www.sigpicardie.fr/geonetwork/apps/search/?id=6813",
-              "params": {
-                "url": "http://carto.sigpicardie.fr/cgi-bin/mapserv",
-                "name": "EOLIEN-SchemaRegional-Zonesfavorables",
-                "format": "image/png",
-                "srs": "epsg:2154"
-              }
-            },
-            {
-              "title": "Zones d'implantation favorables sous conditions",
-              "description": "Limites des zones d'implantation favorables sous conditions des parcs éoliens",
-              "type": "wms_layer",
-              "metadata_url": "http://www.sigpicardie.fr/geonetwork/apps/search/?id=6814",
-              "params": {
-                "url": "http://carto.sigpicardie.fr/cgi-bin/mapserv",
-                "name": "EOLIEN-SchemaRegional-Zonesfavorablessousconditions",
-                "format": "image/png",
-                "srs": "epsg:2154"
-              }
-            },
-            {
-              "title": "Implantations d'éoliennes dans l'Aisne",
-              "description": "Localisation des mats d'éoliennes dans l'Aisne",
-              "type": "wms_layer",
-              "params": {
-                "url": "http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/DDT_02/SIG_eolien_DDT02.www.map",
-                "name": "c_N_MAT_EOLIEN_CONSTRUITS_002",
-                "format": "image/png",
-                "srs": "epsg:2154"
-              }
-            },
-            {
-              "title": "Implantations d'éoliennes dans l'Oise",
-              "description": "Localisation des mats d'éoliennes dans l'Oise",
-              "type": "wms_layer",
-              "params": {
-                "url": "http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/DDT_60/Eolien_usageWMS.www.map",
-                "name": "c_Eoliennes_Construites",
-                "format": "image/png",
-                "srs": "epsg:2154"
-              }
-            },
-            {
-              "title": "Implantations d'éoliennes dans la Somme",
-              "description": "Localisation des mats d'éoliennes dans la Somme",
-              "type": "wms_layer",
-              "params": {
-                "url": "http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/DDTM_80/eolien_internet.www.map",
-                "name": "c_N_MAT_EOLIEN_code_8",
-                "format": "image/png",
-                "srs": "epsg:2154"
-              }
             }
           ]
         }
