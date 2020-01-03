@@ -384,41 +384,6 @@
       ]
     },
     {
-      "title": "Aménagement & urbanisme",
-      "description": "Données concernant l'aménagement et l'urbanisme",
-      "type": "folder",
-      "children": [
-        {
-          "title": "SCoT",
-          "description": "Schéma de Cohérence Territoriale",
-          "type": "folder",
-          "status": "warn",
-          "children": []
-        },
-        {
-          "title": "PLU, PLUI et cartes communales",
-          "description": "PLU, PLUI et cartes communales",
-          "type": "folder",
-          "status": "warn",
-          "children": []
-        },
-        {
-          "title": "SUP",
-          "description": "Servitudes d'utilité publique",
-          "type": "folder",
-          "status": "warn",
-          "children": []
-        },
-        {
-          "title": "Parcs naturels régionaux",
-          "description": "Parcs naturels régionaux",
-          "type": "folder",
-          "status": "warn",
-          "children": []
-        }
-      ]
-    },
-    {
       "title": "Transports",
       "description": "Données concernant les transports",
       "type": "folder",
@@ -515,34 +480,6 @@
               }
             }
           ]
-        },
-        {
-          "title": "Transport fluvial",
-          "description": "Transport fluvial",
-          "type": "folder",
-          "status": "warn",
-          "children": []
-        },
-        {
-          "title": "Transport maritime",
-          "description": "Transport maritime",
-          "type": "folder",
-          "status": "warn",
-          "children": []
-        },
-        {
-          "title": "Transport aérien",
-          "description": "Transport aérien",
-          "type": "folder",
-          "status": "warn",
-          "children": []
-        },
-        {
-          "title": "Aménagements cyclables",
-          "description": "Aménagements cyclables",
-          "type": "folder",
-          "status": "warn",
-          "children": []
         }
       ]
     },
@@ -590,20 +527,6 @@
               }
             }
           ]
-        },
-        {
-          "title": "Établissements d'enseignement supérieur",
-          "description": "Données relatives aux établissements d'enseignement supérieur",
-          "type": "folder",
-          "status": "warn",
-          "children": []
-        },
-        {
-          "title": "Centres de Formation d'Apprentis (CFA)",
-          "description": "Données relatives aux centres de formation d'apprentis",
-          "type": "folder",
-          "status": "warn",
-          "children": []
         }
       ]
     },
@@ -1036,37 +959,6 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "title": "Risques",
-      "description": "Données concernant les risques",
-      "type": "folder",
-      "children": []
-    },
-    {
-      "title": "Culture, tourisme et loisir",
-      "description": "Données concernant le patrimoine culturel, le tourisme et les activités de loisir",
-      "type": "folder",
-      "children": [
-        {
-          "title": "Patrimoine",
-          "description": "Patrimoine",
-          "status": "warn",
-          "type": "folder"
-        },
-        {
-          "title": "Itinéraires et circuits",
-          "description": "Itinéraires et circuits",
-          "status": "warn",
-          "type": "folder"
-        },
-        {
-          "title": "Équipements touristiques",
-          "description": "Équipements touristiques",
-          "status": "warn",
-          "type": "folder"
         }
       ]
     }
