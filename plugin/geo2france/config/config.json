@@ -14,8 +14,8 @@
           "type": "wms_layer",
           "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/f3b9e304-c760-47af-ac87-b0a219d77eba",
           "params": {
-            "url": "https://www.geopicardie.fr/geoserver/wms",
-            "name": "geopicardie:picardie_scan25",
+            "url": "https://www.geopicardie.fr/geoserver/geopicardie/ows",
+            "name": "picardie_scan25",
             "format": "image/png",
             "srs": "epsg:2154"
           }
@@ -26,8 +26,8 @@
           "type": "wms_layer",
           "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/3f7cdf36-55b9-4464-8f37-4f92ffe54cdd",
           "params": {
-            "url": "https://www.geopicardie.fr/geoserver/wms",
-            "name": "geopicardie:mos_picardie",
+            "url": "https://www.geopicardie.fr/geoserver/geopicardie/ows",
+            "name": "mos_picardie",
             "format": "image/png",
             "srs": "epsg:2154"
           }
@@ -115,8 +115,8 @@
               "description": "Orthophotographie aérienne composite de la Picardie de 2008-2009 (résolution de 0,25 m)",
               "type": "wms_layer",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:picardie_ortho_composite_2008_2009_vis",
+                "url": "https://www.geopicardie.fr/geoserver/geopicardie/ows",
+                "name": "picardie_ortho_composite_2008_2009_vis",
                 "format": "image/jpeg",
                 "srs": "epsg:2154"
               }
@@ -127,8 +127,8 @@
               "type": "wms_layer",
               "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/1e49ac01-abec-4ba6-8309-d5705f14b5dc",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:aisne_ortho_2009_vis",
+                "url": "https://www.geopicardie.fr/geoserver/geopicardie/ows",
+                "name": "aisne_ortho_2009_vis",
                 "format": "image/jpeg",
                 "srs": "epsg:2154"
               }
@@ -139,8 +139,8 @@
               "type": "wms_layer",
               "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/49c5b5df-e767-4c61-9d43-4ae85b3ed39a",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:oise_ortho_2013_vis",
+                "url": "https://www.geopicardie.fr/geoserver/geopicardie/ows",
+                "name": "oise_ortho_2013_vis",
                 "format": "image/png",
                 "srs": "epsg:2154"
               }
@@ -151,8 +151,8 @@
               "type": "wms_layer",
               "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/bd427799-8035-4ff8-b0fb-4c75fe9b4848",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wms",
-                "name": "reg22:oise_ortho_2008_vis",
+                "url": "https://www.geopicardie.fr/geoserver/reg22/ows",
+                "name": "oise_ortho_2008_vis",
                 "format": "image/jpeg",
                 "srs": "epsg:2154"
               }
@@ -163,8 +163,8 @@
               "type": "wms_layer",
               "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/80ccc6c8-6e93-42fb-b99e-6d7491f48f5b",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:somme_ortho_2008_vis",
+                "url": "https://www.geopicardie.fr/geoserver/geopicardie/ows",
+                "name": "somme_ortho_2008_vis",
                 "format": "image/jpeg",
                 "srs": "epsg:2154"
               }
@@ -182,8 +182,8 @@
               "type": "wms_layer",
               "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/4635b9cc-bc9a-4f25-851e-040cf647d974",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:aisne_ortho_2009_ir",
+                "url": "https://www.geopicardie.fr/geoserver/geopicardie/ows",
+                "name": "aisne_ortho_2009_ir",
                 "format": "image/jpeg",
                 "srs": "epsg:2154"
               }
@@ -201,8 +201,8 @@
               "type": "wms_layer",
               "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/e5ae91ad-e49c-4878-b3ed-6f483f864169",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:picardie_ortho_2002",
+                "url": "https://www.geopicardie.fr/geoserver/geopicardie/ows",
+                "name": "picardie_ortho_2002",
                 "format": "image/jpeg",
                 "srs": "epsg:2154"
               }
@@ -239,8 +239,8 @@
               "description": "Altitude sur l'ensemble du département de la Somme issue de l'orthorectification des vues aériennes de 2008 - images en couleurs",
               "type": "wms_layer",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:somme_mnt_2008_img_slope_shade_color_5m",
+                "url": "https://www.geopicardie.fr/geoserver/geopicardie/ows",
+                "name": "somme_mnt_2008_img_slope_shade_color_5m",
                 "format": "image/jpeg",
                 "srs": "epsg:2154"
               }
@@ -250,8 +250,8 @@
               "description": "Altitude sur l'ensemble du département de la Somme issue de l'orthorectification des vues aériennes de 2008 - images en niveaux de gris",
               "type": "wms_layer",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wms",
-                "name": "geopicardie:somme_mnt_2008_img_slope_shade_5m",
+                "url": "https://www.geopicardie.fr/geoserver/geopicardie/ows",
+                "name": "somme_mnt_2008_img_slope_shade_5m",
                 "format": "image/jpeg",
                 "srs": "epsg:2154"
               }
@@ -275,8 +275,8 @@
               "description": "Limites de la région basée sur la base de données GEOFLA de l'IGN (objet surfacique)",
               "type": "wfs_feature_type",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
+                "url": "https://www.geopicardie.fr/geoserver/reg22/ows",
+                "version": "2.0.0",
                 "name": "reg22:reg_Picardie_FLA",
                 "srs": "epsg:2154"
               }
@@ -286,8 +286,8 @@
               "description": "Limites de la région basée sur la base de données BDTOPO de l'IGN (objet surfacique)",
               "type": "wfs_feature_type",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
+                "url": "https://www.geopicardie.fr/geoserver/reg22/ows",
+                "version": "2.0.0",
                 "name": "reg22:Region_Pic_BdTopo",
                 "srs": "epsg:2154"
               }
@@ -304,8 +304,8 @@
               "description": "Limites des départements basées sur la base de données GEOFLA de l'IGN (objets surfaciques)",
               "type": "wfs_feature_type",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
+                "url": "https://www.geopicardie.fr/geoserver/autres/ows",
+                "version": "2.0.0",
                 "name": "autres:ign_geofla_departements",
                 "srs": "epsg:2154"
               }
@@ -315,8 +315,8 @@
               "description": "Limites des départements basées sur la base de données GEOFLA de l'IGN (objets linéaires)",
               "type": "wfs_feature_type",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
+                "url": "https://www.geopicardie.fr/geoserver/autres/ows",
+                "version": "2.0.0",
                 "name": "autres:ign_geofla_limites_dept",
                 "srs": "epsg:2154"
               }
@@ -333,8 +333,8 @@
               "description": "Limites des pays de Picardie basées sur la base de données GEOFLA de l'IGN (objets surfaciques)",
               "type": "wfs_feature_type",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
+                "url": "https://www.geopicardie.fr/geoserver/reg22/ows",
+                "version": "2.0.0",
                 "name": "reg22:pays_picardie_BY_geofla",
                 "srs": "epsg:2154"
               }
@@ -344,8 +344,8 @@
               "description": "Limites des pays de Picardie basées sur la base de données BDTOPO de l'IGN (objets surfaciques)",
               "type": "wfs_feature_type",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
+                "url": "https://www.geopicardie.fr/geoserver/reg22/ows",
+                "version": "2.0.0",
                 "name": "reg22:pays_picardie_BY_bdtopo",
                 "srs": "epsg:2154"
               }
@@ -362,8 +362,8 @@
               "description": "Limites des EPCI à fiscalité propre basées sur la base de données GEOFLA de l'IGN (objets surfaciques)",
               "type": "wfs_feature_type",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
+                "url": "https://www.geopicardie.fr/geoserver/reg22/ows",
+                "version": "2.0.0",
                 "name": "reg22:epci_reels_picardie_BY_geofla",
                 "srs": "epsg:2154"
               }
@@ -373,8 +373,8 @@
               "description": "Limites des EPCI à fiscalité propre basées sur la base de données BDTOPO de l'IGN (objets surfaciques)",
               "type": "wfs_feature_type",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
+                "url": "https://www.geopicardie.fr/geoserver/reg22/ows",
+                "version": "2.0.0",
                 "name": "reg22:epci_reels_picardie_BY_bdtopo",
                 "srs": "epsg:2154"
               }
@@ -398,8 +398,8 @@
               "description": "Lignes du réseau de transport régional",
               "type": "wfs_feature_type",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
+                "url": "https://www.geopicardie.fr/geoserver/reg22/ows",
+                "version": "2.0.0",
                 "name": "reg22:reseau_TER_100_L93",
                 "srs": "epsg:2154"
               },
@@ -435,9 +435,9 @@
               "description": "Lignes routières du réseau de transport régional",
               "type": "wfs_feature_type",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/reg22/ows",
                 "filter": "<Filter><PropertyIsEqualTo><PropertyName>AUTOCAR</PropertyName><Literal>1</Literal></PropertyIsEqualTo></Filter>",
-                "version": "1.0.0",
+                "version": "2.0.0",
                 "name": "reg22:reseau_TER_100_L93",
                 "srs": "epsg:2154"
               }
@@ -448,8 +448,8 @@
               "type": "wfs_feature_type",
               "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/e8b71073-144a-44c0-9a03-2d52440b3afc",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
+                "url": "https://www.geopicardie.fr/geoserver/reg22/ows",
+                "version": "2.0.0",
                 "name": "reg22:sommet_ferrovaire4TER_gare_avril2012",
                 "srs": "epsg:2154"
               }
@@ -460,8 +460,8 @@
               "type": "wfs_feature_type",
               "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/2359ebf7-8e2f-4abb-bdeb-43caad02f99d",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
+                "url": "https://www.geopicardie.fr/geoserver/reg22/ows",
+                "version": "2.0.0",
                 "name": "reg22:points_arret_LRR",
                 "srs": "epsg:2154"
               }
@@ -473,8 +473,8 @@
               "status": "warn",
               "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/2359ebf7-8e2f-4abb-bdeb-43caad02f99d",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
+                "url": "https://www.geopicardie.fr/geoserver/reg22/ows",
+                "version": "2.0.0",
                 "name": "reg22:points_arret_LRR",
                 "srs": "epsg:2154"
               }
@@ -498,8 +498,8 @@
               "description": "Localisation à l'adresse des lycées publics et privés de Picardie",
               "type": "wfs_feature_type",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
+                "url": "https://www.geopicardie.fr/geoserver/reg22/ows",
+                "version": "2.0.0",
                 "name": "reg22:lycees_adresses",
                 "srs": "epsg:2154"
               }
@@ -509,8 +509,8 @@
               "description": "Localisation des collèges publiques de l'Aisne",
               "type": "wfs_feature_type",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
+                "url": "https://www.geopicardie.fr/geoserver/dept02/ows",
+                "version": "2.0.0",
                 "name": "dept02:COLLEGES_AISNE",
                 "srs": "epsg:2154"
               }
@@ -520,9 +520,9 @@
               "description": "Localisation des collèges publiques de l'Oise",
               "type": "wfs_feature_type",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
-                "name": "dept60:Colleges_Publics_CG60",
+                "url": "https://www.geopicardie.fr/geoserver/dept60/ows",
+                "version": "2.0.0",
+                "name": "dept60:colleges_Publics_CG60",
                 "srs": "epsg:2154"
               }
             }
@@ -540,8 +540,8 @@
           "description": "Sites d'activités économiques",
           "type": "wfs_feature_type",
           "params": {
-            "url": "https://www.geopicardie.fr/geoserver/wfs",
-            "version": "1.0.0",
+            "url": "https://www.geopicardie.fr/geoserver/geopicardie/ows",
+            "version": "2.0.0",
             "name": "geopicardie:activite_eco_sites",
             "srs": "epsg:2154"
           }
@@ -551,8 +551,8 @@
           "description": "Localisation des établissements",
           "type": "wfs_feature_type",
           "params": {
-            "url": "https://www.geopicardie.fr/geoserver/wfs",
-            "version": "1.0.0",
+            "url": "https://www.geopicardie.fr/geoserver/geopicardie/ows",
+            "version": "2.0.0",
             "name": "geopicardie:activite_eco_etablissements",
             "srs": "epsg:2154"
           }
@@ -563,8 +563,8 @@
           "type": "wfs_feature_type",
           "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/bc4d0c39-897c-470e-932c-7cfebaf59e91",
           "params": {
-            "url": "https://www.geopicardie.fr/geoserver/wfs",
-            "version": "1.0.0",
+            "url": "https://www.geopicardie.fr/geoserver/reg22/ows",
+            "version": "2.0.0",
             "name": "reg22:zonage_AFR_Picardie_2014_2020",
             "srs": "epsg:2154"
           }
@@ -623,8 +623,8 @@
               "description": "Périmètres des ENS de l'Aisne",
               "type": "wfs_feature_type",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
+                "url": "https://www.geopicardie.fr/geoserver/dept02/ows",
+                "version": "2.0.0",
                 "name": "dept02:ENS_CG02",
                 "srs": "epsg:2154"
               }
@@ -634,8 +634,8 @@
               "description": "Périmètres des ENS de l'Oise",
               "type": "wfs_feature_type",
               "params": {
-                "url": "https://www.geopicardie.fr/geoserver/wfs",
-                "version": "1.0.0",
+                "url": "https://www.geopicardie.fr/geoserver/dept60/ows",
+                "version": "2.0.0",
                 "name": "dept60:ENS_CG60",
                 "srs": "epsg:2154"
               }
