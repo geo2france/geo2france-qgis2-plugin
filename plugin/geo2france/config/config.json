@@ -465,19 +465,6 @@
                 "name": "reg22:points_arret_LRR",
                 "srs": "epsg:2154"
               }
-            },
-            {
-              "title": "Taxi TER",
-              "description": "Taxi TER",
-              "type": "wfs_feature_type",
-              "status": "warn",
-              "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/2359ebf7-8e2f-4abb-bdeb-43caad02f99d",
-              "params": {
-                "url": "https://www.geopicardie.fr/geoserver/reg22/ows",
-                "version": "2.0.0",
-                "name": "reg22:points_arret_LRR",
-                "srs": "epsg:2154"
-              }
             }
           ]
         }
