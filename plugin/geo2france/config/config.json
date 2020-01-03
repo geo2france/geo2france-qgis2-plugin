@@ -9,12 +9,12 @@
       "type": "folder",
       "children": [
         {
-          "title": "Scan 25 - IGN",
+          "title": "Scan 25 sur la Picardie - IGN",
           "description": "Scan25 (version topographique) de l'IGN de la Picardie",
           "type": "wms_layer",
-          "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=f3b9e304-c760-47af-ac87-b0a219d77eba",
+          "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/f3b9e304-c760-47af-ac87-b0a219d77eba",
           "params": {
-            "url": "http://www.geopicardie.fr/geoserver/wms",
+            "url": "https://www.geopicardie.fr/geoserver/wms",
             "name": "geopicardie:picardie_scan25",
             "format": "image/png",
             "srs": "epsg:2154"
@@ -24,9 +24,9 @@
           "title": "Occupation du sol de Picardie",
           "description": "Cartographie de l'occupation du sol de la Picardie de 1992 à 2010",
           "type": "wms_layer",
-          "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=3f7cdf36-55b9-4464-8f37-4f92ffe54cdd",
+          "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/3f7cdf36-55b9-4464-8f37-4f92ffe54cdd",
           "params": {
-            "url": "http://www.geopicardie.fr/geoserver/wms",
+            "url": "https://www.geopicardie.fr/geoserver/wms",
             "name": "geopicardie:mos_picardie",
             "format": "image/png",
             "srs": "epsg:2154"
@@ -83,7 +83,7 @@
           "params": {
             "url": "https://osm.geo2france.fr/mapproxy/service",
             "name": "overlay",
-            "format": "image/jpeg",
+            "format": "image/png",
             "srs": "epsg:2154"
           }
         },
@@ -115,7 +115,7 @@
               "description": "Orthophotographie aérienne composite de la Picardie de 2008-2009 (résolution de 0,25 m)",
               "type": "wms_layer",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "url": "https://www.geopicardie.fr/geoserver/wms",
                 "name": "geopicardie:picardie_ortho_composite_2008_2009_vis",
                 "format": "image/jpeg",
                 "srs": "epsg:2154"
@@ -125,9 +125,9 @@
               "title": "Vue aérienne de l'Aisne 2009 - visible",
               "description": "Orthophotographie aérienne de l'Aisne de 2009 dans le domaine visible (résolution de 25 cm)",
               "type": "wms_layer",
-              "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=1e49ac01-abec-4ba6-8309-d5705f14b5dc",
+              "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/1e49ac01-abec-4ba6-8309-d5705f14b5dc",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "url": "https://www.geopicardie.fr/geoserver/wms",
                 "name": "geopicardie:aisne_ortho_2009_vis",
                 "format": "image/jpeg",
                 "srs": "epsg:2154"
@@ -137,9 +137,9 @@
               "title": "Vue aérienne de l'Oise 2013 - visible",
               "description": "Orthophotographie aérienne de l'Oise de 2013 dans le domaine visible (résolution de 15 cm)",
               "type": "wms_layer",
-              "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=49c5b5df-e767-4c61-9d43-4ae85b3ed39a",
+              "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/49c5b5df-e767-4c61-9d43-4ae85b3ed39a",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "url": "https://www.geopicardie.fr/geoserver/wms",
                 "name": "geopicardie:oise_ortho_2013_vis",
                 "format": "image/png",
                 "srs": "epsg:2154"
@@ -149,9 +149,9 @@
               "title": "Vue aérienne de l'Oise 2008-2009 - visible",
               "description": "Orthophotographie aérienne de l'Oise de 2008-2009 dans le domaine visible (résolution de 20 cm)",
               "type": "wms_layer",
-              "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=bd427799-8035-4ff8-b0fb-4c75fe9b4848",
+              "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/bd427799-8035-4ff8-b0fb-4c75fe9b4848",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "url": "https://www.geopicardie.fr/geoserver/wms",
                 "name": "reg22:oise_ortho_2008_vis",
                 "format": "image/jpeg",
                 "srs": "epsg:2154"
@@ -161,9 +161,9 @@
               "title": "Vue aérienne de la Somme 2008 - visible",
               "description": "Orthophotographie aérienne de la Somme de 2008 dans le domaine visible (résolution de 20 cm)",
               "type": "wms_layer",
-              "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=80ccc6c8-6e93-42fb-b99e-6d7491f48f5b",
+              "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/80ccc6c8-6e93-42fb-b99e-6d7491f48f5b",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "url": "https://www.geopicardie.fr/geoserver/wms",
                 "name": "geopicardie:somme_ortho_2008_vis",
                 "format": "image/jpeg",
                 "srs": "epsg:2154"
@@ -180,9 +180,9 @@
               "title": "Vue aérienne de l'Aisne 2009 - infrarouge",
               "description": "Orthophotographie aérienne de l'Aisne de 2009 dans le domaine infrarouge (résolution de 25 cm)",
               "type": "wms_layer",
-              "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=4635b9cc-bc9a-4f25-851e-040cf647d974",
+              "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/4635b9cc-bc9a-4f25-851e-040cf647d974",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "url": "https://www.geopicardie.fr/geoserver/wms",
                 "name": "geopicardie:aisne_ortho_2009_ir",
                 "format": "image/jpeg",
                 "srs": "epsg:2154"
@@ -199,9 +199,9 @@
               "title": "Vue aérienne de Picardie 2001-2002",
               "description": "Orthophotographie aérienne de la Picardie de 2001-2002 (résolution de 1,25 m)",
               "type": "wms_layer",
-              "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=e5ae91ad-e49c-4878-b3ed-6f483f864169",
+              "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/e5ae91ad-e49c-4878-b3ed-6f483f864169",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "url": "https://www.geopicardie.fr/geoserver/wms",
                 "name": "geopicardie:picardie_ortho_2002",
                 "format": "image/jpeg",
                 "srs": "epsg:2154"
@@ -211,9 +211,9 @@
               "title": "Vue aérienne côte normande et picarde 1947 (ROLNP)",
               "description": "Orthophotographie aérienne de la côte normand-picarde de 1947",
               "type": "wms_layer",
-              "metadata_url": "http://www.rolnp.fr/geoportal/catalog/search/resource/details.page?uuid=%7B5442DF2F-C02D-42A4-834A-21B450FBDA34%7D",
+              "metadata_url": "https://maps.rolnp.fr/geoportal/catalog/search/resource/details.page?uuid=%7B5442DF2F-C02D-42A4-834A-21B450FBDA34%7D",
               "params": {
-                "url": "http://www.rolnp.fr/arcgis/services/Imagerie/Orthos_historiques_1947/MapServer/WMSServer",
+                "url": "https://maps.rolnp.fr/arcgis/services/Imagerie/Orthos_historiques_1947/MapServer/WMSServer",
                 "name": "0",
                 "format": "image/png8",
                 "srs": "epsg:2154",
@@ -239,7 +239,7 @@
               "description": "Altitude sur l'ensemble du département de la Somme issue de l'orthorectification des vues aériennes de 2008 - images en couleurs",
               "type": "wms_layer",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "url": "https://www.geopicardie.fr/geoserver/wms",
                 "name": "geopicardie:somme_mnt_2008_img_slope_shade_color_5m",
                 "format": "image/jpeg",
                 "srs": "epsg:2154"
@@ -250,7 +250,7 @@
               "description": "Altitude sur l'ensemble du département de la Somme issue de l'orthorectification des vues aériennes de 2008 - images en niveaux de gris",
               "type": "wms_layer",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "url": "https://www.geopicardie.fr/geoserver/wms",
                 "name": "geopicardie:somme_mnt_2008_img_slope_shade_5m",
                 "format": "image/jpeg",
                 "srs": "epsg:2154"
@@ -275,7 +275,7 @@
               "description": "Limites de la région basée sur la base de données GEOFLA de l'IGN (objet surfacique)",
               "type": "wfs_feature_type",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
                 "name": "reg22:reg_Picardie_FLA",
                 "srs": "epsg:2154"
@@ -286,7 +286,7 @@
               "description": "Limites de la région basée sur la base de données BDTOPO de l'IGN (objet surfacique)",
               "type": "wfs_feature_type",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
                 "name": "reg22:Region_Pic_BdTopo",
                 "srs": "epsg:2154"
@@ -304,7 +304,7 @@
               "description": "Limites des départements basées sur la base de données GEOFLA de l'IGN (objets surfaciques)",
               "type": "wfs_feature_type",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
                 "name": "autres:ign_geofla_departements",
                 "srs": "epsg:2154"
@@ -315,7 +315,7 @@
               "description": "Limites des départements basées sur la base de données GEOFLA de l'IGN (objets linéaires)",
               "type": "wfs_feature_type",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
                 "name": "autres:ign_geofla_limites_dept",
                 "srs": "epsg:2154"
@@ -333,7 +333,7 @@
               "description": "Limites des pays de Picardie basées sur la base de données GEOFLA de l'IGN (objets surfaciques)",
               "type": "wfs_feature_type",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
                 "name": "reg22:pays_picardie_BY_geofla",
                 "srs": "epsg:2154"
@@ -344,7 +344,7 @@
               "description": "Limites des pays de Picardie basées sur la base de données BDTOPO de l'IGN (objets surfaciques)",
               "type": "wfs_feature_type",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
                 "name": "reg22:pays_picardie_BY_bdtopo",
                 "srs": "epsg:2154"
@@ -362,7 +362,7 @@
               "description": "Limites des EPCI à fiscalité propre basées sur la base de données GEOFLA de l'IGN (objets surfaciques)",
               "type": "wfs_feature_type",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
                 "name": "reg22:epci_reels_picardie_BY_geofla",
                 "srs": "epsg:2154"
@@ -373,7 +373,7 @@
               "description": "Limites des EPCI à fiscalité propre basées sur la base de données BDTOPO de l'IGN (objets surfaciques)",
               "type": "wfs_feature_type",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
                 "name": "reg22:epci_reels_picardie_BY_bdtopo",
                 "srs": "epsg:2154"
@@ -433,7 +433,7 @@
               "description": "Lignes du réseau de transport régional",
               "type": "wfs_feature_type",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
                 "name": "reg22:reseau_TER_100_L93",
                 "srs": "epsg:2154"
@@ -470,7 +470,7 @@
               "description": "Lignes routières du réseau de transport régional",
               "type": "wfs_feature_type",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
                 "filter": "<Filter><PropertyIsEqualTo><PropertyName>AUTOCAR</PropertyName><Literal>1</Literal></PropertyIsEqualTo></Filter>",
                 "version": "1.0.0",
                 "name": "reg22:reseau_TER_100_L93",
@@ -481,9 +481,9 @@
               "title": "Gares et points d'arrêt ferroviaires",
               "description": "Gares et points d'arrêt ferroviaires",
               "type": "wfs_feature_type",
-              "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=e8b71073-144a-44c0-9a03-2d52440b3afc",
+              "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/e8b71073-144a-44c0-9a03-2d52440b3afc",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
                 "name": "reg22:sommet_ferrovaire4TER_gare_avril2012",
                 "srs": "epsg:2154"
@@ -493,9 +493,9 @@
               "title": "Arrêts des lignes routières régionales",
               "description": "Points d'arrêt routiers du réseau de Transport Express Régional de Picardie",
               "type": "wfs_feature_type",
-              "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=2359ebf7-8e2f-4abb-bdeb-43caad02f99d",
+              "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/2359ebf7-8e2f-4abb-bdeb-43caad02f99d",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
                 "name": "reg22:points_arret_LRR",
                 "srs": "epsg:2154"
@@ -506,9 +506,9 @@
               "description": "Taxi TER",
               "type": "wfs_feature_type",
               "status": "warn",
-              "metadata_url": "http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=2359ebf7-8e2f-4abb-bdeb-43caad02f99d",
+              "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/2359ebf7-8e2f-4abb-bdeb-43caad02f99d",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
                 "name": "reg22:points_arret_LRR",
                 "srs": "epsg:2154"
@@ -561,7 +561,7 @@
               "description": "Localisation à l'adresse des lycées publics et privés de Picardie",
               "type": "wfs_feature_type",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
                 "name": "reg22:lycees_adresses",
                 "srs": "epsg:2154"
@@ -572,7 +572,7 @@
               "description": "Localisation des collèges publiques de l'Aisne",
               "type": "wfs_feature_type",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
                 "name": "dept02:COLLEGES_AISNE",
                 "srs": "epsg:2154"
@@ -583,20 +583,9 @@
               "description": "Localisation des collèges publiques de l'Oise",
               "type": "wfs_feature_type",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wfs",
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
                 "version": "1.0.0",
                 "name": "dept60:Colleges_Publics_CG60",
-                "srs": "epsg:2154"
-              }
-            },
-            {
-              "title": "Collèges publiques de la Somme",
-              "description": "Localisation des collèges publiques de la Somme",
-              "type": "wfs_feature_type",
-              "params": {
-                "url": "http://geo.somme.fr/arcgis/services/SIG_CG_SOMME/MapServer/WFSServer",
-                "version": "1.0.0",
-                "name": "ENS_CANTON_COLLEGE:Colleges",
                 "srs": "epsg:2154"
               }
             }
@@ -624,23 +613,11 @@
       "type": "folder",
       "children": [
         {
-          "title": "Pôles d'activités économiques",
-          "description": "Pôles d'activités économiques",
-          "type": "wfs_feature_type",
-          "status": "warn",
-          "params": {
-            "url": "http://www.geopicardie.fr/geoserver/wfs",
-            "version": "1.0.0",
-            "name": "geopicardie:xxx",
-            "srs": "epsg:2154"
-          }
-        },
-        {
           "title": "Sites d'activités économiques",
           "description": "Sites d'activités économiques",
           "type": "wfs_feature_type",
           "params": {
-            "url": "http://www.geopicardie.fr/geoserver/wfs",
+            "url": "https://www.geopicardie.fr/geoserver/wfs",
             "version": "1.0.0",
             "name": "geopicardie:activite_eco_sites",
             "srs": "epsg:2154"
@@ -650,11 +627,10 @@
           "title": "Localisation des établissements",
           "description": "Localisation des établissements",
           "type": "wfs_feature_type",
-          "status": "warn",
           "params": {
-            "url": "http://www.geopicardie.fr/geoserver/wfs",
+            "url": "https://www.geopicardie.fr/geoserver/wfs",
             "version": "1.0.0",
-            "name": "geopicardie:xxx",
+            "name": "geopicardie:activite_eco_etablissements",
             "srs": "epsg:2154"
           }
         },
@@ -662,12 +638,11 @@
           "title": "Zonage des Aides à Finalités Régionales en Picardie",
           "description": "Zonage communal et infracommunal pour les AFR (Aides à finalités régionales) en Picardie pour la période 2014-2020. Seule la commune d'Amiens est découpée en zones infracommunales.",
           "type": "wfs_feature_type",
-          "status": "warn",
-          "metadata_url": "http://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=bc4d0c39-897c-470e-932c-7cfebaf59e91",
+          "metadata_url": "https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/bc4d0c39-897c-470e-932c-7cfebaf59e91",
           "params": {
-            "url": "http://www.geopicardie.fr/geoserver/wfs",
+            "url": "https://www.geopicardie.fr/geoserver/wfs",
             "version": "1.0.0",
-            "name": "reg22:zonage_AFR_Picardie__2014_2020",
+            "name": "reg22:zonage_AFR_Picardie_2014_2020",
             "srs": "epsg:2154"
           }
         }
@@ -684,105 +659,98 @@
           "type": "folder",
           "children": [
             {
-              "title": "Réserves naturelles",
-              "description": "Réserves naturelles",
-              "type": "folder",
-              "children": [
-                {
-                  "title": "Réserves naturelles nationales (MNHN-INPN)",
-                  "description": "Réserves naturelles nationales provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
-                  "type": "wfs_feature_type",
-                  "metadata_url": "http://www.geocatalogue.fr/geocat/Detail.do?fileIdentifier=97792AFC-1A3E-4F15-8872-076489973156",
-                  "params": {
-                    "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
-                    "version": "1.0.0",
-                    "name": "Reserves_naturelles_nationales",
-                    "srs": "epsg:2154"
-                  }
-                },
-                {
-                  "title": "Réserves naturelles régionales (MNHN-INPN)",
-                  "description": "Réserves naturelles régionales provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
-                  "type": "wfs_feature_type",
-                  "params": {
-                    "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
-                    "version": "1.0.0",
-                    "name": "Reserves_naturelles_regionales",
-                    "srs": "epsg:2154"
-                  }
-                }
-              ]
+              "title": "Aire de protection de Biotope des Hauts-de-France",
+              "description": "Arrêté préfectoral de protection biotope",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-b687eb0a-f6d2-41a5-9451-d8f8be370005",
+              "status": "warn",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/d42130e6-5a13-4b67-bc21-165d801ac003.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_enp_apb_s_r32",
+                "srs": "epsg:2154"
+              }
             },
             {
-              "title": "Espaces naturels sensibles",
-              "description": "Espaces naturels sensibles",
-              "type": "folder",
-              "children": [
-                {
-                  "title": "Espaces naturels sensibles de l'Aisne",
-                  "description": "Périmètres des ENS de l'Aisne",
-                  "type": "wfs_feature_type",
-                  "params": {
-                    "url": "http://www.geopicardie.fr/geoserver/wfs",
-                    "version": "1.0.0",
-                    "name": "dept02:ENS_CG02",
-                    "srs": "epsg:2154"
-                  }
-                },
-                {
-                  "title": "Espaces naturels sensibles de l'Oise",
-                  "description": "Périmètres des ENS de l'Oise",
-                  "type": "wfs_feature_type",
-                  "params": {
-                    "url": "http://www.geopicardie.fr/geoserver/wfs",
-                    "version": "1.0.0",
-                    "name": "dept60:ENS_CG60",
-                    "srs": "epsg:2154"
-                  }
-                },
-                {
-                  "title": "Espaces naturels sensibles de la Somme",
-                  "description": "Périmètres des ENS de la Somme",
-                  "type": "wfs_feature_type",
-                  "params": {
-                    "url": "http://geo.somme.fr/arcgis/services/SIG_CG_SOMME/MapServer/WFSServer",
-                    "version": "1.0.0",
-                    "name": "ENS_CANTON_COLLEGE:Espaces_naturels_sensibles",
-                    "srs": "epsg:2154"
-                  }
-                }
-              ]
+              "title": "Réserves naturelles nationales des Hauts-de-France",
+              "description": "Réserves naturelles nationales des Hauts-de-France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-33a9ee61-b45e-4c00-ae9f-f329b02d0212",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/2329e44b-b133-4eec-884f-286829f28ff6.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_enp_rnn_s_r32",
+                "srs": "epsg:2154"
+              }
             },
             {
-              "title": "Parcs naturels",
-              "description": "Parcs naturels",
-              "type": "folder",
-              "children": [
-                {
-                  "title": "Parcs naturels régionaux (MNHN-INPN)",
-                  "description": "Parcs naturels régionaux provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
-                  "type": "wfs_feature_type",
-                  "metadata_url": "http://www.geocatalogue.fr/Detail.do?id=158548",
-                  "params": {
-                    "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
-                    "version": "1.0.0",
-                    "name": "Parcs_naturels_regionaux",
-                    "srs": "epsg:2154"
-                  }
-                },
-                {
-                  "title": "Parcs naturels marins (MNHN-INPN)",
-                  "description": "Parcs naturels marins provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
-                  "type": "wfs_feature_type",
-                  "metadata_url": "http://www.geocatalogue.fr/Detail.do?id=158557",
-                  "params": {
-                    "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
-                    "version": "1.0.0",
-                    "name": "Parc_naturel_marin",
-                    "srs": "epsg:2154"
-                  }
-                }
-              ]
+              "title": "Réserves naturelles régionales (MNHN-INPN)",
+              "description": "Réserves naturelles régionales provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://www.geocatalogue.fr/Detail.do?fileIdentifier=98296d6d-bd8c-4f18-864c-81c101f75739",
+              "params": {
+                "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
+                "version": "1.0.0",
+                "name": "Reserves_naturelles_regionales",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Espaces naturels sensibles de l'Aisne",
+              "description": "Périmètres des ENS de l'Aisne",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "dept02:ENS_CG02",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Espaces naturels sensibles de l'Oise",
+              "description": "Périmètres des ENS de l'Oise",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "https://www.geopicardie.fr/geoserver/wfs",
+                "version": "1.0.0",
+                "name": "dept60:ENS_CG60",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Réserves biologiques - ONF",
+              "description": "Réserves biologiques - ONF",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://data.geo-ide.application.developpement-durable.gouv.fr/cartes/mapserv?map=/apps/inet/DATA/geoide/ressources/REG031B/Publication/www.nature_paysages.map",
+                "version": "2.0.0",
+                "name": "layer38",
+                "srs": "EPSG:3857"
+              }
+            },
+            {
+              "title": "Parcs naturels régionaux des Hauts de France",
+              "description": "Parcs Naturels Régionaux des Hauts de France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-be6808be-64f0-44f5-ae33-52f102f62727",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/4963be0f-b7a3-43a2-b06a-a37d822f2cc8.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_enp_pnr_s_r32",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Parcs naturels marins des Hauts de France",
+              "description": "Parcs naturels marins des Hauts de France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-da23aaed-3b94-4797-b86b-a93cfcff0a78",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/9605b223-7126-4023-8c45-8f2a654ed9a2.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_enp_pnm_s_r32",
+                "srs": "epsg:2154"
+              }
             }
           ]
         },
@@ -792,126 +760,100 @@
           "type": "folder",
           "children": [
             {
-              "title": "ZICO (MNHN-INPN)",
-              "description": "Zone d'importance pour la conservation des oiseaux provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
+              "title": "ZICO en Hauts-de-France",
+              "description": "Zone d'Importance pour la conservation des Oiseaux (ZICO) dans les Hauts de France",
               "type": "wfs_feature_type",
-              "metadata_url": "http://metadata.carmen.developpement-durable.gouv.fr/geosource-27/apps/search/index.html#uuid=48ad4520-17fa-4f99-83c6-7d28185169fb",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-a7b7cf5c-f46f-4a6c-8198-1d6f8f797ab8",
               "params": {
-                "url": "http://ws.carmen.developpement-durable.gouv.fr/cgi-bin/mapserv?map=/mnt/data_carmen/PIC/Publication/patrimoine_naturel_de_picardie.map",
-                "version": "1.0.0",
-                "name": "layer10",
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/e6feb047-b6b1-4847-92c8-a077301bc262.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_zico_s_r32",
                 "srs": "epsg:2154"
               }
             },
             {
-              "title": "ZNIEFF",
-              "description": "ZNIEFF",
-              "type": "folder",
-              "children": [
-                {
-                  "title": "ZNIEFF 1 continentales (DREAL Picardie)",
-                  "description": "Zones Naturelles d'Intérêt Ecologique, Faunistique et Floristique de type I provenant de la DREAL Picardie",
-                  "type": "wfs_feature_type",
-                  "metadata_url": "http://metadata.carmen.developpement-durable.gouv.fr/geosource-27/apps/search/index.html#uuid=748db929-0c16-4e5f-bbeb-5518819c710b",
-                  "params": {
-                    "url": "http://ws.carmen.developpement-durable.gouv.fr/cgi-bin/mapserv?map=/mnt/data_carmen/PIC/Publication/patrimoine_naturel_de_picardie.map",
-                    "version": "1.0.0",
-                    "name": "layer59",
-                    "srs": "epsg:2154"
-                  }
-                },
-                {
-                  "title": "ZNIEFF 2 continentales (DREAL Picardie)",
-                  "description": "Zones Naturelles d'Intérêt Ecologique, Faunistique et Floristique de type II provenant de la DREAL Picardie",
-                  "type": "wfs_feature_type",
-                  "metadata_url": "http://metadata.carmen.developpement-durable.gouv.fr/geosource-27/apps/search/index.html#uuid=1a6c8f40-5e90-497f-a619-0b4de511ba23",
-                  "params": {
-                    "url": "http://ws.carmen.developpement-durable.gouv.fr/cgi-bin/mapserv?map=/mnt/data_carmen/PIC/Publication/patrimoine_naturel_de_picardie.map",
-                    "version": "1.0.0",
-                    "name": "layer60",
-                    "srs": "epsg:2154"
-                  }
-                },
-                {
-                  "title": "ZNIEFF 1 continentales (MNHN-INPN)",
-                  "description": "Zones Naturelles d'Intérêt Ecologique, Faunistique et Floristique de type I provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
-                  "type": "wfs_feature_type",
-                  "params": {
-                    "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
-                    "version": "1.0.0",
-                    "name": "Znieff1",
-                    "srs": "epsg:2154"
-                  }
-                },
-                {
-                  "title": "ZNIEFF 2 continentales (MNHN-INPN)",
-                  "description": "Zones Naturelles d'Intérêt Ecologique, Faunistique et Floristique de type II provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
-                  "type": "wfs_feature_type",
-                  "params": {
-                    "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
-                    "version": "1.0.0",
-                    "name": "Znieff2",
-                    "srs": "epsg:2154"
-                  }
-                }
-              ]
+              "title": "ZNIEFF 1 en Hauts-de-France - milieu continental",
+              "description": "Zone Naturelle d'Intérêt Ecologique Faunistique ou Floristique de type 1 (ZNIEFF1) dans les Hauts de France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-603b8e12-363b-4682-b81a-4449ca60679f",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/7195bd28-f3aa-4f57-9c23-edac2466900c.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_znieff1_zinf_s_r32",
+                "srs": "epsg:2154"
+              }
             },
             {
-              "title": "Zones à dominante humide",
-              "description": "Zones à dominante humide",
-              "type": "folder",
-              "children": [
-                {
-                  "title": "Zones à dominante humide (DREAL Picardie)",
-                  "description": "Zones à dominante humide provenant de la DREAL Picardie",
-                  "type": "wfs_feature_type",
-                  "metadata_url": "http://metadata.carmen.developpement-durable.gouv.fr/geosource-27/apps/search/index.html#uuid=3bcac346-c5df-45b7-a498-8297ccaf1198",
-                  "params": {
-                    "url": "http://ws.carmen.developpement-durable.gouv.fr/cgi-bin/mapserv?map=/mnt/data_carmen/PIC/Publication/patrimoine_naturel_de_picardie.map",
-                    "version": "1.0.0",
-                    "name": "layer28",
-                    "srs": "epsg:2154"
-                  }
-                }
-              ]
+              "title": "ZNIEFF 1 en Hauts-de-France - milieu maritime",
+              "description": "Zones naturelles d'intérêt écologique floristique ou faunistique de type I en mer (ZNIEFFI en mer) des Hauts-de-France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-e246f754-daa2-4ea2-b164-d4770bf33a45",
+              "params": {
+                "url": "http://data.geo-ide.application.developpement-durable.gouv.fr/cartes/mapserv?map=/apps/inet/DATA/geoide/ressources/REG031B/Publication/www.nature_paysages.map",
+                "version": "2.0.0",
+                "name": "layer30",
+                "srs": "epsg:3857"
+              }
             },
             {
-              "title": "Natura 2000",
-              "description": "Natura 2000",
-              "type": "folder",
-              "children": [
-                {
-                  "title": "Natura 2000 - ZPS (MNHN-INPN)",
-                  "description": "Zones de protection spéciale provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
-                  "type": "wfs_feature_type",
-                  "metadata_url": "http://www.geocatalogue.fr/Detail.do?id=158570",
-                  "params": {
-                    "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
-                    "version": "1.0.0",
-                    "name": "Zones_de_protection_speciale",
-                    "srs": "epsg:2154"
-                  }
-                },
-                {
-                  "title": "Natura 2000 - SIC (MNHN-INPN)",
-                  "description": "Sites d'importance communautaire provenant du Muséum national d'Histoire naturelle / Inventaire National du Patrimoine Naturel",
-                  "type": "wfs_feature_type",
-                  "metadata_url": "http://www.geocatalogue.fr/Detail.do?id=158570",
-                  "params": {
-                    "url": "http://ws.carmencarto.fr/WMS/119/fxx_inpn",
-                    "version": "1.0.0",
-                    "name": "Sites_d_importance_communautaire",
-                    "srs": "epsg:2154"
-                  }
-                }
-              ]
+              "title": "ZNIEFF 2 en Hauts-de-France - milieu continental",
+              "description": "Zones Naturelles d'Intérêt Ecologique Faunistique et Floristique de type II en Hauts de France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-5d7cf54d-0183-4adc-afbd-38af375832b1",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/22eeca42-4f56-49ab-853e-1cc81097198b.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_znieff2_zinf_s_r32",
+                "srs": "epsg:2154"
+              }
             },
             {
-              "title": "Trames vertes et bleues",
-              "description": "Trames vertes et bleues",
-              "type": "folder",
+              "title": "Zones RAMSAR en Hauts-de-France",
+              "description": "Convention relative aux zones humides d'importance internationale particulièrement comme habitats des oiseaux d'eau (RAMSAR) en Hauts-de-France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-442401e2-4ec5-43cd-bfa7-5b1efd737e46",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/9a4ea742-5051-4f13-8ea3-e1e82e53daab.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_enp_ramsar_s_r32",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Natura 2000 - ZPS - Hauts-de-France",
+              "description": "Zone de protection spéciale (ZPS) Natura 2000 en Hauts-de-France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-032c1815-190f-4914-8b48-297f47d21f4c",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/ab3b9394-a6f6-4609-9817-d439ea76a6bb.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_n2000_zps_zinf_s_r32",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Natura 2000 - ZSC - Hauts-de-France",
+              "description": "Zones Spéciales de Conservation (ZSC) Natura 2000 en Hauts-de-France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-0c726950-e0ef-495b-a981-efbc49be276d",
               "status": "warn",
-              "children": []
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/9d4929c3-9425-43d8-85f3-51caa3a05170.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_n2000_zsc_zinf_s_r32",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Inventaire du patrimoine géologique - Hauts-de-France",
+              "description": "Inventaire du patrimoine géologique (IRPG) en Hauts-de-France",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://data.geo-ide.application.developpement-durable.gouv.fr/cartes/mapserv?map=/apps/inet/DATA/geoide/ressources/REG031B/Publication/www.nature_paysages.map",
+                "version": "1.1.0",
+                "name": "layer37",
+                "srs": "epsg:3857"
+              }
             }
           ]
         },
@@ -919,8 +861,55 @@
           "title": "Paysages",
           "description": "Paysages",
           "type": "folder",
-          "status": "warn",
-          "children": []
+          "children": [
+            {
+              "title": "Opérations grands sites - Hauts-de-France",
+              "description": "Opérations grands sites en Hauts-de-France",
+              "type": "wfs_feature_type",
+              "params": {
+                "url": "http://data.geo-ide.application.developpement-durable.gouv.fr/cartes/mapserv?map=/apps/inet/DATA/geoide/ressources/REG031B/Publication/www.nature_paysages.map",
+                "version": "2.0.0",
+                "name": "layer39",
+                "srs": "epsg:3857"
+              }
+            },
+            {
+              "title": "Sites classés - Hauts-de-France",
+              "description": "Sites classés dans les Hauts de France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-f22df5c2-948c-4db7-8a86-fbcb2eaa600b",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/dff5d109-d865-4b40-8426-ac073983d044.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_sites_classes_s_r32",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "Sites inscrits - Hauts-de-France",
+              "description": "Sites inscrits dans les Hauts de France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-5bbbf341-b62c-43e3-830c-fdad62b4116a",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/6a0c6a7d-b53b-442d-b900-061165c225b5.internet.map",
+                "version": "2.0.0",
+                "name": "ms:n_sites_inscrits_s_r32",
+                "srs": "epsg:2154"
+              }
+            },
+            {
+              "title": "UNESCO - Hauts-de-France",
+              "description": "Patrimoine mondial de l'UNESCO en Hauts-de-France",
+              "type": "wfs_feature_type",
+              "metadata_url": "http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-1288b421-8f7e-4972-bd61-ea618689755e",
+              "params": {
+                "url": "http://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38148/0185b669-a574-49d8-892d-fa5660926ff7.internet.map",
+                "version": "2.0.0",
+                "name": "ms:patrimoine_mondial_unesco_minier_s_r31",
+                "srs": "epsg:2154"
+              }
+            }
+          ]
         }
       ]
     },
@@ -939,7 +928,7 @@
               "description": "Modélisation de la vitesse du vent à 40 m au-dessus du sol en Picardie",
               "type": "wms_layer",
               "params": {
-                "url": "http://www.geopicardie.fr/geoserver/wms",
+                "url": "https://www.geopicardie.fr/geoserver/wms",
                 "name": "geopicardie:vent40m",
                 "format": "image/png",
                 "srs": "epsg:2154"
