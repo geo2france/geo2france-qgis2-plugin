@@ -509,7 +509,7 @@
               "params": {
                 "url": "https://www.geopicardie.fr/geoserver/dept60/ows",
                 "version": "2.0.0",
-                "name": "dept60:colleges_Publics_CG60",
+                "name": "dept60:Colleges_Publics_CG60",
                 "srs": "epsg:2154"
               }
             }
