@@ -3,7 +3,7 @@
 from PyQt4.QtCore import *
 from PyQt4 import QtGui
 
-from geopicardie.utils.plugin_globals import GpicGlobals
+from geo2france.utils.plugin_globals import GpicGlobals
 
 
 
@@ -52,7 +52,7 @@ def containsUnexpandedSubitems(item):
 
 class GpicTreeWidgetItem(QtGui.QTreeWidgetItem):
   """
-  An item of the GéoPicardie tree view
+  An item of the Géo2France tree view
   """
 
   def __init__(self, parent, gpic_data = None):

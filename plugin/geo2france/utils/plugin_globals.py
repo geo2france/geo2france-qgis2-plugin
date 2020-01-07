@@ -2,7 +2,7 @@
 
 import sys
 import os
-from geopicardie.utils.singleton import *
+from geo2france.utils.singleton import *
 from PyQt4.QtCore import QSettings
 
 
@@ -15,9 +15,9 @@ class GpicGlobals():
   plugin_path = None
 
   # Plugin infos
-  PLUGIN_TAG = u"GéoPicardie"
+  PLUGIN_TAG = u"Géo2France"
   PLUGIN_VERSION = u"0.4.4"
-  PLUGIN_SOURCE_REPOSITORY = u"https://github.com/bchartier/geopicardie-qgis-plugin/"
+  PLUGIN_SOURCE_REPOSITORY = u"https://github.com/geopicardie/geo2france-qgis2-plugin"
 
   # Tree nodes types
   NODE_TYPE_FOLDER = "folder"
@@ -34,7 +34,7 @@ class GpicGlobals():
 
   # Images dir
   IMAGES_DIR_NAME = "images"
-  LOGO_FILE_NAME = "logo_geopicardie.png"
+  LOGO_FILE_NAME = "logo_geo2france.png"
 
   ICON_WARN_FILE_NAME = "Icon_Simple_Warn.png"
   ICON_WMS_LAYER_FILE_NAME = "mIconWms.svg"
@@ -46,7 +46,7 @@ class GpicGlobals():
   CONFIG_FILES_DOWNLOAD_AT_STARTUP = False
   CONFIG_DIR_NAME = "config"
   CONFIG_FILE_NAMES = ["config.json"]
-  CONFIG_FILE_URLS = ["https://raw.githubusercontent.com/bchartier/qgis-favorites-resources-trees/master/geopicardie.json"]
+  CONFIG_FILE_URLS = ["https://www.geo2france.fr/public/qgis2/plugins/geo2france/config.json"]
 
   # Hide resources with status = warn
   HIDE_RESOURCES_WITH_WARN_STATUS = True
@@ -120,7 +120,7 @@ class GpicGlobals():
     s.setValue(u"{0}/hide_empty_groups".format(self.PLUGIN_TAG), u"1")
     s.setValue(u"{0}/config_files_download_at_startup".format(self.PLUGIN_TAG), u"0")
     s.setValue(u"{0}/config_file_names".format(self.PLUGIN_TAG), ["config.json"])
-    s.setValue(u"{0}/config_file_urls".format(self.PLUGIN_TAG), ["https://raw.githubusercontent.com/bchartier/qgis-favorites-resources-trees/master/geopicardie.json"])
+    s.setValue(u"{0}/config_file_urls".format(self.PLUGIN_TAG), ["https://www.geo2france.fr/public/qgis2/plugins/geo2france/config.json"])
 
 
   def getQgisSettingDefaultValue(self, setting):

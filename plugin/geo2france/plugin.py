@@ -5,15 +5,15 @@ from PyQt4.QtGui import *
 
 import os
 
-from geopicardie.utils.plugin_globals import GpicGlobals
-from geopicardie.gui.gpic_dock import GpicDockWidget
-from geopicardie.gui.about_box import AboutBox
-from geopicardie.gui.param_box import ParamBox
-from geopicardie.nodes.treenodefactory import FavoriteTreeNodeFactory
-from geopicardie.nodes.treenodefactory import downloadResourcesTreeFile
+from geo2france.utils.plugin_globals import GpicGlobals
+from geo2france.gui.gpic_dock import GpicDockWidget
+from geo2france.gui.about_box import AboutBox
+from geo2france.gui.param_box import ParamBox
+from geo2france.nodes.treenodefactory import FavoriteTreeNodeFactory
+from geo2france.nodes.treenodefactory import downloadResourcesTreeFile
 
 
-class PluginGeoPicardie:
+class PluginGeo2France:
   """
   Plugin class.
   """
@@ -75,10 +75,10 @@ class PluginGeoPicardie:
     """
 
     plugin_menu = self.iface.pluginMenu()
-    self.gpic_menu = QMenu(u"GéoPicardie", plugin_menu)
+    self.gpic_menu = QMenu(u"Géo2France", plugin_menu)
     plugin_menu.addMenu(self.gpic_menu)
 
-    show_gpic_panel_action = QAction(u'Afficher le panneau GéoPicardie', self.iface.mainWindow())        
+    show_gpic_panel_action = QAction(u'Afficher le panneau Géo2France', self.iface.mainWindow())
     show_gpic_panel_action.triggered.connect(self.showGpicPanelMenuTriggered)
     self.gpic_menu.addAction(show_gpic_panel_action)
 

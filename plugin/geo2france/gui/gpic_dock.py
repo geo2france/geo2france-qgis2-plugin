@@ -5,12 +5,12 @@ from PyQt4.QtGui import *
 from qgis.core import *
 from qgis.gui import *
 
-from geopicardie.gui.gpic_tree_widget import GpicTreeWidget
+from geo2france.gui.gpic_tree_widget import GpicTreeWidget
 
 
 class GpicDockWidget(QDockWidget):
   """
-  The dock widget containing the tree view displaying the GéoPicardie resources
+  The dock widget containing the tree view displaying the Géo2France resources
   """
 
 
@@ -27,7 +27,7 @@ class GpicDockWidget(QDockWidget):
     """
     """
 
-    self.setWindowTitle(u'GéoPicardie')
+    self.setWindowTitle(u'Géo2France')
     self.setAllowedAreas(Qt.LeftDockWidgetArea | Qt.RightDockWidgetArea)
 
     self.treeWidget = GpicTreeWidget()

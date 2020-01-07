@@ -4,8 +4,8 @@ from PyQt4 import QtGui
 from qgis.core import QgsApplication
 import os
 
-from geopicardie.utils.plugin_globals import GpicGlobals
-from geopicardie.utils.singleton import *
+from geo2france.utils.plugin_globals import GpicGlobals
+from geo2france.utils.singleton import *
 
 
 @Singleton

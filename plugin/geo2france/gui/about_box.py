@@ -4,7 +4,7 @@ from PyQt4 import QtGui
 
 import os
 
-from geopicardie.utils.plugin_globals import GpicGlobals
+from geo2france.utils.plugin_globals import GpicGlobals
 
 
 class AboutBox(QtGui.QDialog):
@@ -24,7 +24,7 @@ class AboutBox(QtGui.QDialog):
     mainLayout.addWidget(self.logo)
 
 
-    title = u"À propos de l'extension GéoPicardie…"
+    title = u"À propos de l'extension Géo2France…"
     description = u"""Extension pour QGIS donnant un accès simplifié aux ressources géographiques utiles aux partenaires de GéoPicardie
 Version {0}
 Plus d'informations à l'adresse suivante : {1}

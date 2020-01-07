@@ -2,8 +2,8 @@
 
 import os
 
-from geopicardie.utils.plugin_globals import GpicGlobals
-from geopicardie.utils.gpic_icons import *
+from geo2france.utils.plugin_globals import GpicGlobals
+from geo2france.utils.gpic_icons import *
 
 
 class FavoritesTreeNode:
