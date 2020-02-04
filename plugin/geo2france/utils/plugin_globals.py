@@ -16,8 +16,8 @@ class GpicGlobals():
 
   # Plugin infos
   PLUGIN_TAG = u"Géo2France"
-  PLUGIN_VERSION = u"0.4.4"
-  PLUGIN_SOURCE_REPOSITORY = u"https://github.com/geopicardie/geo2france-qgis2-plugin"
+  PLUGIN_VERSION = u"0.5.1"
+  PLUGIN_SOURCE_REPOSITORY = u"https://github.com/geo2france/geo2france-qgis2-plugin"
 
   # Tree nodes types
   NODE_TYPE_FOLDER = "folder"

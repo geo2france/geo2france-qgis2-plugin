@@ -57,6 +57,9 @@ un point d'exclamation.
 Notes
 -----
 
+Version 0.5.1 :
+* changement de nom du repository github : geopicardie -> geo2france
+
 Version 0.5.0 :
 * passage de GéoPicardie à Géo2France
 

@@ -5,5 +5,5 @@ description=Plugin pour QGIS 2 fournissant un accès simple aux données de Géo
 author=Neogeo Technologies
 email=contact@neogeo.fr
 icon=images/geo2france.png
-version=version 0.5.0
+version=version 0.5.1
 deprecated=False
